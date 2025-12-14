@@ -1,0 +1,33 @@
+
+{
+    "experience": [
+      {
+        "title": "MERN Stack Developer & Web Designer",
+        "company": "Matiyas Solution",
+        "link": "",
+        "location": "Gandhinagar, Gujarat, India",
+        "type": "Freelance / Self-Employed",
+        "duration": "April 2025 - Present",
+        "description": "Working as a MERN Stack Developer and Web Designer, building modern, responsive, and scalable web applications. Responsible for UI/UX design, frontend development using React.js and Next.js, and backend development with Node.js, Express.js, and MongoDB, with a strong focus on performance and user experience."
+      },
+      {
+        "title": "Web Designer & Developer",
+        "company": "Self-Employed",
+        "link": "",
+        "location": "Gujarat, India (Remote)",
+        "type": "Freelance",
+        "duration": "August 2022 - April 2025",
+        "description": "Provided freelance web design and development services, creating professional websites, UI/UX designs, and full-stack applications for clients. Delivered optimized, secure, and visually appealing solutions using modern web technologies."
+      },
+      {
+        "title": "Freelance Web Developer",
+        "company": "Self-Employed",
+        "link": "",
+        "location": "Remote",
+        "type": "Freelance",
+        "duration": "June 2023 - January 2024",
+        "description": "Worked as a freelance developer delivering frontend and backend solutions for various clients. Specialized in React, Node.js, MongoDB, and UI/UX design, ensuring high-quality and client-focused project delivery."
+      }
+    ]
+  }
+  

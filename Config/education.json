@@ -1,0 +1,55 @@
+{
+  "degrees": [
+    {
+      "name": "LDRP Institute of Technology and Research",
+      "link": "https://www.ldrp.ac.in",
+      "course": "Master of Computer Applications",
+      "duration": "Aug 2025 - July 2027",
+      "description": "Postgraduate program focusing on advanced computing topics, software development, and practical projects.",
+      "grade": "Ongoing"
+    },
+    {
+      "name": "A.M.Patel Institute of Computer Studies – Ganpat University",
+      "link": "http://ganpatuniversity.ac.in/",
+      "course": "Bachelor of Computer Applications",
+      "duration": "June 2022 - July 2025",
+      "description": "I Completed a Bachelor’s degree in Computer Applications at A.M.Patel Institute of Computer Studies – Ganpat University, where I gained a solid academic background in computing through a well-rounded curriculum and practical experiences.",
+      "grade": "First Class"
+    }
+  ],
+  "certifiedCourses": [
+    {
+      "name": "LDRP Institute of Technology and Research",
+      "link": "https://www.ldrp.ac.in",
+      "course": "Hands-On Learning on Hibernate Framework",
+      "duration": "September 2025",
+      "description": "Participated in an expert-led hands-on learning session focused on the Hibernate Framework, gaining practical exposure to object-relational mapping (ORM) concepts and enterprise-level Java persistence techniques.",
+      "grade": "Participant"
+    },
+    {
+      "name": "LDRP Institute of Technology and Research",
+      "link": "https://www.ldrp.ac.in",
+      "course": "Git and GitHub Profile",
+      "duration": "November 2025",
+      "description": "Actively participated in an expert session on Git and GitHub, learning version control fundamentals, repository management, collaboration workflows, and best practices for maintaining a professional GitHub profile.",
+      "grade": "Participant"
+    },
+
+    {
+      "name": "Cognitive Class (IBM Developer Skills Network)",
+      "link": "https://cognitiveclass.ai",
+      "course": "Build an IoT Blockchain Network for a Supply Chain",
+      "duration": "April 2024",
+      "description": "Successfully completed an IBM-powered course focused on building an IoT-based blockchain network for supply chain systems, covering blockchain fundamentals, IoT integration, and real-world enterprise use cases.",
+      "grade": "Pass"
+    },
+    {
+      "name": "Google Developer Student Clubs (GDSC)",
+      "link": "https://developers.google.com/community/gdsc",
+      "course": "Google Cloud Computing Fundamentals & Generative AI Arcade (Level 3)",
+      "duration": "September 2023",
+      "description": "Completed the Google Cloud Computing Fundamentals pathway along with Level 3 of the Generative AI Arcade Game during Google Cloud Study Jam, gaining hands-on experience with cloud services and generative AI concepts.",
+      "grade": "Completed"
+    }
+  ]
+}

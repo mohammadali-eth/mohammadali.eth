@@ -1,0 +1,16 @@
+{
+    "Email": "malidhanga@gmail.com",
+    "Phone": "+919016999984",
+    "Address": "Gandhinagar, Gujarat, India",
+    "Introduction": "I'm currently available to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact me anytime.",
+    "FormLabels": {
+      "Email": "Your email",
+      "Subject": "Subject",
+      "Message": "Your message"
+    },
+    "FormPlaceholders": {
+      "Email": "Enter Your email...",
+      "Subject": "Subject...",
+      "Message": "Leave a message..."
+    }
+  }
