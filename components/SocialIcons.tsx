@@ -13,7 +13,7 @@ const defaultSize = 32;
 const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/mohammadalidhanga",
+    url: "https://github.com/MohammadAli440",
     icon: (size: number) => (
       <svg
         width={size}
@@ -47,7 +47,7 @@ const socialLinks = [
   },
   {
     name: "Instagram",
-    url: "https://instagram.com/mohammadalidhanga",
+    url: "https://instagram.com/mohammadali8.eth",
     icon: (size: number) => (
       <svg
         width={size}
@@ -62,7 +62,7 @@ const socialLinks = [
   },
   {
     name: "Twitter X",
-    url: "https://twitter.com/mdhanga07",
+    url: "https://x.com/mohammadali_eth",
     icon: (size: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"

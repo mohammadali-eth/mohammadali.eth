@@ -1,95 +1,88 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  SiJavascript,
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPython,
-  SiTailwindcss,
-  SiFramer,
-  SiGit,
-  SiWeb3Dotjs,
-  SiMongodb,
-  SiMysql,
-  SiExpress,
-  SiReactivex,
-  SiAdobe,
-  SiWordpress,
-  SiHiveBlockchain,
-  SiHackthebox,
-  SiCoursera,
-  SiProtools,
-} from "react-icons/si";
-import {
-  FaRobot,
-  FaGlobeAmericas,
-  FaLanguage,
-  FaPaintBrush,
-  FaLaptopCode,
-  FaBriefcase,
-  FaUser,
-  FaSignLanguage,
-} from "react-icons/fa";
-import SocialIcons from "@/components/SocialIcons";
-import { MdSchool, MdWork, MdOutlineDesignServices } from "react-icons/md";
-import {
-  IoIosRocket,
-  IoMdRibbon,
-  IoIosCode,
-  IoIosChatboxes,
-} from "react-icons/io";
-import { BiSolidBookOpen, BiSolidTrophy } from "react-icons/bi";
 import { JSX } from "react";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
+import {
+  Atom,
+  BookOpen,
+  BriefcaseBusiness,
+  CircleDot,
+  Clapperboard,
+  FileCode,
+  FileType,
+  GitBranch,
+  Globe2,
+  GraduationCap,
+  Languages,
+  Leaf,
+  MessageCircle,
+  Network,
+  Palette,
+  PenTool,
+  Rocket,
+  Route,
+  Server,
+  Smartphone,
+  Table,
+  Trophy,
+  UserRound,
+  Waves,
+  Wrench,
+  Workflow,
+} from "lucide-react";
+
+const sharedStroke = 1.8;
 
 const iconMap: Record<string, JSX.Element> = {
-  JavaScript: <SiJavascript color="#f7df1e" />,
-  TypeScript: <SiTypescript color="#3178c6" />,
-  React: <SiReact color="#61dafb" />,
-  "Next.js": <SiNextdotjs color="#ffffff" />,
-  "Node.js": <SiNodedotjs color="#339933" />,
-  Python: <SiPython color="#3776ab" />,
-  "Tailwind CSS": <SiTailwindcss color="#38bdf8" />,
-  "Framer Motion": <SiFramer color="#e62aff" />,
-  Git: <SiGit color="#f34f29" />,
-  Web3: <SiWeb3Dotjs color="#27ae60" />,
-  MongoDB: <SiMongodb color="#47a248" />,
-  MySQL: <SiMysql color="#00758f" />,
-  "Express.js": <SiExpress color="#ffffff" />,
-  "React Native": <SiReactivex color="#61dafb" />,
+  JavaScript: <FileCode color="#f7df1e" strokeWidth={sharedStroke} />,
+  TypeScript: <FileType color="#3178c6" strokeWidth={sharedStroke} />,
+  React: <Atom color="#61dafb" strokeWidth={sharedStroke} />,
+  "Next.js": <CircleDot color="#ffffff" strokeWidth={sharedStroke} />,
+  "Node.js": <Server color="#339933" strokeWidth={sharedStroke} />,
+  Python: <Workflow color="#3776ab" strokeWidth={sharedStroke} />,
+  "Tailwind CSS": <Waves color="#38bdf8" strokeWidth={sharedStroke} />,
+  "Framer Motion": <Clapperboard color="#e62aff" strokeWidth={sharedStroke} />,
+  Git: <GitBranch color="#f34f29" strokeWidth={sharedStroke} />,
+  Web3: <Network color="#27ae60" strokeWidth={sharedStroke} />,
+  MongoDB: <Leaf color="#47a248" strokeWidth={sharedStroke} />,
+  MySQL: <Table color="#00758f" strokeWidth={sharedStroke} />,
+  "Express.js": <Route color="#ffffff" strokeWidth={sharedStroke} />,
+  "React Native": <Smartphone color="#61dafb" strokeWidth={sharedStroke} />,
 };
 
 const courseIconMap: Record<string, JSX.Element> = {
-  "MERN Stack Developer": <FaRobot color="#128c7e" />,
-  "Adobe Software": <SiAdobe color="#ff0000" />,
-  "WordPress Bootcamp": <SiWordpress color="#21759b" />,
-  "IoT Blockchain Supply Chain Network": <SiHiveBlockchain color="#f89c1d" />,
+  "MERN Stack Developer": <Atom color="#128c7e" strokeWidth={sharedStroke} />,
+  "Adobe Software": <Palette color="#ff0000" strokeWidth={sharedStroke} />,
+  "WordPress Bootcamp": <Globe2 color="#21759b" strokeWidth={sharedStroke} />,
+  "IoT Blockchain Supply Chain Network": (
+    <Network color="#f89c1d" strokeWidth={sharedStroke} />
+  ),
 };
 
 const hackathonIconMap: Record<string, JSX.Element> = {
-  "Smart India Hackathon – 2024 & 2025": <SiHackthebox color="#9fe870" />,
-  "DevFast – 2024": <SiHackthebox color="#ffb347" />,
+  "Smart India Hackathon – 2024 & 2025": (
+    <Trophy color="#9fe870" strokeWidth={sharedStroke} />
+  ),
+  "DevFast – 2024": <Trophy color="#ffb347" strokeWidth={sharedStroke} />,
 };
 
 const languageIconMap: Record<string, JSX.Element> = {
-  English: <FaGlobeAmericas color="#4f8edc" />,
-  Hindi: <FaLanguage color="#ff9933" />,
-  Gujarati: <FaLanguage color="#008751" />,
+  English: <Globe2 color="#4f8edc" strokeWidth={sharedStroke} />,
+  Hindi: <Languages color="#ff9933" strokeWidth={sharedStroke} />,
+  Gujarati: <Languages color="#008751" strokeWidth={sharedStroke} />,
 };
 
 const sectionIconMap: Record<string, JSX.Element> = {
-  about: <FaUser className="text-xl text-[#0ea5e9]" />,
-  highlights: <IoIosRocket className="text-xl text-[#ec4899]" />,
-  education: <MdSchool className="text-xl text-[#f59e42]" />,
-  hackathons: <BiSolidTrophy className="text-xl text-[#84cc16]" />,
-  courses: <BiSolidBookOpen className="text-xl text-[#8b5cf6]" />,
-  languages: <FaSignLanguage className="text-xl text-[#06b6d4]" />,
-  tools: <SiProtools className="text-xl text-[#fbbf24]" />,
-  connect: <IoIosChatboxes className="text-2xl text-[#0ea5e9]" />,
+  about: <UserRound className="text-xl text-[#0ea5e9]" strokeWidth={sharedStroke} />,
+  highlights: <Rocket className="text-xl text-[#ec4899]" strokeWidth={sharedStroke} />,
+  education: <GraduationCap className="text-xl text-[#f59e42]" strokeWidth={sharedStroke} />,
+  hackathons: <Trophy className="text-xl text-[#84cc16]" strokeWidth={sharedStroke} />,
+  courses: <BookOpen className="text-xl text-[#8b5cf6]" strokeWidth={sharedStroke} />,
+  languages: <Languages className="text-xl text-[#06b6d4]" strokeWidth={sharedStroke} />,
+  tools: <Wrench className="text-xl text-[#fbbf24]" strokeWidth={sharedStroke} />,
+  connect: <MessageCircle className="text-2xl text-[#0ea5e9]" strokeWidth={sharedStroke} />,
 };
 
 // Animation variants
@@ -153,17 +146,17 @@ const skills = [
 
 const highlights = [
   {
-    icon: <IoIosRocket color="#ec4899" className="text-lg" />,
+    icon: <Rocket color="#ec4899" className="text-lg" strokeWidth={sharedStroke} />,
     title: "MERN & Next.js",
     desc: "Building modern, scalable, and responsive applications end to end.",
   },
   {
-    icon: <MdOutlineDesignServices color="#14b8a6" className="text-lg" />,
+    icon: <PenTool color="#14b8a6" className="text-lg" strokeWidth={sharedStroke} />,
     title: "UI/UX focus",
     desc: "Clean, accessible interfaces with professional design tooling.",
   },
   {
-    icon: <FaBriefcase color="#f59e42" className="text-lg" />,
+    icon: <BriefcaseBusiness color="#f59e42" className="text-lg" strokeWidth={sharedStroke} />,
     title: "Freelance delivery",
     desc: "Hands-on with real projects, iterating with users and stakeholders.",
   },
@@ -171,13 +164,13 @@ const highlights = [
 
 const education = [
   {
-    icon: <MdSchool color="#34d399" className="text-xl" />,
+    icon: <GraduationCap color="#34d399" className="text-xl" strokeWidth={sharedStroke} />,
     title: "Master’s in Computer Application",
     place: "LDRP Institute of Technology and Research",
     time: "2024 – Present",
   },
   {
-    icon: <MdSchool color="#818cf8" className="text-xl" />,
+    icon: <GraduationCap color="#818cf8" className="text-xl" strokeWidth={sharedStroke} />,
     title: "Bachelor’s in Computer Application",
     place:
       "Acharya Motibhai Patel Institute of Computer Studies – Ganpat University",
@@ -188,13 +181,13 @@ const education = [
 const hackathons = [
   {
     icon: hackathonIconMap["Smart India Hackathon – 2024 & 2025"] ?? (
-      <SiHackthebox color="#44a832" />
+      <Trophy color="#44a832" strokeWidth={sharedStroke} />
     ),
     label: "Smart India Hackathon – 2024 & 2025",
   },
   {
     icon: hackathonIconMap["DevFast – 2024"] ?? (
-      <SiHackthebox color="#44a832" />
+      <Trophy color="#44a832" strokeWidth={sharedStroke} />
     ),
     label: "DevFast – 2024",
   },
@@ -203,21 +196,25 @@ const hackathons = [
 const courses = [
   {
     icon: courseIconMap["MERN Stack Developer"] ?? (
-      <SiCoursera color="#2a73cc" />
+      <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
     ),
     label: "MERN Stack Developer",
   },
   {
-    icon: courseIconMap["Adobe Software"] ?? <SiCoursera color="#2a73cc" />,
+    icon: courseIconMap["Adobe Software"] ?? (
+      <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
+    ),
     label: "Adobe Software",
   },
   {
-    icon: courseIconMap["WordPress Bootcamp"] ?? <SiCoursera color="#2a73cc" />,
+    icon: courseIconMap["WordPress Bootcamp"] ?? (
+      <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
+    ),
     label: "WordPress Bootcamp",
   },
   {
     icon: courseIconMap["IoT Blockchain Supply Chain Network"] ?? (
-      <SiCoursera color="#2a73cc" />
+      <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
     ),
     label: "IoT Blockchain Supply Chain Network",
   },
@@ -554,7 +551,10 @@ export default function About() {
       fontFamily:
       "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
     }}>
-                  <IoIosRocket className="inline text-base text-[#ec4899]" />
+                  <Rocket
+                    className="inline text-base text-[#ec4899]"
+                    strokeWidth={sharedStroke}
+                  />
                   Always learning, always shipping.
                 </p>
               </div>
@@ -576,7 +576,9 @@ export default function About() {
                     
                   >
                     <span className="text-xl md:text-2xl" >
-                      {iconMap[skill] ?? <FaRobot color="#888" />}
+                      {iconMap[skill] ?? (
+                        <Atom color="#888" strokeWidth={sharedStroke} />
+                      )}
                     </span>
                     <span className="truncate">{skill}</span>
                   </motion.div>

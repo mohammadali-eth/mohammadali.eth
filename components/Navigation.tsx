@@ -4,19 +4,19 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaHome, FaUserAlt, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
+import { Home, Mail, Menu, UserRound, X } from "lucide-react";
 
 const navLinks = [
-  { href: "/", label: "Home", icon: <FaHome className="text-[#38bdf8]" /> }, // sky-500
+  { href: "/", label: "Home", icon: <Home className="text-[#38bdf8]" strokeWidth={1.8} /> }, // sky-500
   {
     href: "/about",
     label: "About",
-    icon: <FaUserAlt className="text-[#f59e42]" />,
+    icon: <UserRound className="text-[#f59e42]" strokeWidth={1.8} />,
   }, // orange-400
   {
     href: "/contact",
     label: "Contact",
-    icon: <FaEnvelope className="text-[#84cc16]" />,
+    icon: <Mail className="text-[#84cc16]" strokeWidth={1.8} />,
   }, // lime-400
 ];
 
@@ -115,7 +115,7 @@ export default function Navigation() {
                 transition={{ duration: 0.25 }}
                 key="close"
               >
-                <FaTimes className="text-xl text-white" />
+                <X className="text-xl text-white" strokeWidth={1.8} />
               </motion.span>
             ) : (
               <motion.span
@@ -125,7 +125,7 @@ export default function Navigation() {
                 transition={{ duration: 0.25 }}
                 key="open"
               >
-                <FaBars className="text-xl text-white" />
+                <Menu className="text-xl text-white" strokeWidth={1.8} />
               </motion.span>
             )}
           </motion.button>

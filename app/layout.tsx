@@ -14,6 +14,7 @@ export const metadata = {
   instagram: "https://www.instagram.com/mohammadali8.eth/",
   github: "https://github.com/MohammadAli440",
   linkedin: "https://www.linkedin.com/in/mohammadalidhanga/",
+  facebook: "https://www.facebook.com/share/14MNEcsACYn/?mibextid=wwXIfr",
   keywords:
     "Mohammadali Dhanga, MERN Stack Developer, Web Developer, Full Stack Developer, React Developer, Next.js Developer, Node.js Developer, MongoDB Developer, UI UX Designer",
   robots: "index, follow",
@@ -46,6 +47,8 @@ export default function RootLayout({ children }) {
         <meta property="og:instagram" content={metadata.instagram} />
         <meta property="og:github" content={metadata.github} />
         <meta property="og:linkedin" content={metadata.linkedin} />
+        <meta property="og:facebook" content={metadata.facebook} />
+
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />

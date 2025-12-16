@@ -2,60 +2,48 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { JSX } from "react";
+import Cal from "@/components/ui/cal";
+import {
+  Atom,
+  Camera,
+  CheckCircle2,
+  CircleDot,
+  Clapperboard,
+  Cloud,
+  Cog,
+  Database,
+  DraftingCompass,
+  FileCode,
+  FileType,
+  Figma,
+  Github,
+  Globe2,
+  GraduationCap,
+  Languages,
+  LayoutDashboard,
+  Leaf,
+  Lightbulb,
+  Mail,
+  Monitor,
+  MonitorSmartphone,
+  Network,
+  Palette,
+  Paintbrush,
+  PenTool,
+  Rocket,
+  Route,
+  Server,
+  ShoppingBag,
+  Smartphone,
+  Shield,
+  Table,
+  Trophy,
+  UserRound,
+  Waves,
+  BookOpen,
+} from "lucide-react";
 import SocialIcons from "@/components/SocialIcons";
-import {
-  FaReact,
-  FaNodeJs,
-  FaFigma,
-  FaAd,
-  FaRegUser,
-  FaUserGraduate,
-  FaWpforms,
-  FaEnvelope,
-  FaLightbulb,
-  FaDraftingCompass,
-  FaCogs,
-  FaRocket,
-  FaChalkboardTeacher,
-  FaWordpress,
-  FaShopify,
-  FaGithub,
-  FaLanguage,
-  FaRegCheckCircle,
-  FaPaintBrush,
-  FaDesktop,
-  FaMobileAlt,
-  FaDatabase,
-} from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiJavascript,
-  SiTypescript,
-  SiTailwindcss,
-  SiMongodb,
-  SiMysql,
-  SiAdobephotoshop,
-  SiAdobeillustrator,
-  SiAdobelightroom,
-  SiExpress,
-  SiWeb3Dotjs,
-  SiAdobecreativecloud,
-  SiAdobe,
-} from "react-icons/si";
-import { TbApi /*TbUserShield*/ } from "react-icons/tb";
-import {
-  MdDashboard,
-  MdSecurity,
-  MdAnimation,
-  MdIntegrationInstructions,
-  /*MdApi,*/
-  MdDesignServices,
-  MdImportantDevices,
-  MdOutlineSchool,
-  MdCloud,
-} from "react-icons/md";
-import { BsFillPinMapFill } from "react-icons/bs";
-import { HiMiniLanguage } from "react-icons/hi2";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 
 // --- DATA DEFINITIONS (to solve errors regarding undefined variables) ---
@@ -232,112 +220,202 @@ const languages = ["English", "Hindi", "Gujarati"];
 
 // --- END DATA DEFINITIONS ---
 
-const skillIcons = {
-  "React.js": <FaReact size={20} color="#61dafb" />,
+const sharedStroke = 1.8;
+
+const skillIcons: Record<string, JSX.Element> = {
+  "React.js": <Atom size={20} color="#61dafb" strokeWidth={sharedStroke} />,
   "Next.js": (
-    <SiNextdotjs
+    <CircleDot
       size={20}
       color="#000000"
+      strokeWidth={sharedStroke}
       style={{ background: "#fff", borderRadius: 4, padding: 2 }}
     />
   ),
-  JavaScript: <SiJavascript size={20} color="#f7df1e" />,
-  TypeScript: <SiTypescript size={20} color="#2d79c7" />,
-  "Tailwind CSS": <SiTailwindcss size={20} color="#06b6d4" />,
-  "React Native": <FaMobileAlt size={18} color="#4DD0E1" />,
-  "Node.js": <FaNodeJs size={20} color="#3c873a" />,
+  JavaScript: <FileCode size={20} color="#f7df1e" strokeWidth={sharedStroke} />,
+  TypeScript: <FileType size={20} color="#2d79c7" strokeWidth={sharedStroke} />,
+  "Tailwind CSS": (
+    <Waves size={20} color="#06b6d4" strokeWidth={sharedStroke} />
+  ),
+  "React Native": (
+    <Smartphone size={18} color="#4DD0E1" strokeWidth={sharedStroke} />
+  ),
+  "Node.js": <Server size={20} color="#3c873a" strokeWidth={sharedStroke} />,
   "Express.js": (
-    <SiExpress
+    <Route
       size={20}
-      color="#fff"
+      color="#ffffff"
+      strokeWidth={sharedStroke}
       style={{ background: "#222", borderRadius: 4, padding: 2 }}
     />
   ),
-  MongoDB: <SiMongodb size={20} color="#47A248" />,
-  MySQL: <SiMysql size={20} color="#00758f" />,
-  Figma: <FaFigma size={20} color="#a259ff" />,
-  "Adobe Photoshop": <SiAdobephotoshop size={20} color="#0a74c3" />,
-  "Adobe Illustrator": <SiAdobeillustrator size={20} color="#fb9d06" />,
-  "Adobe Lightroom": <SiAdobelightroom size={20} color="#3652ff" />,
-  // Git: <FaGithub size={20} color="#333" />,
+  MongoDB: <Leaf size={20} color="#47A248" strokeWidth={sharedStroke} />,
+  MySQL: <Table size={20} color="#00758f" strokeWidth={sharedStroke} />,
+  Figma: <Figma size={20} color="#a259ff" strokeWidth={sharedStroke} />,
+  "Adobe Photoshop": (
+    <Palette size={20} color="#0a74c3" strokeWidth={sharedStroke} />
+  ),
+  "Adobe Illustrator": (
+    <PenTool size={20} color="#fb9d06" strokeWidth={sharedStroke} />
+  ),
+  "Adobe Lightroom": (
+    <Camera size={20} color="#3652ff" strokeWidth={sharedStroke} />
+  ),
 };
 
-const platformIcons = {
-  WordPress: <FaWordpress size={18} color="#21759b" />,
-  Shopify: <FaShopify size={18} color="#7ab55c" />,
-  Git: <FaGithub size={18} color="#333" />,
-  Figma: <FaFigma size={18} color="#a259ff" />,
-  "Adobe Creative Suite": <SiAdobecreativecloud size={18} color="#d84d3b" />,
+const platformIcons: Record<string, JSX.Element> = {
+  WordPress: <Globe2 size={18} color="#21759b" strokeWidth={sharedStroke} />,
+  Shopify: <ShoppingBag size={18} color="#7ab55c" strokeWidth={sharedStroke} />,
+  Git: <Github size={18} color="#333" strokeWidth={sharedStroke} />,
+  Figma: <Figma size={18} color="#a259ff" strokeWidth={sharedStroke} />,
+  "Adobe Creative Suite": (
+    <Cloud size={18} color="#d84d3b" strokeWidth={sharedStroke} />
+  ),
 };
 
-const serviceTrackIcons = {
-  "Product & UX": <MdDesignServices size={22} color="#7c3aed" />,
-  Engineering: <FaCogs size={22} color="#f59e42" />,
+const serviceTrackIcons: Record<string, JSX.Element> = {
+  "Product & UX": (
+    <PenTool size={22} color="#7c3aed" strokeWidth={sharedStroke} />
+  ),
+  Engineering: <Cog size={22} color="#f59e42" strokeWidth={sharedStroke} />,
   "Web3 & Integrations": (
-    <MdIntegrationInstructions size={22} color="#1de9b6" />
+    <Network size={22} color="#1de9b6" strokeWidth={sharedStroke} />
   ),
 };
 
 const processIcons = [
-  <FaLightbulb key="discover" size={22} color="#facc15" />,
-  <FaDraftingCompass key="design" size={22} color="#c026d3" />,
-  <FaCogs key="build" size={22} color="#60a5fa" />,
-  <FaRocket key="launch" size={22} color="#fb7185" />,
+  <Lightbulb
+    key="discover"
+    size={22}
+    color="#facc15"
+    strokeWidth={sharedStroke}
+  />,
+  <DraftingCompass
+    key="design"
+    size={22}
+    color="#c026d3"
+    strokeWidth={sharedStroke}
+  />,
+  <Cog key="build" size={22} color="#60a5fa" strokeWidth={sharedStroke} />,
+  <Rocket key="launch" size={22} color="#fb7185" strokeWidth={sharedStroke} />,
 ];
 
 const featuredIcons = [
-  <MdDashboard key="Realtime dashboards" size={20} color="#0ea5e9" />,
-  <MdAnimation key="Creative launches" size={20} color="#f59e42" />,
-  <MdSecurity key="Secure systems" size={20} color="#f43f5e" />,
+  <LayoutDashboard
+    key="Realtime dashboards"
+    size={20}
+    color="#0ea5e9"
+    strokeWidth={sharedStroke}
+  />,
+  <Clapperboard
+    key="Creative launches"
+    size={20}
+    color="#f59e42"
+    strokeWidth={sharedStroke}
+  />,
+  <Shield
+    key="Secure systems"
+    size={20}
+    color="#f43f5e"
+    strokeWidth={sharedStroke}
+  />,
 ];
 
 const projectIcons = [
-  <FaRegCheckCircle
+  <CheckCircle2
     key="AI Based Crop Recommendation System"
     size={20}
     color="#14b8a6"
+    strokeWidth={sharedStroke}
   />,
-  <MdDashboard key="Hotel Management System" size={20} color="#0ea5e9" />,
-  <MdImportantDevices
+  <LayoutDashboard
+    key="Hotel Management System"
+    size={20}
+    color="#0ea5e9"
+    strokeWidth={sharedStroke}
+  />,
+  <MonitorSmartphone
     key="Professional Company Website"
     size={20}
     color="#818cf8"
+    strokeWidth={sharedStroke}
   />,
-  <FaWordpress key="WordPress E-commerce Website" size={20} color="#21759b" />,
-  <MdCloud
+  <Globe2
+    key="WordPress E-commerce Website"
+    size={20}
+    color="#21759b"
+    strokeWidth={sharedStroke}
+  />,
+  <Cloud
     key="Real-Time Blog & Chat Uploading Website"
     size={20}
     color="#06b6d4"
+    strokeWidth={sharedStroke}
   />,
-  <FaPaintBrush
+  <Paintbrush
     key="Weather Forecast UI/UX Project"
     size={20}
     color="#f59e42"
+    strokeWidth={sharedStroke}
   />,
 ];
 
 const educationIcons = [
-  <MdOutlineSchool key="Master" size={20} color="#6366f1" />,
-  <MdOutlineSchool key="Bachelor" size={20} color="#f59e42" />,
+  <GraduationCap
+    key="Master"
+    size={20}
+    color="#6366f1"
+    strokeWidth={sharedStroke}
+  />,
+  <GraduationCap
+    key="Bachelor"
+    size={20}
+    color="#f59e42"
+    strokeWidth={sharedStroke}
+  />,
 ];
 
 const hackathonIcons = [
-  <FaRegUser key="Smart India Hackathon" size={20} color="#eab308" />,
-  <FaChalkboardTeacher key="DevFast" size={20} color="#a21caf" />,
+  <UserRound
+    key="Smart India Hackathon"
+    size={20}
+    color="#eab308"
+    strokeWidth={sharedStroke}
+  />,
+  <Trophy key="DevFast" size={20} color="#a21caf" strokeWidth={sharedStroke} />,
 ];
 
 const courseIcons = [
-  <FaReact key="MERN Stack Developer" size={16} color="#61dafb" />,
-  // <SiAdobephotoshop key="Adobe Software" size={16} color="#0a74c3" />,
-  <SiAdobe key="Adobe Software" size={16} color="#ff0000" />,
-  <FaWordpress key="WordPress Bootcamp" size={16} color="#21759b" />,
-  <SiWeb3Dotjs key="IoT Blockchain" size={16} color="#10b981" />,
+  <Atom
+    key="MERN Stack Developer"
+    size={16}
+    color="#61dafb"
+    strokeWidth={sharedStroke}
+  />,
+  <Palette
+    key="Adobe Software"
+    size={16}
+    color="#ff0000"
+    strokeWidth={sharedStroke}
+  />,
+  <Globe2
+    key="WordPress Bootcamp"
+    size={16}
+    color="#21759b"
+    strokeWidth={sharedStroke}
+  />,
+  <Network
+    key="IoT Blockchain"
+    size={16}
+    color="#10b981"
+    strokeWidth={sharedStroke}
+  />,
 ];
 
-const languageIcons = {
-  English: <HiMiniLanguage size={16} color="#60a5fa" />,
-  Hindi: <HiMiniLanguage size={16} color="#22c55e" />,
-  Gujarati: <HiMiniLanguage size={16} color="#f59e42" />,
+const languageIcons: Record<string, JSX.Element> = {
+  English: <Languages size={16} color="#60a5fa" strokeWidth={sharedStroke} />,
+  Hindi: <Languages size={16} color="#22c55e" strokeWidth={sharedStroke} />,
+  Gujarati: <Languages size={16} color="#f59e42" strokeWidth={sharedStroke} />,
 };
 
 function GridBG() {
@@ -432,31 +510,24 @@ export default function Home() {
               className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-white/10 bg-white/5 text-xs sm:text-sm uppercase tracking-widest text-gray-300"
               variants={itemVariants}
             >
-              {/* Icon for MERN Stack */}
-              {/* <FaReact size={14} color="#61dafb" />
-              <FaNodeJs size={14} color="#3c873a" /> */}
+          
               <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300">
                 <span>✨ MERN Stack Developer · Next.js Specialist</span>
               </AnimatedShinyText>
 
-              {/* <SiNextdotjs
-                size={14}
-                color="#000"
-                style={{ background: "#fff", borderRadius: 4, marginLeft: 2 }}
-              /> */}
             </motion.div>
             <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-display font-bold tracking-tight"
               variants={itemVariants}
             >
-              {/* <FaRegUser size={28} color="#60a5fa" className="inline mr-2" /> */}
+            
               Mohammadali Dhanga
             </motion.h1>
             <motion.p
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light"
               variants={itemVariants}
             >
-              {/* <FaReact size={18} color="#61dafb" className="inline mr-2" /> */}
+
               MERN Stack Developer | Next.js Specialist | UI/UX Focused
               Developer
             </motion.p>
@@ -468,11 +539,7 @@ export default function Home() {
                   "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
               }}
             >
-              {/* <BsFillPinMapFill
-                size={16}
-                color="#f59e42"
-                className="inline mr-2"
-              /> */}
+            
               I’m Mohammadali Dhanga, a Web Designer and Developer building
               modern, responsive web applications with the MERN Stack and
               Next.js. I keep UI/UX clean, performant, and focused on the user.
@@ -487,17 +554,7 @@ export default function Home() {
                 whileHover="hover"
                 whileTap="tap"
               >
-                <Link
-                  href="/about"
-                  className="inline-block px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 bg-white text-black font-semibold text-base sm:text-lg md:text-xl rounded-lg sm:rounded-xl transition-colors duration-200 hover:bg-gray-200 min-w-[200px] sm:min-w-[240px] text-center"
-                >
-                  <FaRegUser
-                    size={18}
-                    color="#6366f1"
-                    className="inline mr-2"
-                  />
-                  About Me
-                </Link>
+                <Cal />
               </motion.div>
 
               <motion.div
@@ -505,17 +562,18 @@ export default function Home() {
                 whileHover="hover"
                 whileTap="tap"
               >
-                <a
-                  href="mailto:malidhanga@gmail.com"
+                <Link
+                  href="/contact"
                   className="inline-block px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 border-2 border-white text-white font-semibold text-base sm:text-lg md:text-xl rounded-lg sm:rounded-xl transition-colors duration-200 hover:bg-white hover:text-black min-w-[200px] sm:min-w-[240px] text-center"
                 >
-                  <FaEnvelope
+                  <Mail
                     size={18}
                     color="#f59e42"
+                    strokeWidth={sharedStroke}
                     className="inline mr-2"
                   />
                   Contact
-                </a>
+                </Link>
               </motion.div>
             </motion.div>
 
@@ -627,7 +685,12 @@ export default function Home() {
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <FaCogs size={20} color="#f59e42" className="inline mr-2" />
+              <Cog
+                size={20}
+                color="#f59e42"
+                strokeWidth={sharedStroke}
+                className="inline mr-2"
+              />
               Capability tracks
             </h2>
             <p
@@ -668,7 +731,7 @@ export default function Home() {
                   {service.desc}
                 </p>
                 <div className="space-y-1.5 text-xs sm:text-sm text-gray-300">
-                  {service.points.map((point, pidx) => (
+                  {service.points.map((point) => (
                     <div key={point} className="flex items-start gap-2">
                       <span className="h-0.5 w-2 bg-[#ffffff60] mt-2 inline-block" />
                       {/* Removed icon for specific key points */}
@@ -688,7 +751,12 @@ export default function Home() {
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <FaLightbulb size={20} color="#facc15" className="inline mr-2" />
+              <Lightbulb
+                size={20}
+                color="#facc15"
+                strokeWidth={sharedStroke}
+                className="inline mr-2"
+              />
               Process that ships
             </h2>
             <p
@@ -739,7 +807,12 @@ export default function Home() {
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <MdDashboard size={20} color="#0ea5e9" className="inline mr-2" />
+              <LayoutDashboard
+                size={20}
+                color="#0ea5e9"
+                strokeWidth={sharedStroke}
+                className="inline mr-2"
+              />
               Work snapshots
             </h2>
             <p
@@ -786,7 +859,12 @@ export default function Home() {
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <FaCogs size={20} color="#60a5fa" className="inline mr-2" />
+              <Cog
+                size={20}
+                color="#60a5fa"
+                strokeWidth={sharedStroke}
+                className="inline mr-2"
+              />
               Skills
             </h2>
             <p
@@ -802,7 +880,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
             <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur space-y-3">
               <p className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
-                <FaDesktop size={18} color="#1e293b" />
+                <Monitor size={18} color="#1e293b" strokeWidth={sharedStroke} />
                 Frontend
               </p>
               <div className="flex flex-wrap gap-2">
@@ -822,7 +900,11 @@ export default function Home() {
             </div>
             <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur space-y-3">
               <p className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
-                <FaDatabase size={18} color="#16a34a" />
+                <Database
+                  size={18}
+                  color="#16a34a"
+                  strokeWidth={sharedStroke}
+                />
                 Backend
               </p>
               <div className="flex flex-wrap gap-2">
@@ -842,7 +924,11 @@ export default function Home() {
             </div>
             <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur space-y-3">
               <p className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
-                <FaPaintBrush size={18} color="#f59e42" />
+                <Paintbrush
+                  size={18}
+                  color="#f59e42"
+                  strokeWidth={sharedStroke}
+                />
                 UI/UX & Tools
               </p>
               <div className="flex flex-wrap gap-2">
@@ -870,17 +956,21 @@ export default function Home() {
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <SiAdobecreativecloud
+              <Cloud
                 size={20}
                 color="#d84d3b"
+                strokeWidth={sharedStroke}
                 className="inline mr-2"
               />
               Platforms & Tools
             </h2>
-            <p className="text-gray-400 text-xs sm:text-sm" style={{
-      fontFamily:
-      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-    }}>
+            <p
+              className="text-gray-400 text-xs sm:text-sm"
+              style={{
+                fontFamily:
+                  "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
+              }}
+            >
               Ecosystems I build and design with.
             </p>
           </div>
@@ -907,17 +997,21 @@ export default function Home() {
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <FaRegCheckCircle
+              <CheckCircle2
                 size={20}
                 color="#14b8a6"
+                strokeWidth={sharedStroke}
                 className="inline mr-2"
               />
               Projects
             </h2>
-            <p className="text-gray-400 text-xs sm:text-sm" style={{
-      fontFamily:
-      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-    }}>
+            <p
+              className="text-gray-400 text-xs sm:text-sm"
+              style={{
+                fontFamily:
+                  "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
+              }}
+            >
               Selected work as Mohammadali Dhanga (Dhanga Mohammadali).
             </p>
           </div>
@@ -963,7 +1057,11 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
             <div className="space-y-4 p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur">
               <h3 className="text-lg sm:text-xl font-display font-bold text-white flex items-center gap-2">
-                <MdOutlineSchool size={20} color="#6366f1" />
+                <GraduationCap
+                  size={20}
+                  color="#6366f1"
+                  strokeWidth={sharedStroke}
+                />
                 Education
               </h3>
               <div className="space-y-3">
@@ -993,7 +1091,7 @@ export default function Home() {
             </div>
             <div className="space-y-4 p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur">
               <h3 className="text-lg sm:text-xl font-display font-bold text-white flex items-center gap-2">
-                <FaChalkboardTeacher size={18} color="#eab308" />
+                <Trophy size={18} color="#eab308" strokeWidth={sharedStroke} />
                 Hackathons
               </h3>
               <div className="space-y-2 text-sm text-gray-200">
@@ -1012,7 +1110,11 @@ export default function Home() {
                 ))}
               </div>
               <h3 className="text-lg sm:text-xl font-display font-bold text-white pt-4 flex items-center gap-2">
-                <FaChalkboardTeacher size={18} color="#f59e42" />
+                <BookOpen
+                  size={18}
+                  color="#f59e42"
+                  strokeWidth={sharedStroke}
+                />
                 Courses
               </h3>
               <div className="space-y-2 text-sm text-gray-200">
@@ -1031,7 +1133,11 @@ export default function Home() {
                 ))}
               </div>
               <h3 className="text-lg sm:text-xl font-display font-bold text-white pt-4 flex items-center gap-2">
-                <HiMiniLanguage size={18} color="#60a5fa" />
+                <Languages
+                  size={18}
+                  color="#60a5fa"
+                  strokeWidth={sharedStroke}
+                />
                 Languages
               </h3>
               <div
