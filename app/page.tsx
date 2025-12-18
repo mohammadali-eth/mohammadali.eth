@@ -183,6 +183,7 @@ const projects = [
   {
     title: "Real-Time Blog & Chat Uploading Website",
     desc: "Collaborative blogging platform with live chat features.",
+    link: "https://www.arqaamultipack.com/",
   },
   {
     title: "Weather Forecast UI/UX Project",
@@ -1039,7 +1040,7 @@ export default function Home() {
                   {project.desc}
                 </p>
                 <Link
-                  href="https://mohammadalidhanga.dev"
+                  href={project.link}
                   className="text-sm font-semibold text-white underline"
                 >
                   View Project
