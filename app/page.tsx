@@ -167,26 +167,32 @@ const projects = [
   {
     title: "AI Based Crop Recommendation System",
     desc: "A platform to optimize farming with AI-driven suggestions.",
+    link: "https://mohammadalidhanga.dev",
   },
   {
     title: "Hotel Management System",
     desc: "Comprehensive web-based hotel/room booking interface.",
+    link: "https://mohammadalidhanga.dev",
   },
   {
     title: "Professional Company Website",
     desc: "Responsive SMB/CORP site showcasing brand and services.",
+    link: "https://arqaamultipack.com/",
   },
   {
     title: "WordPress E-commerce Website",
     desc: "Custom WooCommerce store for growing online businesses.",
+    link: "https://mohammadalidhanga.dev",
   },
   {
     title: "Real-Time Blog & Chat Uploading Website",
     desc: "Collaborative blogging platform with live chat features.",
+    link: "https://mohammadalidhanga.dev",
   },
   {
     title: "Weather Forecast UI/UX Project",
     desc: "Beautiful weather dashboard focused on clarity and experience.",
+    link: "https://mohammadalidhanga.dev",
   },
 ];
 
@@ -1056,7 +1062,7 @@ export default function Home() {
                   {project.desc}
                 </p>
                 <Link
-                  href="https://mohammadalidhanga.dev"
+                  href={project.link ?? ""}
                   className="text-sm font-semibold text-white underline"
                 >
                   View Project
