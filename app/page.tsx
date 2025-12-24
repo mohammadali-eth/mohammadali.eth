@@ -511,8 +511,12 @@ export default function Home() {
               variants={itemVariants}
             >
           
-              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300">
-                <span>✨ MERN Stack Developer · Next.js Specialist</span>
+              <AnimatedShinyText
+                className="inline-flex items-center justify-center px-2 sm:px-3 md:px-4 py-1 text-xs sm:text-sm md:text-base transition ease-out hover:text-neutral-600 hover:duration-300 w-full sm:w-auto text-center"
+              >
+                <span className="truncate max-w-full">
+                  ✨ MERN Stack Developer · Next.js Specialist
+                </span>
               </AnimatedShinyText>
 
             </motion.div>
@@ -524,12 +528,25 @@ export default function Home() {
               Mohammadali Dhanga
             </motion.h1>
             <motion.p
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light"
+              className="
+                text-sm
+                sm:text-base
+                md:text-lg
+                lg:text-xl
+                xl:text-2xl
+                text-gray-300
+                font-light
+                leading-snug
+                sm:leading-normal
+                md:leading-relaxed
+                break-words
+                max-w-full
+                sm:max-w-prose
+                md:max-w-2xl
+                "
               variants={itemVariants}
             >
-
-              MERN Stack Developer | Next.js Specialist | UI/UX Focused
-              Developer
+              MERN Stack Developer&nbsp;|&nbsp;Next.js Specialist&nbsp;|&nbsp;UI/UX Focused Developer
             </motion.p>
             <motion.p
               className="text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl text-gray-400 leading-relaxed"
