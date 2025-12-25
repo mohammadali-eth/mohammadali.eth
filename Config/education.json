@@ -50,6 +50,22 @@
       "duration": "September 2023",
       "description": "Completed the Google Cloud Computing Fundamentals pathway along with Level 3 of the Generative AI Arcade Game during Google Cloud Study Jam, gaining hands-on experience with cloud services and generative AI concepts.",
       "grade": "Completed"
+    },
+    {
+      "name": "Udemy",
+      "link": "https://www.udemy.com",
+      "course": "Python Mastery: The Complete Web Programming Course",
+      "duration": "December 2025",
+      "description": "Successfully completed a comprehensive Python web programming course covering core Python concepts, web development fundamentals, and practical implementation. Gained hands-on experience in building real-world applications using Python.",
+      "grade": "Completed"
+    },
+    {
+      "name": "Udemy",
+      "link": "https://www.udemy.com",
+      "course": "Complete Generative AI Course with LangChain and Hugging Face",
+      "duration": "December 2025",
+      "description": "Completed an in-depth Generative AI course focusing on modern AI concepts, large language models, prompt engineering, LangChain workflows, and Hugging Face tools. Built a strong foundation in applied AI and real-world use cases.",
+      "grade": "Completed"
     }
   ]
 }

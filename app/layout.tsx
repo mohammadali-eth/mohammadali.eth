@@ -13,7 +13,7 @@ export const metadata = {
   siteName: "Mohammadali Dhanga Portfolio",
   twitterHandle: "@mohammadali_eth",
   instagram: "https://www.instagram.com/mohammadali8.eth/",
-  github: "https://github.com/MohammadAli440",
+  github: "https://github.com/mohammadali-eth",
   linkedin: "https://www.linkedin.com/in/mohammadalidhanga/",
   facebook: "https://www.facebook.com/share/14MNEcsACYn/?mibextid=wwXIfr",
   keywords:

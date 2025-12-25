@@ -13,7 +13,7 @@ const defaultSize = 32;
 const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/MohammadAli440",
+    url: "https://github.com/mohammadali-eth",
     icon: (size: number) => (
       <svg
         width={size}
