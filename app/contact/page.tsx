@@ -141,7 +141,9 @@ function ContactForm() {
     return !newErrors.name && !newErrors.email && !newErrors.message;
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
     // Clear the error as user is typing
     if (errors[e.target.name as keyof typeof errors]) {
@@ -161,9 +163,9 @@ function ContactForm() {
 
     try {
       await emailjs.sendForm(
-        "service_87ksd9q",     // SERVICE ID
-        "template_ip7814b",        // TEMPLATE ID
-        formRef.current
+        "service_87ksd9q", // SERVICE ID
+        "template_ip7814b", // TEMPLATE ID
+        formRef.current,
       );
 
       alert("Message sent successfully ✅");
@@ -191,16 +193,15 @@ function ContactForm() {
       noValidate
     >
       {/* Hidden Time Field */}
-      <input
-        type="hidden"
-        name="time"
-        value={new Date().toLocaleString()}
-      />
+      <input type="hidden" name="time" value={new Date().toLocaleString()} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-sm mb-1 text-gray-200 font-semibold">
+          <label
+            htmlFor="name"
+            className="block text-sm mb-1 text-gray-200 font-semibold"
+          >
             Full Name <span className="text-pink-500">*</span>
           </label>
           <input
@@ -217,13 +218,18 @@ function ContactForm() {
             aria-describedby="name-error"
           />
           {errors.name && (
-            <p id="name-error" className="text-xs mt-1 text-pink-400">{errors.name}</p>
+            <p id="name-error" className="text-xs mt-1 text-pink-400">
+              {errors.name}
+            </p>
           )}
         </div>
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm mb-1 text-gray-200 font-semibold">
+          <label
+            htmlFor="email"
+            className="block text-sm mb-1 text-gray-200 font-semibold"
+          >
             Email <span className="text-pink-500">*</span>
           </label>
           <input
@@ -240,14 +246,19 @@ function ContactForm() {
             aria-describedby="email-error"
           />
           {errors.email && (
-            <p id="email-error" className="text-xs mt-1 text-pink-400">{errors.email}</p>
+            <p id="email-error" className="text-xs mt-1 text-pink-400">
+              {errors.email}
+            </p>
           )}
         </div>
       </div>
 
       {/* Project Type / Subject */}
       <div>
-        <label htmlFor="project_type" className="block text-sm mb-1 text-gray-200 font-semibold">
+        <label
+          htmlFor="project_type"
+          className="block text-sm mb-1 text-gray-200 font-semibold"
+        >
           Project Type / Subject
         </label>
         <input
@@ -263,7 +274,10 @@ function ContactForm() {
 
       {/* Budget */}
       <div>
-        <label htmlFor="budget" className="block text-sm mb-1 text-gray-200 font-semibold">
+        <label
+          htmlFor="budget"
+          className="block text-sm mb-1 text-gray-200 font-semibold"
+        >
           Budget (Optional)
         </label>
         <input
@@ -279,7 +293,10 @@ function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm mb-1 text-gray-200 font-semibold">
+        <label
+          htmlFor="message"
+          className="block text-sm mb-1 text-gray-200 font-semibold"
+        >
           Message <span className="text-pink-500">*</span>
         </label>
         <textarea
@@ -295,7 +312,9 @@ function ContactForm() {
           aria-describedby="message-error"
         />
         {errors.message && (
-          <p id="message-error" className="text-xs mt-1 text-pink-400">{errors.message}</p>
+          <p id="message-error" className="text-xs mt-1 text-pink-400">
+            {errors.message}
+          </p>
         )}
       </div>
 
@@ -347,8 +366,8 @@ export default function Contact() {
             variants={itemVariants}
           >
             <AnimatedShinyText className="inline-flex items-center justify-center gap-2 px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300">
-              <Mail className="text-pink-500" strokeWidth={1.8} /> Contact Mohammadali
-              Dhanga
+              <Mail className="text-pink-500" strokeWidth={1.8} /> Contact
+              Mohammadali Dhanga
             </AnimatedShinyText>
           </motion.p>
           <motion.h1
@@ -377,7 +396,10 @@ export default function Contact() {
             variants={itemVariants}
           >
             <h2 className="text-lg sm:text-xl font-display font-bold text-white flex items-center gap-2">
-              <BriefcaseBusiness className="text-yellow-500" strokeWidth={1.8} />
+              <BriefcaseBusiness
+                className="text-yellow-500"
+                strokeWidth={1.8}
+              />
               Project Inquiry
             </h2>
             <p className="text-xs sm:text-sm text-gray-300 flex items-center gap-2 ">
@@ -395,7 +417,10 @@ export default function Contact() {
             {/* Header Section */}
             <div className="flex flex-col gap-1.5">
               <div className="flex items-center gap-2 mt-1">
-                <UserRound className="text-orange-500 text-lg" strokeWidth={1.8} />
+                <UserRound
+                  className="text-orange-500 text-lg"
+                  strokeWidth={1.8}
+                />
                 <h3 className="text-lg font-display font-bold text-white">
                   Direct details
                 </h3>

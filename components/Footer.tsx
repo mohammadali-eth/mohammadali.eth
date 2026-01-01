@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import SocialIcons from './SocialIcons'
+import SocialIcons from "./SocialIcons";
 
 export default function Footer() {
   return (
@@ -14,6 +14,5 @@ export default function Footer() {
         </p>
       </div>
     </footer>
-  )
+  );
 }
-

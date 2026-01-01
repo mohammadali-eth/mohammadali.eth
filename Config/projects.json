@@ -1,100 +1,76 @@
 {
-    "dataList1": [
-      {
-        "id": 0,
-        "name": "AI Based Crop Recommendation System",
-        "desc": "An AI-driven system that recommends suitable crops based on soil parameters, weather conditions, and historical data to help farmers improve yield and decision-making.",
-        "photo": "",
-        "skills": [
-          "Python",
-          "Machine Learning",
-          "AI",
-          "Data Analysis",
-          "Web Integration"
-        ],
-        "live": "",
-        "code": "",
-        "profession": "Academic Project"
-      },
-      {
-        "id": 1,
-        "name": "Hotel Management System",
-        "desc": "A web-based system for managing hotel operations including room booking, customer records, billing, and staff management with a user-friendly interface.",
-        "photo": "",
-        "skills": [
-          "React",
-          "Node.js",
-          "Express",
-          "MongoDB",
-          "Bootstrap"
-        ],
-        "live": "",
-        "code": "",
-        "profession": "Academic Project"
-      }
-    ],
-    "dataList2": [
-      {
-        "id": 0,
-        "name": "Professional Company Website",
-        "desc": "A modern, responsive company website designed to showcase business services, portfolio, and contact information with a professional UI/UX.",
-        "photo": "",
-        "skills": [
-          "React",
-          "Next.js",
-          "Tailwind CSS",
-          "UI/UX Design"
-        ],
-        "live": "",
-        "code": ""
-      },
-      {
-        "id": 1,
-        "name": "WordPress E-commerce Website",
-        "desc": "An e-commerce website built using WordPress for online product sales, including payment integration, product management, and responsive design.",
-        "photo": "",
-        "skills": [
-          "WordPress",
-          "WooCommerce",
-          "PHP",
-          "Payment Gateway",
-          "UI/UX"
-        ],
-        "live": "",
-        "code": ""
-      }
-    ],
-    "dataList3": [
-      {
-        "id": 0,
-        "name": "Real-Time Blog and Chat Uploading Website",
-        "desc": "A real-time web platform allowing users to post blogs and communicate via chat with instant updates using modern web technologies.",
-        "photo": "",
-        "skills": [
-          "React",
-          "Node.js",
-          "MongoDB",
-          "Socket.io",
-          "Express"
-        ],
-        "live": "",
-        "code": ""
-      },
-      {
-        "id": 1,
-        "name": "Weather Forecast Page (UI/UX)",
-        "desc": "A clean and responsive weather forecast interface displaying real-time weather data with an emphasis on modern UI/UX design.",
-        "photo": "",
-        "skills": [
-          "React",
-          "API Integration",
-          "UI/UX Design",
-          "CSS",
-          "JavaScript"
-        ],
-        "live": "",
-        "code": ""
-      }
-    ]
-  }
-  
+  "dataList1": [
+    {
+      "id": 0,
+      "name": "AI Based Crop Recommendation System",
+      "desc": "An AI-driven system that recommends suitable crops based on soil parameters, weather conditions, and historical data to help farmers improve yield and decision-making.",
+      "photo": "",
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "AI",
+        "Data Analysis",
+        "Web Integration"
+      ],
+      "live": "",
+      "code": "",
+      "profession": "Academic Project"
+    },
+    {
+      "id": 1,
+      "name": "Hotel Management System",
+      "desc": "A web-based system for managing hotel operations including room booking, customer records, billing, and staff management with a user-friendly interface.",
+      "photo": "",
+      "skills": ["React", "Node.js", "Express", "MongoDB", "Bootstrap"],
+      "live": "",
+      "code": "",
+      "profession": "Academic Project"
+    }
+  ],
+  "dataList2": [
+    {
+      "id": 0,
+      "name": "Professional Company Website",
+      "desc": "A modern, responsive company website designed to showcase business services, portfolio, and contact information with a professional UI/UX.",
+      "photo": "",
+      "skills": ["React", "Next.js", "Tailwind CSS", "UI/UX Design"],
+      "live": "",
+      "code": ""
+    },
+    {
+      "id": 1,
+      "name": "WordPress E-commerce Website",
+      "desc": "An e-commerce website built using WordPress for online product sales, including payment integration, product management, and responsive design.",
+      "photo": "",
+      "skills": ["WordPress", "WooCommerce", "PHP", "Payment Gateway", "UI/UX"],
+      "live": "",
+      "code": ""
+    }
+  ],
+  "dataList3": [
+    {
+      "id": 0,
+      "name": "Real-Time Blog and Chat Uploading Website",
+      "desc": "A real-time web platform allowing users to post blogs and communicate via chat with instant updates using modern web technologies.",
+      "photo": "",
+      "skills": ["React", "Node.js", "MongoDB", "Socket.io", "Express"],
+      "live": "",
+      "code": ""
+    },
+    {
+      "id": 1,
+      "name": "Weather Forecast Page (UI/UX)",
+      "desc": "A clean and responsive weather forecast interface displaying real-time weather data with an emphasis on modern UI/UX design.",
+      "photo": "",
+      "skills": [
+        "React",
+        "API Integration",
+        "UI/UX Design",
+        "CSS",
+        "JavaScript"
+      ],
+      "live": "",
+      "code": ""
+    }
+  ]
+}

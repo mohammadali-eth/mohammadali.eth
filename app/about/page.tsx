@@ -75,14 +75,36 @@ const languageIconMap: Record<string, JSX.Element> = {
 };
 
 const sectionIconMap: Record<string, JSX.Element> = {
-  about: <UserRound className="text-xl text-[#0ea5e9]" strokeWidth={sharedStroke} />,
-  highlights: <Rocket className="text-xl text-[#ec4899]" strokeWidth={sharedStroke} />,
-  education: <GraduationCap className="text-xl text-[#f59e42]" strokeWidth={sharedStroke} />,
-  hackathons: <Trophy className="text-xl text-[#84cc16]" strokeWidth={sharedStroke} />,
-  courses: <BookOpen className="text-xl text-[#8b5cf6]" strokeWidth={sharedStroke} />,
-  languages: <Languages className="text-xl text-[#06b6d4]" strokeWidth={sharedStroke} />,
-  tools: <Wrench className="text-xl text-[#fbbf24]" strokeWidth={sharedStroke} />,
-  connect: <MessageCircle className="text-2xl text-[#0ea5e9]" strokeWidth={sharedStroke} />,
+  about: (
+    <UserRound className="text-xl text-[#0ea5e9]" strokeWidth={sharedStroke} />
+  ),
+  highlights: (
+    <Rocket className="text-xl text-[#ec4899]" strokeWidth={sharedStroke} />
+  ),
+  education: (
+    <GraduationCap
+      className="text-xl text-[#f59e42]"
+      strokeWidth={sharedStroke}
+    />
+  ),
+  hackathons: (
+    <Trophy className="text-xl text-[#84cc16]" strokeWidth={sharedStroke} />
+  ),
+  courses: (
+    <BookOpen className="text-xl text-[#8b5cf6]" strokeWidth={sharedStroke} />
+  ),
+  languages: (
+    <Languages className="text-xl text-[#06b6d4]" strokeWidth={sharedStroke} />
+  ),
+  tools: (
+    <Wrench className="text-xl text-[#fbbf24]" strokeWidth={sharedStroke} />
+  ),
+  connect: (
+    <MessageCircle
+      className="text-2xl text-[#0ea5e9]"
+      strokeWidth={sharedStroke}
+    />
+  ),
 };
 
 // Animation variants
@@ -146,17 +168,27 @@ const skills = [
 
 const highlights = [
   {
-    icon: <Rocket color="#ec4899" className="text-lg" strokeWidth={sharedStroke} />,
+    icon: (
+      <Rocket color="#ec4899" className="text-lg" strokeWidth={sharedStroke} />
+    ),
     title: "MERN & Next.js",
     desc: "Building modern, scalable, and responsive applications end to end.",
   },
   {
-    icon: <PenTool color="#14b8a6" className="text-lg" strokeWidth={sharedStroke} />,
+    icon: (
+      <PenTool color="#14b8a6" className="text-lg" strokeWidth={sharedStroke} />
+    ),
     title: "UI/UX focus",
     desc: "Clean, accessible interfaces with professional design tooling.",
   },
   {
-    icon: <BriefcaseBusiness color="#f59e42" className="text-lg" strokeWidth={sharedStroke} />,
+    icon: (
+      <BriefcaseBusiness
+        color="#f59e42"
+        className="text-lg"
+        strokeWidth={sharedStroke}
+      />
+    ),
     title: "Freelance delivery",
     desc: "Hands-on with real projects, iterating with users and stakeholders.",
   },
@@ -164,13 +196,25 @@ const highlights = [
 
 const education = [
   {
-    icon: <GraduationCap color="#34d399" className="text-xl" strokeWidth={sharedStroke} />,
+    icon: (
+      <GraduationCap
+        color="#34d399"
+        className="text-xl"
+        strokeWidth={sharedStroke}
+      />
+    ),
     title: "Master’s in Computer Application",
     place: "LDRP Institute of Technology and Research",
     time: "2024 – Present",
   },
   {
-    icon: <GraduationCap color="#818cf8" className="text-xl" strokeWidth={sharedStroke} />,
+    icon: (
+      <GraduationCap
+        color="#818cf8"
+        className="text-xl"
+        strokeWidth={sharedStroke}
+      />
+    ),
     title: "Bachelor’s in Computer Application",
     place:
       "Acharya Motibhai Patel Institute of Computer Studies – Ganpat University",
@@ -191,6 +235,12 @@ const hackathons = [
     ),
     label: "DevFast – 2024",
   },
+  {
+    icon: hackathonIconMap["Odoo x Adani Hackathon – 2026"] ?? (
+      <Trophy color="#44a832" strokeWidth={sharedStroke} />
+    ),
+    label: "Odoo x Adani Hackathon – 2026",
+  },
 ];
 
 const courses = [
@@ -201,17 +251,19 @@ const courses = [
     label: "MERN Stack Developer",
   },
   {
-    icon: courseIconMap["Adobe Software"] ?? (
-      <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
-    ),
-    label: "Adobe Software",
+    icon: courseIconMap[
+      "Complete Generative AI Course With Langchain and Huggingface"
+    ] ?? <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />,
+    label: "Complete Generative AI Course With Langchain and Huggingface",
   },
+
   {
     icon: courseIconMap["WordPress Bootcamp"] ?? (
       <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
     ),
     label: "WordPress Bootcamp",
   },
+
   {
     icon: courseIconMap["IoT Blockchain Supply Chain Network"] ?? (
       <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
@@ -421,10 +473,13 @@ export default function About() {
                       {item.title}
                     </span>
                   </div>
-                  <p className="text-gray-200 text-sm sm:text-base leading-relaxed" style={{
-      fontFamily:
-      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-    }}>
+                  <p
+                    className="text-gray-200 text-sm sm:text-base leading-relaxed"
+                    style={{
+                      fontFamily:
+                        "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
+                    }}
+                  >
                     {item.desc}
                   </p>
                 </motion.div>
@@ -457,10 +512,13 @@ export default function About() {
                       <p className="text-xs sm:text-sm text-gray-300">
                         {item.place}
                       </p>
-                      <p className="text-xs sm:text-sm text-gray-400" style={{
-      fontFamily:
-      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-    }}  >
+                      <p
+                        className="text-xs sm:text-sm text-gray-400"
+                        style={{
+                          fontFamily:
+                            "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
+                        }}
+                      >
                         {item.time}
                       </p>
                     </div>
@@ -483,10 +541,15 @@ export default function About() {
                     className="flex items-center gap-3 text-gray-200"
                   >
                     <span className="mt-1 text-lg">{item.icon}</span>
-                    <p className="text-xs sm:text-sm" style={{
-      fontFamily:
-      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-    }}>{item.label}</p>
+                    <p
+                      className="text-xs sm:text-sm"
+                      style={{
+                        fontFamily:
+                          "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
+                      }}
+                    >
+                      {item.label}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -506,10 +569,15 @@ export default function About() {
                     className="flex items-center gap-3 text-gray-200"
                   >
                     <span className="mt-1 text-lg">{item.icon}</span>
-                    <p className="text-xs sm:text-sm" style={{
-      fontFamily:
-      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-    }}>{item.label}</p>
+                    <p
+                      className="text-xs sm:text-sm"
+                      style={{
+                        fontFamily:
+                          "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
+                      }}
+                    >
+                      {item.label}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -526,12 +594,13 @@ export default function About() {
                 {languages.map((lang) => (
                   <span
                     key={lang.label}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg border border-white/10 bg-white/5 text-xs sm:text-sm text-gray-200"style={{
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg border border-white/10 bg-white/5 text-xs sm:text-sm text-gray-200"
+                    style={{
                       fontFamily:
-                      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
+                        "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
                     }}
                   >
-                    <span className="text-base" >{lang.icon}</span>
+                    <span className="text-base">{lang.icon}</span>
                     {lang.label}
                   </span>
                 ))}
@@ -547,10 +616,13 @@ export default function About() {
                     Tools & Skills
                   </h2>
                 </div>
-                <p className="flex items-center gap-1 text-sm text-gray-400" style={{
-      fontFamily:
-      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-    }}>
+                <p
+                  className="flex items-center gap-1 text-sm text-gray-400"
+                  style={{
+                    fontFamily:
+                      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
+                  }}
+                >
                   <Rocket
                     className="inline text-base text-[#ec4899]"
                     strokeWidth={sharedStroke}
@@ -565,7 +637,9 @@ export default function About() {
                     className="flex flex-col items-center justify-center gap-2 w-full h-20 sm:h-24 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-center text-sm sm:text-base md:text-lg font-medium hover:bg-white/10 hover:border-white/20 transition-colors duration-200"
                     style={{
                       fontFamily:
-                      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace", minWidth: "0" }}
+                        "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
+                      minWidth: "0",
+                    }}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
@@ -573,9 +647,8 @@ export default function About() {
                       duration: 0.35,
                     }}
                     whileHover={{ scale: 1.05 }}
-                    
                   >
-                    <span className="text-xl md:text-2xl" >
+                    <span className="text-xl md:text-2xl">
                       {iconMap[skill] ?? (
                         <Atom color="#888" strokeWidth={sharedStroke} />
                       )}

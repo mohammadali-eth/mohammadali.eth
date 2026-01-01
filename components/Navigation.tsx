@@ -7,7 +7,11 @@ import { usePathname } from "next/navigation";
 import { Home, Mail, Menu, UserRound, X } from "lucide-react";
 
 const navLinks = [
-  { href: "/", label: "Home", icon: <Home className="text-[#38bdf8]" strokeWidth={1.8} /> }, // sky-500
+  {
+    href: "/",
+    label: "Home",
+    icon: <Home className="text-[#38bdf8]" strokeWidth={1.8} />,
+  }, // sky-500
   {
     href: "/about",
     label: "About",

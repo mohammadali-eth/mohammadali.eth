@@ -1,46 +1,46 @@
 {
-    "Name": "Mohammadali Dhanga",
-    "Role": "Mern Stack Developer",
-    "Age": 21,
-    "Gender": "Male",
-    "Address": "Gandhinagar, Gujarat, India",
-    "Phone": "+919016999984",
-    "Email": "malidhanga@gmail.com",
-    "Language": ["English", "Hindi", "Gujarati"],
-    "Introduction": "Full Stack Developer with freelance experience and a background contributing to two start-ups. I enjoy building fast, reliable web apps and working with teams to turn ideas into real things. I'm a quick learner, good at solving problems, and always keen to keep learning and improving. I'm currently looking for new opportunities",
-    "links": [
-      {
-        "name": "About",
-        "to": "about"
-      },
-      {
-        "name": "Skills",
-        "to": "skills"
-      },
-      {
-        "name": "Projects",
-        "to": "projects"
-      },
-      {
-        "name": "Education",
-        "to": "education"
-      },
-      {
-        "name": "Experience",
-        "to": "experience"
-      },
-      {
-        "name": "Contact",
-        "to": "contact"
-      }
-    ],
-    "socialLinks": {
-      "instagram": "https://www.instagram.com/mohammadali8.eth/",
-      "twitter": "https://x.com/mohammadali_eth",
-      "github": "https://github.com/mohammadali-eth",
-      "linkedin": "https://www.linkedin.com/in/mohammadalidhanga/"
+  "Name": "Mohammadali Dhanga",
+  "Role": "Mern Stack Developer",
+  "Age": 21,
+  "Gender": "Male",
+  "Address": "Gandhinagar, Gujarat, India",
+  "Phone": "+919016999984",
+  "Email": "malidhanga@gmail.com",
+  "Language": ["English", "Hindi", "Gujarati"],
+  "Introduction": "Full Stack Developer with freelance experience and a background contributing to two start-ups. I enjoy building fast, reliable web apps and working with teams to turn ideas into real things. I'm a quick learner, good at solving problems, and always keen to keep learning and improving. I'm currently looking for new opportunities",
+  "links": [
+    {
+      "name": "About",
+      "to": "about"
     },
-    "Resume": {
-      "drive": "https://drive.google.com/file/d/1Zc1OKgVPQoX4De8uDyW-4kuGZ-s35gmo/view?usp=sharing"
+    {
+      "name": "Skills",
+      "to": "skills"
+    },
+    {
+      "name": "Projects",
+      "to": "projects"
+    },
+    {
+      "name": "Education",
+      "to": "education"
+    },
+    {
+      "name": "Experience",
+      "to": "experience"
+    },
+    {
+      "name": "Contact",
+      "to": "contact"
     }
+  ],
+  "socialLinks": {
+    "instagram": "https://www.instagram.com/mohammadali8.eth/",
+    "twitter": "https://x.com/mohammadali_eth",
+    "github": "https://github.com/mohammadali-eth",
+    "linkedin": "https://www.linkedin.com/in/mohammadalidhanga/"
+  },
+  "Resume": {
+    "drive": "https://drive.google.com/file/d/1Zc1OKgVPQoX4De8uDyW-4kuGZ-s35gmo/view?usp=sharing"
   }
+}

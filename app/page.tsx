@@ -42,6 +42,7 @@ import {
   UserRound,
   Waves,
   BookOpen,
+  Code2,
 } from "lucide-react";
 import SocialIcons from "@/components/SocialIcons";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
@@ -165,24 +166,24 @@ const platforms = [
 // Projects (example, up to 6 to match projectIcons length)
 const projects = [
   {
-    title: "AI Based Crop Recommendation System",
-    desc: "A platform to optimize farming with AI-driven suggestions.",
-    link: "https://mohammadalidhanga.dev",
+    title: "Spur AI Chat Bot",
+    desc: "A high-performance AI chat platform using React, Node.js, and PostgreSQL with seamless switching between Google Gemini, OpenAI, and Puter.js, powered by Redis caching.",
+    link: "https://maddy-chat.vercel.app/",
   },
   {
-    title: "Hotel Management System",
-    desc: "Comprehensive web-based hotel/room booking interface.",
-    link: "https://mohammadalidhanga.dev",
+    title: "GearGuard",
+    desc: "A hackathon-built web app for managing equipment and maintenance workflows through a simple dashboard.",
+    link: "https://gearguard-hackathon.vercel.app/",
+  },
+  {
+    title: "Cloudinary_Media_Upload",
+    desc: "A high-performance media upload platform using React, Node.js, and PostgreSQL with seamless switching between Google Gemini, OpenAI, and Puter.js, powered by Redis caching.",
+    link: "https://cloudy-media-hub.vercel.app/",
   },
   {
     title: "Professional Company Website",
     desc: "Responsive SMB/CORP site showcasing brand and services.",
     link: "https://arqaamultipack.com/",
-  },
-  {
-    title: "WordPress E-commerce Website",
-    desc: "Custom WooCommerce store for growing online businesses.",
-    link: "https://mohammadalidhanga.dev",
   },
   {
     title: "Real-Time Blog & Chat Uploading Website",
@@ -211,12 +212,16 @@ const education = [
 ];
 
 // Hackathons (example)
-const hackathons = ["Smart India Hackathon", "DevFast"];
+const hackathons = [
+  "Smart India Hackathon",
+  "DevFast",
+  "Odoo x Adani Hackathon",
+];
 
 // Courses (example)
 const courses = [
   "MERN Stack Developer",
-  "Adobe Software",
+  "Python Mastery ",
   "WordPress Bootcamp",
   "IoT Blockchain",
 ];
@@ -389,6 +394,12 @@ const hackathonIcons = [
     strokeWidth={sharedStroke}
   />,
   <Trophy key="DevFast" size={20} color="#a21caf" strokeWidth={sharedStroke} />,
+  <Code2
+    key="Odoo x Adani Hackathon"
+    size={20}
+    color="#0ea5e9"
+    strokeWidth={sharedStroke}
+  />,
 ];
 
 const courseIcons = [
@@ -398,8 +409,9 @@ const courseIcons = [
     color="#61dafb"
     strokeWidth={sharedStroke}
   />,
-  <Palette
-    key="Adobe Software"
+
+  <BookOpen
+    key="Python Mastery: The Complete Web Programming Course"
     size={16}
     color="#ff0000"
     strokeWidth={sharedStroke}
@@ -516,21 +528,16 @@ export default function Home() {
               className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-white/10 bg-white/5 text-xs sm:text-sm uppercase tracking-widest text-gray-300"
               variants={itemVariants}
             >
-          
-              <AnimatedShinyText
-                className="inline-flex items-center justify-center px-2 sm:px-3 md:px-4 py-1 text-xs sm:text-sm md:text-base transition ease-out hover:text-neutral-600 hover:duration-300 w-full sm:w-auto text-center"
-              >
+              <AnimatedShinyText className="inline-flex items-center justify-center px-2 sm:px-3 md:px-4 py-1 text-xs sm:text-sm md:text-base transition ease-out hover:text-neutral-600 hover:duration-300 w-full sm:w-auto text-center">
                 <span className="truncate max-w-full">
                   ✨ MERN Stack Developer · Next.js Specialist
                 </span>
               </AnimatedShinyText>
-
             </motion.div>
             <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-display font-bold tracking-tight"
               variants={itemVariants}
             >
-            
               Mohammadali Dhanga
             </motion.h1>
             <motion.p
@@ -552,7 +559,8 @@ export default function Home() {
                 "
               variants={itemVariants}
             >
-              MERN Stack Developer&nbsp;|&nbsp;Next.js Specialist&nbsp;|&nbsp;UI/UX Focused Developer
+              MERN Stack Developer&nbsp;|&nbsp;Next.js
+              Specialist&nbsp;|&nbsp;UI/UX Focused Developer
             </motion.p>
             <motion.p
               className="text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl text-gray-400 leading-relaxed"
@@ -562,7 +570,6 @@ export default function Home() {
                   "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
               }}
             >
-            
               I’m Mohammadali Dhanga, a Web Designer and Developer building
               modern, responsive web applications with the MERN Stack and
               Next.js. I keep UI/UX clean, performant, and focused on the user.
