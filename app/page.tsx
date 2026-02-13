@@ -311,6 +311,8 @@ const processIcons = [
   <Rocket key="launch" size={22} color="#fb7185" strokeWidth={sharedStroke} />,
 ];
 
+const processBorderColors = ["#facc15", "#c026d3", "#60a5fa", "#fb7185"];
+
 const featuredIcons = [
   <LayoutDashboard
     key="Realtime dashboards"
@@ -331,6 +333,8 @@ const featuredIcons = [
     strokeWidth={sharedStroke}
   />,
 ];
+
+const featuredBorderColors = ["#0ea5e9", "#f59e42", "#f43f5e"];
 
 const projectIcons = [
   <CheckCircle2
@@ -370,6 +374,8 @@ const projectIcons = [
     strokeWidth={sharedStroke}
   />,
 ];
+
+const projectBorderColors = ["#14b8a6", "#0ea5e9", "#818cf8", "#21759b", "#06b6d4", "#f59e42"];
 
 const educationIcons = [
   <GraduationCap
@@ -733,14 +739,14 @@ export default function Home() {
               Choose the lane you need — or mix them for a full-stack launch.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid md:grid-cols-3 gap-8 sm:gap-10">
             {serviceTracks.map((service, index) => (
               <motion.div
                 key={service.title}
-                className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur space-y-3"
+                className="p-5 sm:p-6 border-b-4 border-b-[#f59e42] space-y-3 pb-6"
                 variants={itemVariants}
                 transition={{ delay: 0.05 * index }}
-                whileHover={{ y: -6, scale: 1.01 }}
+               
               >
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-display font-semibold text-white flex items-center gap-2">
@@ -799,11 +805,12 @@ export default function Home() {
               Tight loops, visible progress, and instrumentation from day one.
             </p>
           </div>
-          <div className="grid md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid md:grid-cols-4 gap-6 sm:gap-8">
             {process.map((step, index) => (
               <motion.div
                 key={step.title}
-                className="p-4 sm:p-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur space-y-3"
+                className="p-4 sm:p-5 border-b-4 space-y-3 pb-5"
+                style={{ borderBottomColor: processBorderColors[index] }}
                 variants={itemVariants}
                 transition={{ delay: 0.05 * index }}
               >
@@ -855,14 +862,15 @@ export default function Home() {
               A few lanes I keep building in.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid md:grid-cols-3 gap-8 sm:gap-10">
             {featured.map((item, index) => (
               <motion.div
                 key={item.label}
-                className="p-5 sm:p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur"
+                className="p-5 sm:p-6 border-l-4 pl-6 sm:pl-8"
+                style={{ borderLeftColor: featuredBorderColors[index] }}
                 variants={itemVariants}
                 transition={{ delay: 0.08 * index }}
-                whileHover={{ y: -6, scale: 1.01 }}
+                whileHover={{ x: 4 }}
               >
                 <p className="text-sm uppercase tracking-widest text-gray-400 mb-2 flex items-center gap-2">
                   {featuredIcons[index]}
@@ -907,8 +915,8 @@ export default function Home() {
               Focused on modern, responsive web experiences.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
-            <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur space-y-3">
+          <div className="grid md:grid-cols-3 gap-8 sm:gap-10">
+            <div className="p-5 sm:p-6 border-b-4 border-b-[#1e293b] space-y-4">
               <p className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
                 <Monitor size={18} color="#1e293b" strokeWidth={sharedStroke} />
                 Frontend
@@ -917,7 +925,7 @@ export default function Home() {
                 {skills.frontend.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-2 rounded-lg border border-white/10 bg-white/5 text-xs sm:text-sm text-gray-200 flex items-center gap-2 "
+                    className="px-3 py-2 border-b-2 border-b-gray-600 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
                     style={{
                       fontFamily:
                         "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
@@ -928,7 +936,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur space-y-3">
+            <div className="p-5 sm:p-6 border-b-4 border-b-[#16a34a] space-y-4">
               <p className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
                 <Database
                   size={18}
@@ -941,7 +949,7 @@ export default function Home() {
                 {skills.backend.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-2 rounded-lg border border-white/10 bg-white/5 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
+                    className="px-3 py-2 border-b-2 border-b-gray-600 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
                     style={{
                       fontFamily:
                         "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
@@ -952,7 +960,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur space-y-3">
+            <div className="p-5 sm:p-6 border-b-4 border-b-[#f59e42] space-y-4">
               <p className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
                 <Paintbrush
                   size={18}
@@ -965,7 +973,7 @@ export default function Home() {
                 {skills.uiux.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-2 rounded-lg border border-white/10 bg-white/5 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
+                    className="px-3 py-2 border-b-2 border-b-gray-600 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
                     style={{
                       fontFamily:
                         "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
@@ -1004,11 +1012,11 @@ export default function Home() {
               Ecosystems I build and design with.
             </p>
           </div>
-          <div className="flex flex-wrap gap-2 sm:gap-3">
+          <div className="flex flex-wrap gap-3 sm:gap-4">
             {platforms.map((tool) => (
               <span
                 key={tool}
-                className="px-3 sm:px-4 py-2 rounded-lg border border-white/10 bg-white/5 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
+                className="px-3 sm:px-4 py-2 border-b-2 border-b-gray-600 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
                 style={{
                   fontFamily:
                     "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
@@ -1045,15 +1053,16 @@ export default function Home() {
               Selected work as Mohammadali Dhanga (Dhanga Mohammadali).
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid md:grid-cols-3 gap-8 sm:gap-10">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
-                className="p-5 sm:p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur space-y-3"
+                className="p-5 sm:p-6 border-t-4 space-y-3 pt-6"
+                style={{ borderTopColor: projectBorderColors[index] }}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.06 * index }}
-                whileHover={{ y: -6, scale: 1.01 }}
+                whileHover={{ y: -2 }}
               >
                 <p className="text-lg font-semibold text-white flex items-center gap-2">
                   {projectIcons[index]}
@@ -1084,8 +1093,8 @@ export default function Home() {
           className="space-y-6 sm:space-y-8"
           variants={itemVariants}
         >
-          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
-            <div className="space-y-4 p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10">
+            <div className="space-y-6 border-b-4 border-b-[#6366f1] pb-8">
               <h3 className="text-lg sm:text-xl font-display font-bold text-white flex items-center gap-2">
                 <GraduationCap
                   size={20}
@@ -1094,20 +1103,20 @@ export default function Home() {
                 />
                 Education
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-5">
                 {education.map((item, idx) => (
                   <div
                     key={item.title}
-                    className="border-b border-white/10 pb-3 last:border-0 last:pb-0"
+                    className="border-b border-white/10 pb-4 last:border-0 last:pb-0"
                   >
                     <p className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
                       {educationIcons[idx]} {item.title}
                     </p>
-                    <p className="text-xs sm:text-sm text-gray-300">
+                    <p className="text-xs sm:text-sm text-gray-300 mt-1">
                       {item.place}
                     </p>
                     <p
-                      className="text-xs sm:text-sm text-gray-400"
+                      className="text-xs sm:text-sm text-gray-400 mt-1"
                       style={{
                         fontFamily:
                           "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
@@ -1119,16 +1128,16 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="space-y-4 p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur">
+            <div className="space-y-6 border-b-4 border-b-[#eab308] pb-8">
               <h3 className="text-lg sm:text-xl font-display font-bold text-white flex items-center gap-2">
                 <Trophy size={18} color="#eab308" strokeWidth={sharedStroke} />
                 Hackathons
               </h3>
-              <div className="space-y-2 text-sm text-gray-200">
+              <div className="space-y-3 text-sm text-gray-200">
                 {hackathons.map((item, idx) => (
                   <div
                     key={item}
-                    className="flex items-start gap-2"
+                    className="flex items-start gap-2 pb-3 border-b border-white/10 last:border-0 last:pb-0"
                     style={{
                       fontFamily:
                         "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
@@ -1139,7 +1148,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <h3 className="text-lg sm:text-xl font-display font-bold text-white pt-4 flex items-center gap-2">
+              <h3 className="text-lg sm:text-xl font-display font-bold text-white pt-6 flex items-center gap-2 border-t-2 border-t-gray-700 pt-6">
                 <BookOpen
                   size={18}
                   color="#f59e42"
@@ -1147,11 +1156,11 @@ export default function Home() {
                 />
                 Courses
               </h3>
-              <div className="space-y-2 text-sm text-gray-200">
+              <div className="space-y-3 text-sm text-gray-200">
                 {courses.map((item, idx) => (
                   <div
                     key={item}
-                    className="flex items-start gap-2"
+                    className="flex items-start gap-2 pb-3 border-b border-white/10 last:border-0 last:pb-0"
                     style={{
                       fontFamily:
                         "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
@@ -1162,7 +1171,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <h3 className="text-lg sm:text-xl font-display font-bold text-white pt-4 flex items-center gap-2">
+              <h3 className="text-lg sm:text-xl font-display font-bold text-white pt-6 flex items-center gap-2 border-t-2 border-t-gray-700">
                 <Languages
                   size={18}
                   color="#60a5fa"
@@ -1171,7 +1180,7 @@ export default function Home() {
                 Languages
               </h3>
               <div
-                className="flex flex-wrap gap-2"
+                className="flex flex-wrap gap-2 pt-4"
                 style={{
                   fontFamily:
                     "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
@@ -1180,7 +1189,7 @@ export default function Home() {
                 {languages.map((lang) => (
                   <span
                     key={lang}
-                    className="px-3 py-2 rounded-lg border border-white/10 bg-white/5 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
+                    className="px-3 py-2 border-b-2 border-b-gray-600 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
                   >
                     {languageIcons[lang]} {lang}
                   </span>
