@@ -484,294 +484,183 @@ function GridBG() {
 
 export default function Home() {
   return (
-    <main className="relative overflow-hidden min-h-screen px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 pt-24 sm:pt-28 lg:pt-32">
+    <main className="relative min-h-screen bg-black text-white selection:bg-white/20 selection:text-white overflow-x-hidden">
       {/* Decorative grid background for design */}
       <GridBG />
-      {/* Animated background elements */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{ zIndex: 1 }}
-      >
+
+      {/* Animated background elements - Refined for subtlety */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         {floatingElements.map((orb, idx) => (
           <motion.div
             key={idx}
-            className={`absolute ${orb.size} rounded-full bg-white/5 blur-3xl`}
+            className={`absolute ${orb.size} rounded-full bg-white/[0.03] blur-3xl`}
             style={{ ...orb }}
-            initial={{ opacity: 0.15, scale: 0.9 }}
+            initial={{ opacity: 0.1, scale: 0.9 }}
             animate={{
-              opacity: [0.12, 0.25, 0.12],
-              scale: [0.9, 1.08, 0.9],
-              rotate: [0, 6, -6, 0],
+              opacity: [0.1, 0.2, 0.1],
+              scale: [0.9, 1.1, 0.9],
+              rotate: [0, 10, -10, 0],
             }}
             transition={{
-              duration: 12,
+              duration: 15,
               repeat: Infinity,
               ease: "easeInOut",
               delay: orb.delay,
             }}
           />
         ))}
-        <motion.div
-          className="absolute inset-8 rounded-3xl border border-white/5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.45 }}
-          transition={{ duration: 1.2, delay: 0.3 }}
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.05),_transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.02),_transparent_40%)]" />
       </div>
 
       <motion.div
-        className="relative w-full max-w-6xl mx-auto space-y-14 sm:space-y-16 lg:space-y-20"
-        style={{ zIndex: 2 }}
+        className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-24 sm:py-32 lg:py-40 space-y-32 sm:space-y-40"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Hero */}
-        <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-center ">
-          <div className="lg:col-span-3 space-y-6 sm:space-y-8">
-            <motion.div
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-white/10 bg-white/5 text-xs sm:text-sm uppercase tracking-widest text-gray-300"
-              variants={itemVariants}
-            >
-              <AnimatedShinyText className="inline-flex items-center justify-center px-2 sm:px-3 md:px-4 py-1 text-xs sm:text-sm md:text-base transition ease-out hover:text-neutral-600 hover:duration-300 w-full sm:w-auto text-center">
-                <span className="truncate max-w-full">
-                  ✨ MERN Stack Developer · Next.js Specialist
-                </span>
-              </AnimatedShinyText>
+        {/* Hero Section */}
+        <section className="grid lg:grid-cols-12 gap-16 items-start">
+          <div className="lg:col-span-7 flex flex-col justify-center space-y-10">
+            <motion.div variants={itemVariants} className="w-fit">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+                <AnimatedShinyText className="inline-flex items-center justify-center text-xs sm:text-sm uppercase tracking-widest text-[#facc15]/80 font-medium">
+                  <span>✨ MERN Stack Developer · Next.js Specialist</span>
+                </AnimatedShinyText>
+              </div>
             </motion.div>
-            <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-display font-bold tracking-tight"
-              variants={itemVariants}
-            >
-              Mohammadali Dhanga
-            </motion.h1>
+
+            <div className="space-y-6">
+              <motion.h1
+                className="text-5xl sm:text-7xl lg:text-8xl font-display font-bold tracking-tighter leading-[0.95] text-white"
+                variants={itemVariants}
+              >
+                Mohammadali <br />
+                <span className="text-white/40">Dhanga</span>
+              </motion.h1>
+
+              <motion.p
+                className="text-xl sm:text-2xl text-gray-300 font-light max-w-2xl leading-relaxed"
+                variants={itemVariants}
+              >
+                MERN Stack Developer <span className="text-white/20 mx-2">|</span>
+                Next.js Specialist <span className="text-white/20 mx-2">|</span>
+                UI/UX Focused Developer
+              </motion.p>
+            </div>
+
             <motion.p
-              className="
-                text-sm
-                sm:text-base
-                md:text-lg
-                lg:text-xl
-                xl:text-2xl
-                text-gray-300
-                font-light
-                leading-snug
-                sm:leading-normal
-                md:leading-relaxed
-                break-words
-                max-w-full
-                sm:max-w-prose
-                md:max-w-2xl
-                "
-              variants={itemVariants}
-            >
-              MERN Stack Developer&nbsp;|&nbsp;Next.js
-              Specialist&nbsp;|&nbsp;UI/UX Focused Developer
-            </motion.p>
-            <motion.p
-              className="text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl text-gray-400 leading-relaxed"
+              className="text-base sm:text-lg text-gray-400 leading-loose max-w-xl font-light"
               variants={itemVariants}
               style={{
-                fontFamily:
-                  "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
+                fontFamily: "Menlo, Monaco, 'Fira Mono', monospace",
               }}
             >
-              I’m Mohammadali Dhanga, a Web Designer and Developer building
-              modern, responsive web applications with the MERN Stack and
-              Next.js. I keep UI/UX clean, performant, and focused on the user.
+              I’m Mohammadali Dhanga, a Web Designer and Developer building modern, responsive web applications with the MERN Stack and Next.js. I keep UI/UX clean, performant, and focused on the user.
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center"
+              className="flex flex-wrap gap-6 pt-4"
               variants={itemVariants}
             >
-              <motion.div
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-              >
+              <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
                 <Cal />
               </motion.div>
 
-              <motion.div
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-              >
+
+              <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
                 <Link
                   href="/contact"
-                  className="inline-block px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 border-2 border-white text-white font-semibold text-base sm:text-lg md:text-xl rounded-lg sm:rounded-xl transition-colors duration-200 hover:bg-white hover:text-black min-w-[200px] sm:min-w-[240px] text-center"
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-black border border-white/10 text-white font-semibold text-lg rounded-xl transition-all duration-300 hover:bg-white hover:text-black hover:border-white"
                 >
                   <Mail
-                    size={18}
-                    color="#f59e42"
-                    strokeWidth={sharedStroke}
-                    className="inline mr-2"
+                    size={20}
+                    className="transition-transform group-hover:scale-110"
+                    strokeWidth={2}
                   />
-                  Contact
+                  <span>Contact</span>
                 </Link>
               </motion.div>
+
             </motion.div>
 
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className="pt-4">
               <SocialIcons />
             </motion.div>
           </div>
 
-          {/* About Me */}
+          {/* Minimal Code Block - Replaced "About Me" Window */}
           <motion.div
             variants={itemVariants}
-            data-aos="zoom-in-left"
-            className="mx-auto order-1 md:order-2"
+            className="lg:col-span-5 relative mt-8 lg:mt-0"
           >
-            <div
-              className="relative bg-[#18181b] rounded-xl shadow-lg border border-white/10 font-mono resize group overflow-hidden"
-              style={{
-                minWidth: "18rem",
-                minHeight: "12rem",
-                width: "25rem",
-                height: "20rem",
-                maxWidth: "100%",
-                maxHeight: "500px",
-                fontFamily:
-                  "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-              }}
-            >
-              {/* MacBook window bar */}
-              <div className="flex items-center gap-2 px-4 py-2 bg-[#232326] border-b border-white/10 select-none">
-                <span className="h-3 w-3 rounded-full bg-[#ff5f56] border border-black/10" />
-                <span className="h-3 w-3 rounded-full bg-[#ffbd2e] border border-black/10" />
-                <span className="h-3 w-3 rounded-full bg-[#27c93f] border border-black/10" />
-                <span className="ml-5 text-xs text-gray-400 font-semibold tracking-wide">
-                  AboutMe.tsx
-                </span>
-              </div>
-              {/* Code block (not a textarea, just styled spans) */}
-              <div className="px-5 py-2 text-sm h-full w-full font-mono">
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-white/10 to-transparent rounded-2xl blur-sm opacity-50"></div>
+              <div className="relative bg-[#0a0a0a] rounded-2xl border border-white/5 p-8 sm:p-10 shadow-2xl">
+                {/* Minimal Header */}
+                <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/5">
+                  <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">AboutMe.tsx</span>
+                  <div className="flex gap-2">
+                    <span className="w-2 h-2 rounded-full bg-white/10"></span>
+                    <span className="w-2 h-2 rounded-full bg-white/10"></span>
+                  </div>
+                </div>
+
+                {/* Code Content */}
                 <div
-                  className="leading-6 w-full h-full min-h-[200px] bg-transparent border-none outline-none font-mono"
-                  style={{
-                    color: "#d4d4d4",
-                    margin: 0,
-                    overflow: "auto",
-                    whiteSpace: "pre",
-                  }}
-                  tabIndex={-1}
-                  aria-label="AboutMe code block"
+                  className="font-mono text-sm leading-7 overflow-x-auto"
+                  style={{ fontFamily: "Menlo, Monaco, 'Fira Mono', monospace" }}
                 >
-                  {/* React code color style */}
-                  <span style={{ color: "#61dafb" }}>const</span>{" "}
-                  <span style={{ color: "#dcdcaa" }}>AboutMe</span>{" "}
-                  <span style={{ color: "#d4d4d4" }}>= {"{"}</span>
-                  {"\n"}
-                  {"  "}
-                  <span style={{ color: "#9CDCFE" }}>name</span>:{" "}
-                  <span style={{ color: "#CE9178" }}>
-                    &quot;Mohammadali Dhanga&quot;
-                  </span>
-                  ,{"\n"}
-                  {"  "}
-                  <span style={{ color: "#9CDCFE" }}>role</span>:{" "}
-                  <span style={{ color: "#CE9178" }}>
-                    &quot;MERN Stack Developer&quot;
-                  </span>
-                  ,{"\n"}
-                  {"  "}
-                  <span style={{ color: "#9CDCFE" }}>age</span>:{" "}
-                  <span style={{ color: "#B5CEA8" }}>21</span>,{"\n"}
-                  {"  "}
-                  <span style={{ color: "#9CDCFE" }}>gender</span>:{" "}
-                  <span style={{ color: "#CE9178" }}>&quot;Male&quot;</span>,
-                  {"\n"}
-                  {"  "}
-                  <span style={{ color: "#9CDCFE" }}>address</span>:{" "}
-                  <span style={{ color: "#CE9178" }}>
-                    &quot;Gandhinagar, India&quot;
-                  </span>
-                  ,{"\n"}
-                  {"  "}
-                  <span style={{ color: "#9CDCFE" }}>phone</span>:{" "}
-                  <span style={{ color: "#CE9178" }}>
-                    &quot;9016999984&quot;
-                  </span>
-                  ,{"\n"}
-                  {"  "}
-                  <span style={{ color: "#9CDCFE" }}>email</span>:{" "}
-                  <span style={{ color: "#CE9178" }}>
-                    &quot;malidhanga@gmail.com&quot;
-                  </span>
-                  ,{"\n"}
-                  {"  "}
-                  <span style={{ color: "#9CDCFE" }}>languages</span>: [
-                  <span style={{ color: "#CE9178" }}>
-                    &quot;English&quot;, &quot;Hindi&quot;, &quot;Gujarati&quot;
-                  </span>
-                  ]{"\n"}
-                  <span style={{ color: "#d4d4d4" }}>{"}"}</span>;
+                  <p><span style={{ color: "#c678dd" }}>const</span> <span style={{ color: "#e5c07b" }}>AboutMe</span> <span style={{ color: "#abb2bf" }}>=</span> <span style={{ color: "#abb2bf" }}>{"{"}</span></p>
+                  <div className="pl-6 space-y-1">
+                    <p><span style={{ color: "#e06c75" }}>name</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;Mohammadali Dhanga&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>role</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;MERN Stack Developer&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>age</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#d19a66" }}>21</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>gender</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;Male&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>address</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;Gandhinagar, India&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>phone</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;9016999984&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>email</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;malidhanga@gmail.com&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>languages</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#abb2bf" }}>[</span><span style={{ color: "#98c379" }}>&quot;English&quot;</span>, <span style={{ color: "#98c379" }}>&quot;Hindi&quot;</span>, <span style={{ color: "#98c379" }}>&quot;Gujarati&quot;</span><span style={{ color: "#abb2bf" }}>]</span></p>
+                  </div>
+                  <p><span style={{ color: "#abb2bf" }}>{"}"}</span><span style={{ color: "#abb2bf" }}>;</span></p>
                 </div>
               </div>
             </div>
           </motion.div>
-        </div>
+        </section>
 
-        {/* Services */}
-        <motion.section
-          className="space-y-6 sm:space-y-8"
-          variants={itemVariants}
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <Cog
-                size={20}
-                color="#f59e42"
-                strokeWidth={sharedStroke}
-                className="inline mr-2"
-              />
+        {/* Services / Capability Tracks */}
+        <motion.section variants={containerVariants}>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+            <h2 className="text-4xl sm:text-5xl font-display font-bold text-white tracking-tight">
               Capability tracks
             </h2>
-            <p
-              className="text-gray-400 text-xs sm:text-sm"
-              style={{
-                fontFamily:
-                  "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-              }}
-            >
+            <p className="text-gray-400 font-mono text-sm max-w-sm border-l border-white/20 pl-4">
               Choose the lane you need — or mix them for a full-stack launch.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 sm:gap-10">
+
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
             {serviceTracks.map((service, index) => (
               <motion.div
                 key={service.title}
-                className="p-5 sm:p-6 border-b-4 border-b-[#f59e42] space-y-3 pb-6"
                 variants={itemVariants}
-                transition={{ delay: 0.05 * index }}
-               
+                className="group space-y-6"
               >
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-display font-semibold text-white flex items-center gap-2">
-                    <span>{serviceTrackIcons[service.title]}</span>
-                    {service.title}
-                  </h3>
-                  <span className="text-xs text-gray-400 uppercase tracking-wide">
-                    Focus
-                  </span>
+                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors">
+                  {serviceTrackIcons[service.title]}
                 </div>
-                <p
-                  className="text-gray-300 text-sm sm:text-base"
-                  style={{
-                    fontFamily:
-                      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                  }}
-                >
+                <h3 className="text-2xl font-bold text-white group-hover:text-gray-200 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 leading-relaxed min-h-[3rem]">
                   {service.desc}
                 </p>
-                <div className="space-y-1.5 text-xs sm:text-sm text-gray-300">
+
+                <div className="space-y-4 pt-4 border-t border-white/5">
                   {service.points.map((point) => (
-                    <div key={point} className="flex items-start gap-2">
-                      <span className="h-0.5 w-2 bg-[#ffffff60] mt-2 inline-block" />
-                      {/* Removed icon for specific key points */}
-                      <span>{point}</span>
+                    <div key={point} className="flex items-center gap-3 text-sm text-gray-300 font-mono">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-white/50 transition-colors" />
+                      {point}
                     </div>
                   ))}
                 </div>
@@ -781,205 +670,131 @@ export default function Home() {
         </motion.section>
 
         {/* Process */}
-        <motion.section
-          className="space-y-6 sm:space-y-8"
-          variants={itemVariants}
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <Lightbulb
-                size={20}
-                color="#facc15"
-                strokeWidth={sharedStroke}
-                className="inline mr-2"
-              />
+        <motion.section variants={containerVariants}>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+            <h2 className="text-4xl sm:text-5xl font-display font-bold text-white tracking-tight">
               Process that ships
             </h2>
-            <p
-              className="text-gray-400 text-xs sm:text-sm"
-              style={{
-                fontFamily:
-                  "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-              }}
-            >
+            <p className="text-gray-400 font-mono text-sm max-w-sm border-l border-white/20 pl-4">
               Tight loops, visible progress, and instrumentation from day one.
             </p>
           </div>
-          <div className="grid md:grid-cols-4 gap-6 sm:gap-8">
+
+          <div className="grid md:grid-cols-4 gap-8 relative">
+            {/* Gentle connecting line for desktop */}
+            <div className="hidden md:block absolute top-8 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
             {process.map((step, index) => (
               <motion.div
                 key={step.title}
-                className="p-4 sm:p-5 border-b-4 space-y-3 pb-5"
-                style={{ borderBottomColor: processBorderColors[index] }}
                 variants={itemVariants}
-                transition={{ delay: 0.05 * index }}
+                className="relative pt-8 space-y-4"
               >
-                <div className="flex items-center gap-2 text-sm text-gray-400">
-                  <span className="h-6 w-6 rounded-full border border-white/20 flex items-center justify-center text-white">
+                {/* Step Number/Icon */}
+                <div className="absolute top-4 left-0 md:left-1/2 md:-translate-x-1/2 -translate-y-1/2 bg-black px-2">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full border border-white/10 bg-white/5 text-white/60">
                     {processIcons[index]}
                   </span>
-                  <span>Step</span>
                 </div>
-                <p className="text-base sm:text-lg font-semibold text-white">
-                  {step.title}
-                </p>
-                <p
-                  className="text-base sm:text-lg text-gray-300"
-                  style={{
-                    fontFamily:
-                      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                  }}
-                >
-                  {step.detail}
-                </p>
+
+                <div className="pt-6 md:text-center space-y-2">
+                  <span className="text-xs uppercase tracking-widest text-gray-500 font-mono block mb-2">Step 0{index + 1}</span>
+                  <h3 className="text-xl font-bold text-white">{step.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed font-mono">{step.detail}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </motion.section>
 
-        {/* Featured strip */}
-        <motion.section
-          className="space-y-6 sm:space-y-8"
-          variants={containerVariants}
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <LayoutDashboard
-                size={20}
-                color="#0ea5e9"
-                strokeWidth={sharedStroke}
-                className="inline mr-2"
-              />
+        {/* Featured / Work Snapshots */}
+        <motion.section variants={containerVariants}>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-6">
+            <h2 className="text-4xl sm:text-5xl font-display font-bold text-white tracking-tight">
               Work snapshots
             </h2>
-            <p
-              className="text-gray-400 text-xs sm:text-sm"
-              style={{
-                fontFamily:
-                  "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-              }}
-            >
+            <p className="text-gray-400 font-mono text-sm max-w-sm border-l border-white/20 pl-4">
               A few lanes I keep building in.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 sm:gap-10">
+
+          <div className="grid md:grid-cols-3 gap-6">
             {featured.map((item, index) => (
               <motion.div
                 key={item.label}
-                className="p-5 sm:p-6 border-l-4 pl-6 sm:pl-8"
-                style={{ borderLeftColor: featuredBorderColors[index] }}
                 variants={itemVariants}
-                transition={{ delay: 0.08 * index }}
-                whileHover={{ x: 4 }}
+                className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors"
+                whileHover={{ y: -4 }}
               >
-                <p className="text-sm uppercase tracking-widest text-gray-400 mb-2 flex items-center gap-2">
-                  {featuredIcons[index]}
-                  {item.label}
-                </p>
-                <p
-                  className="text-base sm:text-lg text-white"
-                  style={{
-                    fontFamily:
-                      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                  }}
-                >
-                  {item.detail}
-                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-gray-400 group-hover:text-white transition-colors">
+                    {featuredIcons[index]}
+                    <span className="text-xs uppercase tracking-widest font-mono">{item.label}</span>
+                  </div>
+                  <p className="text-xl font-medium text-white leading-snug">
+                    {item.detail}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
         </motion.section>
 
         {/* Skills */}
-        <motion.section
-          className="space-y-6 sm:space-y-8"
-          variants={itemVariants}
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <Cog
-                size={20}
-                color="#60a5fa"
-                strokeWidth={sharedStroke}
-                className="inline mr-2"
-              />
+        <motion.section variants={containerVariants}>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+            <h2 className="text-4xl sm:text-5xl font-display font-bold text-white tracking-tight">
               Skills
             </h2>
-            <p
-              className="text-gray-400 text-xs sm:text-sm"
-              style={{
-                fontFamily:
-                  "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-              }}
-            >
+            <p className="text-gray-400 font-mono text-sm max-w-sm border-l border-white/20 pl-4">
               Focused on modern, responsive web experiences.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 sm:gap-10">
-            <div className="p-5 sm:p-6 border-b-4 border-b-[#1e293b] space-y-4">
-              <p className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
-                <Monitor size={18} color="#1e293b" strokeWidth={sharedStroke} />
-                Frontend
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {skills.frontend.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-2 border-b-2 border-b-gray-600 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
-                    style={{
-                      fontFamily:
-                        "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                    }}
-                  >
-                    {skillIcons[skill]} {skill}
+
+          <div className="grid lg:grid-cols-3 gap-12 lg:gap-20">
+            {/* Frontend */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+                <Monitor size={24} className="text-gray-400" strokeWidth={1.5} />
+                <h3 className="text-xl font-bold text-white">Frontend</h3>
+              </div>
+              <div className="flex flex-wrap gap-x-6 gap-y-4">
+                {skills.frontend.map(skill => (
+                  <span key={skill} className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-mono cursor-default">
+                    <span className="opacity-70">{skillIcons[skill]}</span>
+                    {skill}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="p-5 sm:p-6 border-b-4 border-b-[#16a34a] space-y-4">
-              <p className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
-                <Database
-                  size={18}
-                  color="#16a34a"
-                  strokeWidth={sharedStroke}
-                />
-                Backend
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {skills.backend.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-2 border-b-2 border-b-gray-600 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
-                    style={{
-                      fontFamily:
-                        "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                    }}
-                  >
-                    {skillIcons[skill]} {skill}
+
+            {/* Backend */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+                <Database size={24} className="text-gray-400" strokeWidth={1.5} />
+                <h3 className="text-xl font-bold text-white">Backend</h3>
+              </div>
+              <div className="flex flex-wrap gap-x-6 gap-y-4">
+                {skills.backend.map(skill => (
+                  <span key={skill} className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-mono cursor-default">
+                    <span className="opacity-70">{skillIcons[skill]}</span>
+                    {skill}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="p-5 sm:p-6 border-b-4 border-b-[#f59e42] space-y-4">
-              <p className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
-                <Paintbrush
-                  size={18}
-                  color="#f59e42"
-                  strokeWidth={sharedStroke}
-                />
-                UI/UX & Tools
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {skills.uiux.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-2 border-b-2 border-b-gray-600 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
-                    style={{
-                      fontFamily:
-                        "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                    }}
-                  >
-                    {skillIcons[skill]} {skill}
+
+            {/* UI/UX */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+                <Paintbrush size={24} className="text-gray-400" strokeWidth={1.5} />
+                <h3 className="text-xl font-bold text-white">UI/UX & Tools</h3>
+              </div>
+              <div className="flex flex-wrap gap-x-6 gap-y-4">
+                {skills.uiux.map(skill => (
+                  <span key={skill} className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-mono cursor-default">
+                    <span className="opacity-70">{skillIcons[skill]}</span>
+                    {skill}
                   </span>
                 ))}
               </div>
@@ -987,218 +802,162 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Platforms & Tools */}
-        <motion.section
-          className="space-y-6 sm:space-y-8"
-          variants={itemVariants}
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <Cloud
-                size={20}
-                color="#d84d3b"
-                strokeWidth={sharedStroke}
-                className="inline mr-2"
-              />
-              Platforms & Tools
-            </h2>
-            <p
-              className="text-gray-400 text-xs sm:text-sm"
-              style={{
-                fontFamily:
-                  "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-              }}
-            >
-              Ecosystems I build and design with.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3 sm:gap-4">
-            {platforms.map((tool) => (
-              <span
-                key={tool}
-                className="px-3 sm:px-4 py-2 border-b-2 border-b-gray-600 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
-                style={{
-                  fontFamily:
-                    "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                }}
-              >
-                {platformIcons[tool]} {tool}
-              </span>
-            ))}
+        {/* Platforms & Tools - Inline Flow */}
+        <motion.section variants={containerVariants} className="py-8 border-y border-white/5">
+          <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Cloud size={20} className="text-gray-500" />
+              <span className="text-sm font-mono text-gray-500 uppercase tracking-widest">Platforms & Tools SELECTION</span>
+            </div>
+            <div className="flex flex-wrap gap-6 justify-center md:justify-end">
+              {platforms.map(tool => (
+                <span key={tool} className="flex items-center gap-2 text-gray-300 hover:text-white text-sm transition-colors">
+                  <span className="opacity-60">{platformIcons[tool]}</span>
+                  {tool}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.section>
 
-        {/* Projects */}
-        <motion.section
-          className="space-y-6 sm:space-y-8"
-          variants={itemVariants}
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <h2 className="text-xl sm:text-2xl font-display font-bold text-white">
-              <CheckCircle2
-                size={20}
-                color="#14b8a6"
-                strokeWidth={sharedStroke}
-                className="inline mr-2"
-              />
+        {/* Projects - The Premium List Layout */}
+        {/* Projects - Horizontal Scroll Layout */}
+        <motion.section variants={containerVariants} className="overflow-hidden">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-6">
+            <h2 className="text-4xl sm:text-5xl font-display font-bold text-white tracking-tight">
               Projects
             </h2>
-            <p
-              className="text-gray-400 text-xs sm:text-sm"
-              style={{
-                fontFamily:
-                  "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-              }}
-            >
-              Selected work as Mohammadali Dhanga (Dhanga Mohammadali).
-            </p>
+            <div className="flex items-center gap-4">
+              <p className="text-gray-400 font-mono text-sm max-w-sm border-l border-white/20 pl-4 hidden sm:block">
+                Selected work as Mohammadali Dhanga.
+              </p>
+              <div className="text-xs font-mono text-gray-600 uppercase tracking-widest animate-pulse">
+                &larr; Scroll &rarr;
+              </div>
+            </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 sm:gap-10">
+
+          <div
+            className="flex overflow-x-auto gap-6 pb-12 -mx-6 px-6 sm:-mx-0 sm:px-0 snap-x snap-mandatory scroll-smooth no-scrollbar"
+          >
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
-                className="p-5 sm:p-6 border-t-4 space-y-3 pt-6"
-                style={{ borderTopColor: projectBorderColors[index] }}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.06 * index }}
-                whileHover={{ y: -2 }}
+                variants={itemVariants}
+                className="flex-none w-[85vw] sm:w-[450px] group relative bg-[#0a0a0a] border border-white/10 p-8 rounded-2xl flex flex-col justify-between hover:border-white/20 transition-all duration-300 snap-center"
               >
-                <p className="text-lg font-semibold text-white flex items-center gap-2">
-                  {projectIcons[index]}
-                  {project.title}
-                </p>
-                <p
-                  className="text-sm sm:text-base text-gray-300"
-                  style={{
-                    fontFamily:
-                      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                  }}
-                >
-                  {project.desc}
-                </p>
-                <Link
-                  href={project.link ?? ""}
-                  className="text-sm font-semibold text-white underline"
-                >
-                  View Project
-                </Link>
+                <div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-3 rounded-xl bg-white/5 border border-white/5 text-white group-hover:bg-white/10 transition-colors">
+                      {projectIcons[index] || <LayoutDashboard size={20} />}
+                    </div>
+                    <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors line-clamp-1">
+                      {project.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-gray-400 text-base leading-relaxed font-light mb-8">
+                    {project.desc}
+                  </p>
+                </div>
+
+                {project.link && (
+                  <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-white hover:text-blue-400 transition-colors"
+                    >
+                      <span>View Details</span>
+                      <ArrowRightIcon className="w-3 h-3" />
+                    </Link>
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
         </motion.section>
 
-        {/* Education, Hackathons, Courses, Languages */}
-        <motion.section
-          className="space-y-6 sm:space-y-8"
-          variants={itemVariants}
-        >
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10">
-            <div className="space-y-6 border-b-4 border-b-[#6366f1] pb-8">
-              <h3 className="text-lg sm:text-xl font-display font-bold text-white flex items-center gap-2">
-                <GraduationCap
-                  size={20}
-                  color="#6366f1"
-                  strokeWidth={sharedStroke}
-                />
-                Education
-              </h3>
-              <div className="space-y-5">
-                {education.map((item, idx) => (
-                  <div
-                    key={item.title}
-                    className="border-b border-white/10 pb-4 last:border-0 last:pb-0"
-                  >
-                    <p className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
-                      {educationIcons[idx]} {item.title}
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-300 mt-1">
-                      {item.place}
-                    </p>
-                    <p
-                      className="text-xs sm:text-sm text-gray-400 mt-1"
-                      style={{
-                        fontFamily:
-                          "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                      }}
-                    >
-                      {item.time}
-                    </p>
-                  </div>
-                ))}
-              </div>
+        {/* Education, Hackathons & More */}
+        <motion.section variants={containerVariants} className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+          {/* Education Column */}
+          <div className="space-y-12">
+            <h3 className="text-3xl font-bold font-display flex items-center gap-3">
+              <GraduationCap className="text-[#6366f1]" strokeWidth={1.5} />
+              Education
+            </h3>
+            <div className="relative border-l border-white/10 pl-8 space-y-12">
+              {education.map((item, idx) => (
+                <div key={item.title} className="relative">
+                  <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full border-2 border-black bg-white/20" />
+                  <h4 className="text-xl font-bold text-white">{item.title}</h4>
+                  <p className="text-base text-gray-400 mt-2">{item.place}</p>
+                  <p className="text-sm font-mono text-gray-500 mt-1">{item.time}</p>
+                </div>
+              ))}
             </div>
-            <div className="space-y-6 border-b-4 border-b-[#eab308] pb-8">
-              <h3 className="text-lg sm:text-xl font-display font-bold text-white flex items-center gap-2">
-                <Trophy size={18} color="#eab308" strokeWidth={sharedStroke} />
-                Hackathons
+          </div>
+
+          {/* Hackathons / Courses / Languages Column */}
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-3xl font-bold font-display flex items-center gap-3 mb-8">
+                <Trophy className="text-[#eab308]" strokeWidth={1.5} />
+                Honors & More
               </h3>
-              <div className="space-y-3 text-sm text-gray-200">
-                {hackathons.map((item, idx) => (
-                  <div
-                    key={item}
-                    className="flex items-start gap-2 pb-3 border-b border-white/10 last:border-0 last:pb-0"
-                    style={{
-                      fontFamily:
-                        "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                    }}
-                  >
-                    {hackathonIcons[idx]}
-                    <span>{item}</span>
+
+              <div className="space-y-8">
+                {/* Hackathons */}
+                <div className="p-6 rounded-2xl bg-white/5 border border-white/5 space-y-4">
+                  <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500">Hackathons</h4>
+                  <div className="space-y-3">
+                    {hackathons.map((item, idx) => (
+                      <div key={item} className="flex items-center gap-3 text-white">
+                        <span className="text-[#eab308]">{hackathonIcons[idx]}</span>
+                        <span className="font-medium">{item}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-              <h3 className="text-lg sm:text-xl font-display font-bold text-white pt-6 flex items-center gap-2 border-t-2 border-t-gray-700 pt-6">
-                <BookOpen
-                  size={18}
-                  color="#f59e42"
-                  strokeWidth={sharedStroke}
-                />
-                Courses
-              </h3>
-              <div className="space-y-3 text-sm text-gray-200">
-                {courses.map((item, idx) => (
-                  <div
-                    key={item}
-                    className="flex items-start gap-2 pb-3 border-b border-white/10 last:border-0 last:pb-0"
-                    style={{
-                      fontFamily:
-                        "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                    }}
-                  >
-                    {courseIcons[idx]}
-                    <span>{item}</span>
+                </div>
+
+                {/* Courses */}
+                <div className="p-6 rounded-2xl bg-white/5 border border-white/5 space-y-4">
+                  <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500">Courses & Certifications</h4>
+                  <div className="grid grid-cols-1 gap-3">
+                    {courses.map((item, idx) => (
+                      <div key={item} className="flex items-center gap-3 text-gray-300">
+                        <span className="opacity-70">{courseIcons[idx]}</span>
+                        <span className="text-sm">{item}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-              <h3 className="text-lg sm:text-xl font-display font-bold text-white pt-6 flex items-center gap-2 border-t-2 border-t-gray-700">
-                <Languages
-                  size={18}
-                  color="#60a5fa"
-                  strokeWidth={sharedStroke}
-                />
-                Languages
-              </h3>
-              <div
-                className="flex flex-wrap gap-2 pt-4"
-                style={{
-                  fontFamily:
-                    "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                }}
-              >
-                {languages.map((lang) => (
-                  <span
-                    key={lang}
-                    className="px-3 py-2 border-b-2 border-b-gray-600 text-xs sm:text-sm text-gray-200 flex items-center gap-2"
-                  >
-                    {languageIcons[lang]} {lang}
-                  </span>
-                ))}
+                </div>
+
+                {/* Languages */}
+                <div className="flex flex-wrap gap-3 pt-2">
+                  {languages.map(lang => (
+                    <span key={lang} className="px-3 py-1.5 rounded-md bg-white/5 border border-white/5 text-xs font-mono text-gray-300 flex items-center gap-2">
+                      {languageIcons[lang]} {lang}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </motion.section>
+
       </motion.div>
     </main>
+  );
+}
+
+// Simple arrow icon helper for the Project link
+function ArrowRightIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M5 12h14" />
+      <path d="M12 5l7 7-7 7" />
+    </svg>
   );
 }
