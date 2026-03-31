@@ -15,6 +15,8 @@ import {
   Workflow,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import contactData from "../../Config/contact.json";
+import aboutMeData from "../../Config/aboutme.json";
 
 // Animation variants
 const containerVariants = {
@@ -230,13 +232,13 @@ function ContactForm() {
             htmlFor="email"
             className="block text-sm mb-1 text-gray-200 font-semibold"
           >
-            Email <span className="text-pink-500">*</span>
+            {contactData.FormLabels.Email} <span className="text-pink-500">*</span>
           </label>
           <input
             type="email"
             name="email"
             id="email"
-            placeholder="you@example.com"
+            placeholder={contactData.FormPlaceholders.Email}
             required
             autoComplete="email"
             className="w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
@@ -259,13 +261,13 @@ function ContactForm() {
           htmlFor="project_type"
           className="block text-sm mb-1 text-gray-200 font-semibold"
         >
-          Project Type / Subject
+          {contactData.FormLabels.Subject}
         </label>
         <input
           type="text"
           name="project_type"
           id="project_type"
-          placeholder="e.g. Website, SaaS, Mobile App, E-commerce"
+          placeholder={contactData.FormPlaceholders.Subject}
           className="w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
           value={form.project_type}
           onChange={handleChange}
@@ -297,13 +299,13 @@ function ContactForm() {
           htmlFor="message"
           className="block text-sm mb-1 text-gray-200 font-semibold"
         >
-          Message <span className="text-pink-500">*</span>
+          {contactData.FormLabels.Message} <span className="text-pink-500">*</span>
         </label>
         <textarea
           name="message"
           id="message"
           rows={5}
-          placeholder="Describe your project, goals, timelines, and any relevant details."
+          placeholder={contactData.FormPlaceholders.Message}
           required
           className="w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
           value={form.message}
@@ -366,8 +368,7 @@ export default function Contact() {
             variants={itemVariants}
           >
             <AnimatedShinyText className="inline-flex items-center justify-center gap-2 px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300">
-              <Mail className="text-pink-500" strokeWidth={1.8} /> Contact
-              Mohammadali Dhanga
+              <Mail className="text-pink-500" strokeWidth={1.8} /> Contact {aboutMeData.Name}
             </AnimatedShinyText>
           </motion.p>
           <motion.h1
@@ -385,8 +386,7 @@ export default function Contact() {
                 "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
             }}
           >
-            I&apos;m Mohammadali Dhanga, a MERN Stack Developer based in
-            Gandhinagar, India.
+            {contactData.Introduction}
           </motion.p>
         </div>
 
@@ -436,7 +436,7 @@ export default function Contact() {
                       "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
                   }}
                 >
-                  Gandhinagar, Gujarat, India
+                  {contactData.Address}
                 </span>
               </div>
             </div>
@@ -450,14 +450,14 @@ export default function Contact() {
                     Email
                   </span>
                   <Link
-                    href="mailto:malidhanga@gmail.com"
+                    href={`mailto:${contactData.Email}`}
                     className="text-white hover:underline flex items-center gap-2"
                     style={{
                       fontFamily:
                         "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
                     }}
                   >
-                    malidhanga@gmail.com
+                    {contactData.Email}
                   </Link>
                 </div>
               </div>

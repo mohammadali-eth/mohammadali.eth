@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import aboutMeData from "../Config/aboutme.json";
 
 type SocialIconsProps = {
   size?: number; // In pixels, for square (w/h)
@@ -13,7 +14,7 @@ const defaultSize = 32;
 const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/mohammadali-eth",
+    url: aboutMeData.socialLinks.github,
     icon: (size: number) => (
       <svg
         width={size}
@@ -32,7 +33,7 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/mohammadalidhanga/",
+    url: aboutMeData.socialLinks.linkedin,
     icon: (size: number) => (
       <svg
         width={size}
@@ -47,7 +48,7 @@ const socialLinks = [
   },
   {
     name: "Instagram",
-    url: "https://instagram.com/mohammadali8.eth",
+    url: aboutMeData.socialLinks.instagram,
     icon: (size: number) => (
       <svg
         width={size}
@@ -62,7 +63,7 @@ const socialLinks = [
   },
   {
     name: "Twitter X",
-    url: "https://x.com/mohammadali_eth",
+    url: aboutMeData.socialLinks.twitter,
     icon: (size: number) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +78,7 @@ const socialLinks = [
     ),
   },
 ];
+
 
 const iconVariants = {
   hover: {

@@ -21,19 +21,76 @@
       "name": "Hotel Management System",
       "desc": "A web-based system for managing hotel operations including room booking, customer records, billing, and staff management with a user-friendly interface.",
       "photo": "",
-      "skills": ["React", "Node.js", "Express", "MongoDB", "Bootstrap"],
+      "skills": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Bootstrap"
+      ],
       "live": "",
       "code": "",
       "profession": "Academic Project"
+    },
+    {
+      "id": 2,
+      "name": "JAVA ERP Software",
+      "desc": "A robust Enterprise Resource Planning (ERP) solution built with Java to streamline business processes including inventory, finance, and human resources.",
+      "photo": "",
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "MySQL",
+        "Hibernate",
+        "ERP Architecture"
+      ],
+      "live": "",
+      "code": "",
+      "profession": "Professional Project"
+    },
+    {
+      "id": 3,
+      "name": "MaddyCal Application",
+      "desc": "A comprehensive management suite designed to handle scheduling, tasks, and team collaboration efficiently for various business operations.",
+      "photo": "",
+      "skills": [
+        "React",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "live": "",
+      "code": ""
+    },
+    {
+      "id": 4,
+      "name": "Invix AI-powered Invoicing Platform",
+      "desc": "An AI-powered invoicing platform that automates billing processes, tracks payments, and generates financial insights using intelligent algorithms.",
+      "photo": "",
+      "skills": [
+        "Next.js",
+        "AI/ML Integration",
+        "Stripe API",
+        "Prisma",
+        "PostgreSQL"
+      ],
+      "live": "",
+      "code": ""
     }
   ],
   "dataList2": [
     {
       "id": 0,
-      "name": "Professional Company Website",
+      "name": "Arqaamultipack Solution",
       "desc": "A modern, responsive company website designed to showcase business services, portfolio, and contact information with a professional UI/UX.",
       "photo": "",
-      "skills": ["React", "Next.js", "Tailwind CSS", "UI/UX Design"],
+      "skills": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "UI/UX Design"
+      ],
       "live": "",
       "code": ""
     },
@@ -42,7 +99,58 @@
       "name": "WordPress E-commerce Website",
       "desc": "An e-commerce website built using WordPress for online product sales, including payment integration, product management, and responsive design.",
       "photo": "",
-      "skills": ["WordPress", "WooCommerce", "PHP", "Payment Gateway", "UI/UX"],
+      "skills": [
+        "WordPress",
+        "WooCommerce",
+        "PHP",
+        "Payment Gateway",
+        "UI/UX"
+      ],
+      "live": "",
+      "code": ""
+    },
+    {
+      "id": 2,
+      "name": "MaddyBit File Automation",
+      "desc": "An advanced automation tool designed to intelligently organize files by sorting them into dedicated folders, handling duplicates, and maintaining extensive logs and backups.",
+      "photo": "",
+      "skills": [
+        "Python",
+        "File System API",
+        "Automation",
+        "Logging",
+        "Backup Systems"
+      ],
+      "live": "",
+      "code": ""
+    },
+    {
+      "id": 3,
+      "name": "BuzzMitra LLP Agency",
+      "desc": "A performance marketing agency platform focused on data-driven strategies to scale brands through targeted advertising and conversion optimization.",
+      "photo": "",
+      "skills": [
+        "Marketing Analytics",
+        "SEO/SEM",
+        "React",
+        "Next.js",
+        "Google Ads API"
+      ],
+      "live": "",
+      "code": ""
+    },
+    {
+      "id": 4,
+      "name": "NilkanthArt Ecommerce Website",
+      "desc": "A premium e-commerce platform for home decor, featuring high-quality products, seamless checkout, and an elegant UI/UX design.",
+      "photo": "",
+      "skills": [
+        "React",
+        "Shopify",
+        "Tailwind CSS",
+        "E-commerce UI",
+        "Node.js"
+      ],
       "live": "",
       "code": ""
     }
@@ -53,7 +161,13 @@
       "name": "Real-Time Blog and Chat Uploading Website",
       "desc": "A real-time web platform allowing users to post blogs and communicate via chat with instant updates using modern web technologies.",
       "photo": "",
-      "skills": ["React", "Node.js", "MongoDB", "Socket.io", "Express"],
+      "skills": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Socket.io",
+        "Express"
+      ],
       "live": "",
       "code": ""
     },
@@ -68,6 +182,51 @@
         "UI/UX Design",
         "CSS",
         "JavaScript"
+      ],
+      "live": "",
+      "code": ""
+    },
+    {
+      "id": 2,
+      "name": "Pass-Portugez Portal",
+      "desc": "A travel and visa assistance platform helping users navigate the journey of moving to or visiting Portugal, from dream to destination.",
+      "photo": "",
+      "skills": [
+        "Next.js",
+        "Content Management",
+        "UI/UX",
+        "SEO",
+        "React"
+      ],
+      "live": "",
+      "code": ""
+    },
+    {
+      "id": 3,
+      "name": "ECOFlow OODO Inventory",
+      "desc": "An advanced inventory management software built on the Odoo framework to optimize supply chain operations and stock tracking.",
+      "photo": "",
+      "skills": [
+        "Odoo",
+        "Python",
+        "Inventory Management",
+        "PostgreSQL",
+        "XML-RPC"
+      ],
+      "live": "",
+      "code": ""
+    },
+    {
+      "id": 4,
+      "name": "GearGuard Odoo Project",
+      "desc": "A dedicated project management and tracking system built with Odoo for gear maintenance and equipment lifecycle management.",
+      "photo": "",
+      "skills": [
+        "Odoo",
+        "Python",
+        "ERP Customization",
+        "PostgreSQL",
+        "Asset Tracking"
       ],
       "live": "",
       "code": ""

@@ -32,6 +32,9 @@ import {
   Workflow,
 } from "lucide-react";
 import profile from "@/public/me.jpg";
+import aboutMeData from "../../Config/aboutme.json";
+import projectsData from "../../Config/projects.json";
+import educationData from "../../Config/education.json";
 
 const sharedStroke = 1.8;
 
@@ -194,33 +197,18 @@ const highlights = [
   },
 ];
 
-const education = [
-  {
-    icon: (
-      <GraduationCap
-        color="#34d399"
-        className="text-xl"
-        strokeWidth={sharedStroke}
-      />
-    ),
-    title: "Master’s in Computer Application",
-    place: "LDRP Institute of Technology and Research",
-    time: "2024 – Present",
-  },
-  {
-    icon: (
-      <GraduationCap
-        color="#818cf8"
-        className="text-xl"
-        strokeWidth={sharedStroke}
-      />
-    ),
-    title: "Bachelor’s in Computer Application",
-    place:
-      "Acharya Motibhai Patel Institute of Computer Studies – Ganpat University",
-    time: "2022 – 2025",
-  },
-];
+const education = educationData.degrees.map((deg, idx) => ({
+  icon: (
+    <GraduationCap
+      color={idx % 2 === 0 ? "#34d399" : "#818cf8"}
+      className="text-xl"
+      strokeWidth={sharedStroke}
+    />
+  ),
+  title: deg.course,
+  place: deg.name,
+  time: deg.duration,
+}));
 
 const hackathons = [
   {
@@ -243,49 +231,17 @@ const hackathons = [
   },
 ];
 
-const courses = [
-  {
-    icon: courseIconMap["MERN Stack Developer"] ?? (
-      <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
-    ),
-    label: "MERN Stack Developer",
-  },
-  {
-    icon: courseIconMap[
-      "Complete Generative AI Course With Langchain and Huggingface"
-    ] ?? <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />,
-    label: "Complete Generative AI Course With Langchain and Huggingface",
-  },
+const courses = educationData.certifiedCourses.map(c => ({
+  icon: courseIconMap[c.course] ?? (
+    <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
+  ),
+  label: c.course,
+}));
 
-  {
-    icon: courseIconMap["WordPress Bootcamp"] ?? (
-      <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
-    ),
-    label: "WordPress Bootcamp",
-  },
-
-  {
-    icon: courseIconMap["IoT Blockchain Supply Chain Network"] ?? (
-      <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
-    ),
-    label: "IoT Blockchain Supply Chain Network",
-  },
-];
-
-const languages = [
-  {
-    icon: languageIconMap["English"],
-    label: "English",
-  },
-  {
-    icon: languageIconMap["Hindi"],
-    label: "Hindi",
-  },
-  {
-    icon: languageIconMap["Gujarati"],
-    label: "Gujarati",
-  },
-];
+const languages = aboutMeData.Language.map(lang => ({
+  icon: languageIconMap[lang] ?? <Globe2 color="#4f8edc" strokeWidth={sharedStroke} />,
+  label: lang,
+}));
 
 function GridBG() {
   // Soft, subtle SVG grid lines, covers the viewport, does not interfere visually
@@ -371,7 +327,7 @@ export default function About() {
           <motion.div variants={itemVariants} className="space-y-10">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm w-fit">
               <span className="text-xs uppercase tracking-widest text-[#0ea5e9] flex items-center gap-2">
-                {sectionIconMap.about} About Mohammadali Dhanga
+                {sectionIconMap.about} About {aboutMeData.Name}
               </span>
             </div>
 
@@ -382,21 +338,7 @@ export default function About() {
 
               <div className="space-y-6 text-lg text-gray-400 font-light leading-relaxed max-w-2xl">
                 <p>
-                  I am Mohammadali Dhanga, a MERN Stack Developer and Web Designer
-                  with hands-on experience in building modern, scalable, and
-                  responsive websites and applications.
-                </p>
-                <p>
-                  I have strong skills in frontend and backend development using
-                  technologies like React.js, Next.js, Node.js, Express.js,
-                  MongoDB, and MySQL. I also have a good eye for UI/UX design and
-                  experience with professional design tools.
-                </p>
-                <p>
-                  Currently, I work as a freelance developer and continuously
-                  improve my skills by learning new technologies, building
-                  real-world projects, and participating in hackathons across
-                  India.
+                  {aboutMeData.Introduction}
                 </p>
               </div>
             </div>

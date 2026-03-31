@@ -11,6 +11,7 @@
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
     "@emailjs/browser": "^4.4.1",
+    "@studio-freight/lenis": "^1.0.42",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "emailjs": "^5.0.0",

@@ -47,9 +47,14 @@ import {
 import SocialIcons from "@/components/SocialIcons";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 
-// --- DATA DEFINITIONS (to solve errors regarding undefined variables) ---
+import aboutMeData from "../Config/aboutme.json";
+import projectsData from "../Config/projects.json";
+import educationData from "../Config/education.json";
+import contactData from "../Config/contact.json";
+import experienceData from "../Config/experience.json";
 
-// Example arrays/objects. Replace with actual content if available.
+// --- DATA DEFINITIONS ---
+
 const floatingElements = [
   { top: "10%", left: "10%", size: "w-40 h-40", delay: 0 },
   { top: "60%", left: "80%", size: "w-36 h-36", delay: 5 },
@@ -134,7 +139,7 @@ const featured = [
   },
 ];
 
-// Skills (example only; replace with real values as needed)
+// Skills from JSON or hardcoded if specific icons needed
 const skills = {
   frontend: [
     "React.js",
@@ -150,11 +155,10 @@ const skills = {
     "Adobe Photoshop",
     "Adobe Illustrator",
     "Adobe Lightroom",
-    // "Git",
   ],
 };
 
-// Platforms/tools (example, replace with real)
+// Platforms/tools
 const platforms = [
   "WordPress",
   "Shopify",
@@ -163,73 +167,35 @@ const platforms = [
   "Adobe Creative Suite",
 ];
 
-// Projects (example, up to 6 to match projectIcons length)
-const projects = [
-  {
-    title: "Spur AI Chat Bot",
-    desc: "A high-performance AI chat platform using React, Node.js, and PostgreSQL with seamless switching between Google Gemini, OpenAI, and Puter.js, powered by Redis caching.",
-    link: "https://maddy-chat.vercel.app/",
-  },
-  {
-    title: "GearGuard",
-    desc: "A hackathon-built web app for managing equipment and maintenance workflows through a simple dashboard.",
-    link: "https://gearguard-hackathon.vercel.app/",
-  },
-  {
-    title: "Cloudinary_Media_Upload",
-    desc: "A high-performance media upload platform using React, Node.js, and PostgreSQL with seamless switching between Google Gemini, OpenAI, and Puter.js, powered by Redis caching.",
-    link: "https://cloudy-media-hub.vercel.app/",
-  },
-  {
-    title: "Professional Company Website",
-    desc: "Responsive SMB/CORP site showcasing brand and services.",
-    link: "https://arqaamultipack.com/",
-  },
-  {
-    title: "Real-Time Blog & Chat Uploading Website",
-    desc: "Collaborative blogging platform with live chat features.",
-    link: "https://mohammadalidhanga.dev",
-  },
-  {
-    title: "Weather Forecast UI/UX Project",
-    desc: "Beautiful weather dashboard focused on clarity and experience.",
-    link: "https://mohammadalidhanga.dev",
-  },
+// Combine projects from lists
+const allProjects = [
+  ...projectsData.dataList1,
+  ...projectsData.dataList2,
+  ...projectsData.dataList3,
 ];
 
-// Education (example)
-const education = [
-  {
-    title: "Master of Computer Applications",
-    place: "LDRP institute of technology and research",
-    time: "Aug 2025 – Present",
-  },
-  {
-    title: "Bachelor of Computer Applications",
-    place: "A.M.Patel Intitute Of Computer Studies Ganpat University",
-    time: "Aug 2022 – Apr 2025",
-  },
-];
+const projects = allProjects.map(proj => ({
+  title: proj.name,
+  desc: proj.desc,
+  link: proj.live || proj.code || "#",
+})).slice(0, 6);
 
-// Hackathons (example)
-const hackathons = [
-  "Smart India Hackathon",
-  "DevFast",
-  "Odoo x Adani Hackathon",
-];
+// Education from JSON
+const education = educationData.degrees.map(deg => ({
+  title: deg.course,
+  place: deg.name,
+  time: deg.duration,
+}));
 
-// Courses (example)
-const courses = [
-  "MERN Stack Developer",
-  "Python Mastery ",
-  "WordPress Bootcamp",
-  "IoT Blockchain",
-];
+// Hackathons/Courses - taking from certifiedCourses
+const hackathons = ["Smart India Hackathon", "DevFast", "Odoo x Adani Hackathon"];
+const courses = educationData.certifiedCourses.map(c => c.course).slice(0, 4);
 
-// Languages (example)
-const languages = ["English", "Hindi", "Gujarati"];
+// Languages from JSON
+const languages = aboutMeData.Language;
 
 // --- END DATA DEFINITIONS ---
+
 
 const sharedStroke = 1.8;
 
@@ -534,15 +500,15 @@ export default function Home() {
                 className="text-5xl sm:text-7xl lg:text-8xl font-display font-bold tracking-tighter leading-[0.95] text-white"
                 variants={itemVariants}
               >
-                Mohammadali <br />
-                <span className="text-white/40">Dhanga</span>
+                {aboutMeData.Name.split(" ")[0]} <br />
+                <span className="text-white/40">{aboutMeData.Name.split(" ").slice(1).join(" ")}</span>
               </motion.h1>
 
               <motion.p
                 className="text-xl sm:text-2xl text-gray-300 font-light max-w-2xl leading-relaxed"
                 variants={itemVariants}
               >
-                MERN Stack Developer <span className="text-white/20 mx-2">|</span>
+                {aboutMeData.Role} <span className="text-white/20 mx-2">|</span>
                 Next.js Specialist <span className="text-white/20 mx-2">|</span>
                 UI/UX Focused Developer
               </motion.p>
@@ -555,7 +521,7 @@ export default function Home() {
                 fontFamily: "Menlo, Monaco, 'Fira Mono', monospace",
               }}
             >
-              I’m Mohammadali Dhanga, a Web Designer and Developer building modern, responsive web applications with the MERN Stack and Next.js. I keep UI/UX clean, performant, and focused on the user.
+              I’m {aboutMeData.Name}, a {aboutMeData.Role} building modern, responsive web applications with the MERN Stack and Next.js. I keep UI/UX clean, performant, and focused on the user.
             </motion.p>
 
             <motion.div
@@ -612,14 +578,16 @@ export default function Home() {
                 >
                   <p><span style={{ color: "#c678dd" }}>const</span> <span style={{ color: "#e5c07b" }}>AboutMe</span> <span style={{ color: "#abb2bf" }}>=</span> <span style={{ color: "#abb2bf" }}>{"{"}</span></p>
                   <div className="pl-6 space-y-1">
-                    <p><span style={{ color: "#e06c75" }}>name</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;Mohammadali Dhanga&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
-                    <p><span style={{ color: "#e06c75" }}>role</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;MERN Stack Developer&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
-                    <p><span style={{ color: "#e06c75" }}>age</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#d19a66" }}>21</span><span style={{ color: "#abb2bf" }}>,</span></p>
-                    <p><span style={{ color: "#e06c75" }}>gender</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;Male&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
-                    <p><span style={{ color: "#e06c75" }}>address</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;Gandhinagar, India&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
-                    <p><span style={{ color: "#e06c75" }}>phone</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;9016999984&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
-                    <p><span style={{ color: "#e06c75" }}>email</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;malidhanga@gmail.com&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
-                    <p><span style={{ color: "#e06c75" }}>languages</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#abb2bf" }}>[</span><span style={{ color: "#98c379" }}>&quot;English&quot;</span>, <span style={{ color: "#98c379" }}>&quot;Hindi&quot;</span>, <span style={{ color: "#98c379" }}>&quot;Gujarati&quot;</span><span style={{ color: "#abb2bf" }}>]</span></p>
+                    <p><span style={{ color: "#e06c75" }}>name</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;{aboutMeData.Name}&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>role</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;{aboutMeData.Role}&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>age</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#d19a66" }}>{aboutMeData.Age}</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>gender</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;{aboutMeData.Gender}&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>address</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;{aboutMeData.Address}&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>phone</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;{aboutMeData.Phone}&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>email</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#98c379" }}>&quot;{aboutMeData.Email}&quot;</span><span style={{ color: "#abb2bf" }}>,</span></p>
+                    <p><span style={{ color: "#e06c75" }}>languages</span><span style={{ color: "#abb2bf" }}>:</span> <span style={{ color: "#abb2bf" }}>[</span>{aboutMeData.Language.map((lang, i) => (
+                      <span key={lang}><span style={{ color: "#98c379" }}>&quot;{lang}&quot;</span>{i < aboutMeData.Language.length - 1 ? ", " : ""}</span>
+                    ))}<span style={{ color: "#abb2bf" }}>]</span></p>
                   </div>
                   <p><span style={{ color: "#abb2bf" }}>{"}"}</span><span style={{ color: "#abb2bf" }}>;</span></p>
                 </div>
