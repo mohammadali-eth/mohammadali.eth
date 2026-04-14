@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 export const metadata = {
   title: "Mohammadali Dhanga",
   description:
-    "Mohammadali Dhanga - MERN Stack Developer and Web Designer specializing in modern, responsive, and user-friendly web applications using Next.js, React, and Node.js.",
+    "Mohammadali Dhanga - Full Stack Developer and Web Designer specializing in modern, responsive, and user-friendly web applications using Next.js, React, and Node.js.",
   url: "https://mohammadali.eth",
   image:
     "https://res.cloudinary.com/diukjb3ma/image/upload/v1765709456/IMG_5147_aylm5c.jpg",
@@ -20,7 +20,7 @@ export const metadata = {
   linkedin: "https://www.linkedin.com/in/mohammadalidhanga/",
   facebook: "https://www.facebook.com/share/14MNEcsACYn/?mibextid=wwXIfr",
   keywords:
-    "Mohammadali Dhanga, MERN Stack Developer, Web Developer, Full Stack Developer, React Developer, Next.js Developer, Node.js Developer, MongoDB Developer, UI UX Designer",
+    "Mohammadali Dhanga, Full Stack Developer, Web Developer, Full Stack Developer, React Developer, Next.js Developer, Node.js Developer, MongoDB Developer, UI UX Designer",
   robots: "index, follow",
   author: "Mohammadali Dhanga",
 };
@@ -67,6 +67,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className}>
       <head>
+        {/* ... existing meta tags ... */}
         <meta charSet="UTF-8" />
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
@@ -92,11 +93,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-             __html: JSON.stringify({
+            __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Mohammadali Dhanga",
-              jobTitle: "MERN Stack Developer",
+              jobTitle: "Full Stack Developer",
               url: metadata.url,
               sameAs: [metadata.instagram, metadata.github, metadata.linkedin],
               description: metadata.description,
@@ -119,9 +120,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
         <div className="relative z-10 flex flex-col min-h-screen border-x border-white/10 max-w-7xl mx-auto">
           <Navigation />
-          <main className="flex-grow">
-            {children}
-          </main>
+          <main className="flex-grow">{children}</main>
           <Footer />
         </div>
       </body>
