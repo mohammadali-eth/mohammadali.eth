@@ -1,455 +1,142 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { JSX } from "react";
-import {
-  Atom,
-  BookOpen,
-  BriefcaseBusiness,
-  CircleDot,
-  Clapperboard,
-  FileCode,
-  FileType,
-  GitBranch,
-  Globe2,
-  GraduationCap,
-  Languages,
-  Leaf,
-  MessageCircle,
-  Network,
-  Palette,
-  PenTool,
-  Rocket,
-  Route,
-  Server,
-  Smartphone,
-  Table,
-  Trophy,
-  UserRound,
-  Waves,
-  Wrench,
-  Workflow,
-} from "lucide-react";
-import profile from "@/public/me.jpg";
+import { FileText } from "lucide-react";
 import aboutMeData from "../../Config/aboutme.json";
-import projectsData from "../../Config/projects.json";
 import educationData from "../../Config/education.json";
-
-const sharedStroke = 1.8;
-
-const iconMap: Record<string, JSX.Element> = {
-  JavaScript: <FileCode color="#f7df1e" strokeWidth={sharedStroke} />,
-  TypeScript: <FileType color="#3178c6" strokeWidth={sharedStroke} />,
-  React: <Atom color="#61dafb" strokeWidth={sharedStroke} />,
-  "Next.js": <CircleDot color="#ffffff" strokeWidth={sharedStroke} />,
-  "Node.js": <Server color="#339933" strokeWidth={sharedStroke} />,
-  Python: <Workflow color="#3776ab" strokeWidth={sharedStroke} />,
-  "Tailwind CSS": <Waves color="#38bdf8" strokeWidth={sharedStroke} />,
-  "Framer Motion": <Clapperboard color="#e62aff" strokeWidth={sharedStroke} />,
-  Git: <GitBranch color="#f34f29" strokeWidth={sharedStroke} />,
-  Web3: <Network color="#27ae60" strokeWidth={sharedStroke} />,
-  MongoDB: <Leaf color="#47a248" strokeWidth={sharedStroke} />,
-  MySQL: <Table color="#00758f" strokeWidth={sharedStroke} />,
-  "Express.js": <Route color="#ffffff" strokeWidth={sharedStroke} />,
-  "React Native": <Smartphone color="#61dafb" strokeWidth={sharedStroke} />,
-};
-
-const courseIconMap: Record<string, JSX.Element> = {
-  "MERN Stack Developer": <Atom color="#128c7e" strokeWidth={sharedStroke} />,
-  "Adobe Software": <Palette color="#ff0000" strokeWidth={sharedStroke} />,
-  "WordPress Bootcamp": <Globe2 color="#21759b" strokeWidth={sharedStroke} />,
-  "IoT Blockchain Supply Chain Network": (
-    <Network color="#f89c1d" strokeWidth={sharedStroke} />
-  ),
-};
-
-const hackathonIconMap: Record<string, JSX.Element> = {
-  "Smart India Hackathon – 2024 & 2025": (
-    <Trophy color="#9fe870" strokeWidth={sharedStroke} />
-  ),
-  "DevFast – 2024": <Trophy color="#ffb347" strokeWidth={sharedStroke} />,
-};
-
-const languageIconMap: Record<string, JSX.Element> = {
-  English: <Globe2 color="#4f8edc" strokeWidth={sharedStroke} />,
-  Hindi: <Languages color="#ff9933" strokeWidth={sharedStroke} />,
-  Gujarati: <Languages color="#008751" strokeWidth={sharedStroke} />,
-};
-
-const sectionIconMap: Record<string, JSX.Element> = {
-  about: (
-    <UserRound className="text-xl text-[#0ea5e9]" strokeWidth={sharedStroke} />
-  ),
-  highlights: (
-    <Rocket className="text-xl text-[#ec4899]" strokeWidth={sharedStroke} />
-  ),
-  education: (
-    <GraduationCap
-      className="text-xl text-[#f59e42]"
-      strokeWidth={sharedStroke}
-    />
-  ),
-  hackathons: (
-    <Trophy className="text-xl text-[#84cc16]" strokeWidth={sharedStroke} />
-  ),
-  courses: (
-    <BookOpen className="text-xl text-[#8b5cf6]" strokeWidth={sharedStroke} />
-  ),
-  languages: (
-    <Languages className="text-xl text-[#06b6d4]" strokeWidth={sharedStroke} />
-  ),
-  tools: (
-    <Wrench className="text-xl text-[#fbbf24]" strokeWidth={sharedStroke} />
-  ),
-  connect: (
-    <MessageCircle
-      className="text-2xl text-[#0ea5e9]"
-      strokeWidth={sharedStroke}
-    />
-  ),
-};
-
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      // ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-};
-
-const imageVariants = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.7,
-      // ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-  hover: {
-    scale: 1.02,
-    transition: {
-      duration: 0.3,
-    },
-  },
-};
-
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Python",
-  "Tailwind CSS",
-  "Framer Motion",
-  "Git",
-  "Web3",
-  "MongoDB",
-  "MySQL",
-  "Express.js",
-  "React Native",
-];
-
-const highlights = [
-  {
-    icon: (
-      <Rocket color="#ec4899" className="text-lg" strokeWidth={sharedStroke} />
-    ),
-    title: "MERN & Next.js",
-    desc: "Building modern, scalable, and responsive applications end to end.",
-  },
-  {
-    icon: (
-      <PenTool color="#14b8a6" className="text-lg" strokeWidth={sharedStroke} />
-    ),
-    title: "UI/UX focus",
-    desc: "Clean, accessible interfaces with professional design tooling.",
-  },
-  {
-    icon: (
-      <BriefcaseBusiness
-        color="#f59e42"
-        className="text-lg"
-        strokeWidth={sharedStroke}
-      />
-    ),
-    title: "Freelance delivery",
-    desc: "Hands-on with real projects, iterating with users and stakeholders.",
-  },
-];
-
-const education = educationData.degrees.map((deg, idx) => ({
-  icon: (
-    <GraduationCap
-      color={idx % 2 === 0 ? "#34d399" : "#818cf8"}
-      className="text-xl"
-      strokeWidth={sharedStroke}
-    />
-  ),
-  title: deg.course,
-  place: deg.name,
-  time: deg.duration,
-}));
-
-const hackathons = [
-  {
-    icon: hackathonIconMap["Smart India Hackathon – 2024 & 2025"] ?? (
-      <Trophy color="#44a832" strokeWidth={sharedStroke} />
-    ),
-    label: "Smart India Hackathon – 2024 & 2025",
-  },
-  {
-    icon: hackathonIconMap["DevFast – 2024"] ?? (
-      <Trophy color="#44a832" strokeWidth={sharedStroke} />
-    ),
-    label: "DevFast – 2024",
-  },
-  {
-    icon: hackathonIconMap["Odoo x Adani Hackathon – 2026"] ?? (
-      <Trophy color="#44a832" strokeWidth={sharedStroke} />
-    ),
-    label: "Odoo x Adani Hackathon – 2026",
-  },
-];
-
-const courses = educationData.certifiedCourses.map(c => ({
-  icon: courseIconMap[c.course] ?? (
-    <BookOpen color="#2a73cc" strokeWidth={sharedStroke} />
-  ),
-  label: c.course,
-}));
-
-const languages = aboutMeData.Language.map(lang => ({
-  icon: languageIconMap[lang] ?? <Globe2 color="#4f8edc" strokeWidth={sharedStroke} />,
-  label: lang,
-}));
-
-function GridBG() {
-  // Soft, subtle SVG grid lines, covers the viewport, does not interfere visually
-  // Responsive pattern: thin grid every 32px, lighter color.
-  return (
-    <svg
-      className="pointer-events-none absolute inset-0 w-full h-full opacity-30"
-      style={{ zIndex: 0 }}
-      width="100%"
-      height="100%"
-      aria-hidden="true"
-    >
-      <defs>
-        <pattern
-          id="smallGrid"
-          width="32"
-          height="32"
-          patternUnits="userSpaceOnUse"
-        >
-          <path
-            d="M 32 0 L 0 0 0 32"
-            fill="none"
-            stroke="#ffffff1d"
-            strokeWidth="1"
-          />
-        </pattern>
-        <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
-          <rect width="64" height="64" fill="url(#smallGrid)" />
-          <path
-            d="M 64 0 L 0 0 0 64"
-            fill="none"
-            stroke="#ffffff1d"
-            strokeWidth="1.5"
-          />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)" />
-    </svg>
-  );
-}
+import experienceData from "../../Config/experience.json";
 
 export default function About() {
   return (
-    <main className="relative bg-black text-white min-h-screen px-6 py-24 sm:py-32 selection:bg-white/20 selection:text-white overflow-x-hidden">
-      {/* Background */}
-      <GridBG />
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full mix-blend-screen" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-teal-600/5 blur-[100px] rounded-full mix-blend-screen" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
-        {/* Profile Image - Left Column */}
-
-        <motion.div
-          variants={imageVariants}
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-          className="lg:col-span-5 lg:sticky lg:top-32"
-        >
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-2xl">
-            <Image
-              src={profile}
-              alt="Mohammadali Dhanga"
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 40vw"
-            />
+    <div className="px-6 py-12 md:py-24 md:px-16 min-h-screen">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="max-w-6xl mx-auto space-y-20 md:space-y-32"
+      >
+        {/* Header & Bio Section */}
+        <section>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16 border-b border-white/10 pb-8 md:pb-10">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight uppercase">
+              About
+            </h1>
+            <p className="text-gray-600 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.4em] pb-2">
+              Identity & Expertise
+            </p>
           </div>
-        </motion.div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+            <div className="space-y-12 md:space-y-16">
+              <p className="text-2xl sm:text-3xl md:text-5xl leading-tight font-light text-white tracking-tight">
+                I’m a passionate Full Stack Developer building modern, scalable, and high-performance web applications.
+              </p>
+              
+              <div className="space-y-8 md:space-y-12">
+                <div className="relative pl-6 md:pl-10 border-l border-white/10 py-2 group hover:border-white transition-colors duration-500">
+                  <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
+                    Experienced in Full Stack Development, including Ruby on Rails, Web, and Mobile (Android & iOS) applications.
+                  </p>
+                </div>
+                <div className="relative pl-6 md:pl-10 border-l border-white/10 py-2 group hover:border-white transition-colors duration-500">
+                  <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
+                    Strong backend expertise using Node.js with scalable, structured architectures (NestJS-style).
+                  </p>
+                </div>
+                <div className="relative pl-6 md:pl-10 border-l border-white/10 py-2 group hover:border-white transition-colors duration-500">
+                  <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
+                    Deep interest in startups, SaaS products, and innovative tech solutions.
+                  </p>
+                </div>
+              </div>
 
-        {/* Content - Right Column */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="lg:col-span-7 space-y-20 lg:pt-10"
-        >
-
-          {/* About Text */}
-          <motion.div variants={itemVariants} className="space-y-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm w-fit">
-              <span className="text-xs uppercase tracking-widest text-[#0ea5e9] flex items-center gap-2">
-                {sectionIconMap.about} About {aboutMeData.Name}
-              </span>
-            </div>
-
-            <div className="space-y-6">
-              <h1 className="text-5xl sm:text-6xl font-display font-bold leading-[0.95] tracking-tight">
-                Building the web of <br /><span className="text-gray-500">tomorrow.</span>
-              </h1>
-
-              <div className="space-y-6 text-lg text-gray-400 font-light leading-relaxed max-w-2xl">
-                <p>
-                  {aboutMeData.Introduction}
-                </p>
+              <div className="pt-6">
+                <a 
+                  href="https://drive.google.com/file/d/1Zc1OKgVPQoX4De8uDyW-4kuGZ-s35gmo/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-4 px-8 py-4 md:px-12 md:py-6 bg-white text-black hover:bg-black hover:text-white border border-white transition-all font-black text-[10px] md:text-xs uppercase tracking-[0.3em] shadow-[10px_10px_0px_rgba(255,255,255,0.05)] hover:shadow-none w-full sm:w-auto justify-center"
+                >
+                  <FileText size={20} />
+                  <span>Resume</span>
+                </a>
               </div>
             </div>
-          </motion.div>
 
-          {/* Highlights - Simple Grid */}
-          <motion.div variants={itemVariants} className="grid sm:grid-cols-3 gap-8 border-y border-white/5 py-12">
-            {highlights.map((item, index) => (
-              <div key={item.title} className="space-y-4">
-                <div className="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 text-white border border-white/5">
-                  {item.icon}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10 h-fit border border-white/10">
+              <div className="p-8 md:p-12 bg-black space-y-3">
+                <h2 className="text-[9px] md:text-[10px] font-mono uppercase tracking-[0.4em] text-gray-600 font-black">Location</h2>
+                <p className="text-xl md:text-2xl font-bold uppercase tracking-tight">{aboutMeData.Address}</p>
+              </div>
+              <div className="p-8 md:p-12 bg-black space-y-3">
+                <h2 className="text-[9px] md:text-[10px] font-mono uppercase tracking-[0.4em] text-gray-600 font-black">Languages</h2>
+                <p className="text-xl md:text-2xl font-bold uppercase tracking-tight">{aboutMeData.Language.join(", ")}</p>
+              </div>
+              <div className="p-8 md:p-12 bg-black space-y-3">
+                <h2 className="text-[9px] md:text-[10px] font-mono uppercase tracking-[0.4em] text-gray-600 font-black">Expertise</h2>
+                <p className="text-xl md:text-2xl font-bold uppercase tracking-tight">{aboutMeData.Role}</p>
+              </div>
+              <div className="p-8 md:p-12 bg-black space-y-3">
+                <h2 className="text-[9px] md:text-[10px] font-mono uppercase tracking-[0.4em] text-gray-600 font-black">Status</h2>
+                <div className="flex items-center gap-3">
+                  <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></span>
+                  <p className="text-xl md:text-2xl font-bold uppercase tracking-tight">Active</p>
                 </div>
-                <div>
-                  <h3 className="font-bold text-white text-lg">{item.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed font-mono mt-2">{item.desc}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* History Section */}
+        <section className="space-y-12 md:space-y-16">
+          <div className="flex justify-between items-end border-b border-white/10 pb-4 md:pb-6">
+            <h2 className="text-3xl md:text-6xl font-bold tracking-tight uppercase underline decoration-1 underline-offset-8 decoration-white/20 text-white">History</h2>
+          </div>
+          <div className="space-y-0">
+            {experienceData.experience.map((exp, idx) => (
+              <div key={idx} className="group py-12 md:py-20 border-b border-white/5 flex flex-col md:flex-row gap-8 md:gap-12 items-start hover:bg-white/[0.005] transition-all sm:px-4 md:px-10">
+                <div className="md:w-1/3">
+                  <p className="text-[9px] md:text-[10px] font-mono text-gray-600 mb-4 md:mb-6 uppercase tracking-[0.4em] font-black">{exp.duration}</p>
+                  <h3 className="text-2xl md:text-4xl font-bold uppercase tracking-tighter mb-4 group-hover:pl-2 transition-all duration-500">{exp.company}</h3>
+                  <div className="inline-block px-3 py-1 border border-white/10 text-[9px] font-mono uppercase tracking-[0.3em] text-gray-500">{exp.type}</div>
+                </div>
+                <div className="md:w-2/3 space-y-4 md:space-y-8">
+                  <h4 className="text-xl md:text-3xl font-bold text-white uppercase tracking-tight leading-none">{exp.title}</h4>
+                  <p className="text-gray-500 font-light text-lg md:text-2xl leading-relaxed max-w-3xl">
+                    {exp.description}
+                  </p>
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
+        </section>
 
-          {/* Education & Achievements */}
-          <motion.div variants={itemVariants} className="space-y-16">
-            {/* Education */}
-            <div className="space-y-8">
-              <h2 className="text-3xl font-bold flex items-center gap-3">
-                {sectionIconMap.education} Education
-              </h2>
-              <div className="space-y-10 border-l border-white/10 pl-8 ml-3 relative">
-                {education.map((item, idx) => (
-                  <div key={item.title} className="relative group">
-                    <div className="absolute -left-[39px] top-1 w-5 h-5 rounded-full border border-white/20 bg-black flex items-center justify-center group-hover:border-white/50 transition-colors">
-                      <div className="w-1.5 h-1.5 rounded-full bg-white/50 group-hover:bg-white transition-colors" />
-                    </div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">{item.title}</h3>
-                    <p className="text-gray-400 text-base mt-1">{item.place}</p>
-                    <p className="text-sm font-mono text-gray-600 mt-2">{item.time}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Hackathons / Courses - Two Columns */}
-            <div className="grid sm:grid-cols-2 gap-12 sm:gap-16">
-              <div className="space-y-8">
-                <h2 className="text-2xl font-bold flex items-center gap-3 text-white">
-                  {sectionIconMap.hackathons} Hackathons
-                </h2>
-                <ul className="space-y-6">
-                  {hackathons.map(item => (
-                    <li key={item.label} className="flex items-start gap-4 text-gray-300 group">
-                      <span className="mt-1 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all">{item.icon}</span>
-                      <span className="text-sm font-medium leading-snug group-hover:text-white transition-colors">{item.label}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="space-y-8">
-                <h2 className="text-2xl font-bold flex items-center gap-3 text-white">
-                  {sectionIconMap.courses} Courses
-                </h2>
-                <ul className="space-y-6">
-                  {courses.map(item => (
-                    <li key={item.label} className="flex items-start gap-4 text-gray-300 group">
-                      <span className="mt-1 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all">{item.icon}</span>
-                      <span className="text-sm font-medium leading-snug group-hover:text-white transition-colors">{item.label}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="space-y-8">
-                <h2 className="text-2xl font-bold flex items-center gap-3 text-white">
-                  {sectionIconMap.languages} Languages
-                </h2>
-                <ul className="space-y-6">
-                  {languages.map(item => (
-                    <li key={item.label} className="flex items-start gap-4 text-gray-300 group">
-                      <span className="mt-1 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all">{item.icon}</span>
-                      <span className="text-sm font-medium leading-snug group-hover:text-white transition-colors">{item.label}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Skills Cloud */}
-          <motion.div variants={itemVariants} className="space-y-10 pt-10 border-t border-white/5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <h2 className="text-3xl font-bold flex items-center gap-3">
-                {sectionIconMap.tools} Tools & Skills
-              </h2>
-              <span className="text-xs font-mono text-gray-500 uppercase tracking-widest flex items-center gap-2">
-                <Rocket className="w-3 h-3 text-pink-500" />
-                Always learning, always shipping
-              </span>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-              {skills.map(skill => (
-                <div key={skill} className="px-4 py-3 rounded-lg bg-white/5 border border-white/5 flex items-center gap-3 text-gray-300 hover:text-white hover:bg-white/10 transition-all hover:scale-105 cursor-default group">
-                  <span className="opacity-70 group-hover:opacity-100 transition-opacity scale-90">{iconMap[skill]}</span>
-                  <span className="text-sm font-medium">{skill}</span>
+        {/* Knowledge Section */}
+        <section className="space-y-12 md:space-y-16 pb-20 md:pb-32">
+          <div className="flex justify-between items-end border-b border-white/10 pb-4 md:pb-6">
+            <h2 className="text-3xl md:text-6xl font-bold tracking-tight uppercase underline decoration-1 underline-offset-8 decoration-white/20 text-white">Knowledge</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+            {educationData.degrees.map((edu, idx) => (
+              <div key={idx} className="p-8 md:p-16 border border-white/5 bg-white/[0.005] flex flex-col justify-between space-y-8 md:space-y-12 hover:border-white/20 hover:bg-white/[0.01] transition-all duration-700">
+                <div className="space-y-4 md:space-y-8">
+                  <p className="text-[9px] md:text-[10px] font-mono text-gray-600 uppercase tracking-[0.4em] font-black">{edu.duration}</p>
+                  <h3 className="text-2xl md:text-4xl font-bold uppercase tracking-tighter leading-[1]">{edu.course}</h3>
+                  <div className="w-12 h-0.5 bg-white/20 group-hover:w-20 transition-all duration-700"></div>
+                  <p className="text-lg md:text-xl text-gray-400 font-medium uppercase tracking-[0.2em]">{edu.name}</p>
                 </div>
-              ))}
-            </div>
-          </motion.div>
-
-        </motion.div>
-      </div>
-    </main>
+                <p className="text-gray-500 font-light italic leading-relaxed text-lg md:text-xl">
+                  {edu.description}
+                </p>
+                <div className="pt-6 md:pt-10 border-t border-white/5 flex justify-between items-center">
+                  <span className="text-[9px] md:text-[10px] font-mono uppercase tracking-[0.3em] text-gray-600 font-black">Archive / {edu.grade}</span>
+                  <span className="text-[8px] md:text-[9px] font-mono uppercase border border-white/10 px-3 py-1 font-black text-white/40">Certification</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </motion.div>
+    </div>
   );
 }

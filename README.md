@@ -1,38 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mohammadali Dhanga
 
-## Getting Started
+### **MERN Stack Developer & Web Designer**
 
-First, run the development server:
+📍 Gandhinagar, Gujarat, India | 🌐 [mohammadali.eth](https://mohammadali.eth)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 About Me
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I am a passionate **MERN Stack Developer** and **Web Designer** specializing in building modern, responsive, and high-performance digital experiences. With a deep focus on **UI/UX Design** and **Scalable Backend Architectures**, I transform complex ideas into production-ready software.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ⚡ I spend my time architecting with **Next.js**, **React**, and **Node.js**.
+- 🎨 I have a core focus on **Minimalist Brutalist** design and structural grid systems.
+- 🛠️ Currently developing **Scalable Web Infrastructures** and AI-powered platforms.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Technical Arsenal
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Frontend Excellence**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-## Deploy on Vercel
+### **Backend & Systems**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![NestJS](https://img.shields.io/badge/nestjs-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![Ruby on Rails](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **Database & Infrastructure**
 
-# mohammadali.eth
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
+---
+
+## 💼 Experience
+
+#### **MERN Stack Developer & Web Designer** | Matiyas Solution
+
+_April 2025 – Present_
+
+- Building modern, responsive, and scalable web applications.
+- Leading UI/UX design and frontend development using Next.js/React.
+- Architecting backends with Node.js and MongoDB.
+
+#### **Freelance Web Developer** | Remote
+
+_June 2023 – January 2024_
+
+- Delivered full-stack solutions for global clients focusing on React and Node.js.
+- Specialized in custom UI/UX design and client-focused project delivery.
+
+---
+
+## 📂 Selected Projects
+
+- **Invix AI-powered Invoicing**: An automated billing platform utilizing intelligent algorithms for financial insights.
+- **MaddyCal**: A comprehensive management suite for scheduling and task collaboration.
+- **AI Crop Recommendation**: A machine learning system for precision agriculture based on soil/weather data.
+- **JAVA ERP**: A robust enterprise solution for inventory and finance management.
+- **MaddyBit File Automation**: Advanced Python-based tool for intelligent file organization and backup.
+
+---
+
+## 🎓 Education & Certifications
+
+- **Web Designing (Certification)** | Red & White Multimedia Education (2020)
+- **Bachelor of Computer Applications (BCA)** | C.U. Shah University (2022)
+- **Master of Computer Applications (MCA)** | Ganpat University (Current)
+
+---
+
+## 📫 Connect with Me
+
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mohammadali-eth)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohammadalidhanga/)
+[![Instagram](https://img.shields.io/badge/instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/mohammadali8.eth/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-white?style=for-the-badge&logo=google-chrome&logoColor=black)](https://mohammadali.eth)
+
+---
+
+> _"Building the next generation of digital infrastructure, one line of code at a time."_

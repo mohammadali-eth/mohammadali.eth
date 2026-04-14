@@ -1,522 +1,104 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import SocialIcons from "@/components/SocialIcons";
-import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
-import {
-  BadgeDollarSign,
-  BriefcaseBusiness,
-  Globe2,
-  Mail,
-  MessageCircle,
-  UserRound,
-  Workflow,
-} from "lucide-react";
-import emailjs from "@emailjs/browser";
-import contactData from "../../Config/contact.json";
+import { ArrowUpRight, Mail } from "lucide-react";
 import aboutMeData from "../../Config/aboutme.json";
 
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
-  },
-};
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
-
-function GridBG() {
-  return (
-    <svg
-      className="pointer-events-none absolute inset-0 w-full h-full opacity-30"
-      style={{ zIndex: 0 }}
-      width="100%"
-      height="100%"
-      aria-hidden="true"
-    >
-      <defs>
-        <pattern
-          id="smallGrid"
-          width="32"
-          height="32"
-          patternUnits="userSpaceOnUse"
-        >
-          <path
-            d="M 32 0 L 0 0 0 32"
-            fill="none"
-            stroke="#ffffff1d"
-            strokeWidth="1"
-          />
-        </pattern>
-        <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
-          <rect width="64" height="64" fill="url(#smallGrid)" />
-          <path
-            d="M 64 0 L 0 0 0 64"
-            fill="none"
-            stroke="#ffffff1d"
-            strokeWidth="1.5"
-          />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)" />
-    </svg>
-  );
-}
-
-const serviceIcons = [
-  {
-    Icon: Workflow,
-    className: "text-purple-500",
-    text: "MERN & Next.js development",
-  },
-  {
-    Icon: Globe2,
-    className: "text-cyan-500",
-    text: "UI/UX design for web",
-  },
-  {
-    Icon: BadgeDollarSign,
-    className: "text-emerald-500",
-    text: "E-commerce & platforms",
-  },
-  {
-    Icon: MessageCircle,
-    className: "text-sky-500",
-    text: "Performance & accessibility",
-  },
+const socials = [
+  { name: "Behance", color: "bg-[#1769ff]", url: "https://behance.net/mohammadhanga" },
+  { name: "Discord", color: "bg-[#7289DA]", url: "https://discord.gg/1436284327624314920" },
+  { name: "Facebook", color: "bg-[#1877F2]", url: "https://facebook.com/Mohammada-Ali-Dhanga" },
+  { name: "Instagram", color: "bg-[#E4405F]", url: "https://instagram.com/mohammadali8.eth" },
+  { name: "LinkedIn", color: "bg-[#0077B5]", url: "https://linkedin.com/in/mohammadalidhanga" },
+  { name: "Pinterest", color: "bg-[#E60023]", url: "https://pinterest.com/malidhanga" },
+  { name: "Stackoverflow", color: "bg-[#FE7A16]", url: "https://stackoverflow.com/users/32102653" },
+  { name: "Twitch", color: "bg-[#9146FF]", url: "https://twitch.tv/mohammadalieth" },
+  { name: "X", color: "bg-black", border: "border-white/20", url: "https://x.com/mohammadali_eth" },
+  { name: "Email", color: "bg-[#D14836]", url: "mailto:malidhanga.work@gmail.com" },
 ];
-
-// --- REDESIGN FORM WITH LABELS AND VALIDATION ---
-function validateEmail(email: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function ContactForm() {
-  const formRef = useRef<HTMLFormElement | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    project_type: "",
-    budget: "",
-    message: "",
-  });
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  // Init EmailJS (replaces script tag)
-  useEffect(() => {
-    emailjs.init("yv_Iepu5faWShbozH");
-  }, []);
-
-  function validate() {
-    const newErrors: { name: string; email: string; message: string } = {
-      name: "",
-      email: "",
-      message: "",
-    };
-    if (!form.name.trim()) {
-      newErrors.name = "Full name is required.";
-    }
-    if (!form.email.trim()) {
-      newErrors.email = "Email is required.";
-    } else if (!validateEmail(form.email)) {
-      newErrors.email = "Please enter a valid email address.";
-    }
-    if (!form.message.trim()) {
-      newErrors.message = "Message is required.";
-    }
-    setErrors(newErrors);
-    return !newErrors.name && !newErrors.email && !newErrors.message;
-  }
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    // Clear the error as user is typing
-    if (errors[e.target.name as keyof typeof errors]) {
-      setErrors({ ...errors, [e.target.name]: "" });
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formRef.current) return;
-
-    if (!validate()) {
-      return;
-    }
-
-    setLoading(true);
-
-    try {
-      await emailjs.sendForm(
-        "service_87ksd9q", // SERVICE ID
-        "template_ip7814b", // TEMPLATE ID
-        formRef.current,
-      );
-
-      alert("Message sent successfully ✅");
-      setForm({
-        name: "",
-        email: "",
-        project_type: "",
-        budget: "",
-        message: "",
-      });
-      formRef.current.reset();
-    } catch (error) {
-      console.error("FAILED...", error);
-      alert("Failed to send message ❌");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <form
-      ref={formRef}
-      onSubmit={handleSubmit}
-      className="space-y-6"
-      noValidate
-    >
-      {/* Hidden Time Field */}
-      <input type="hidden" name="time" value={new Date().toLocaleString()} />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {/* Name */}
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm mb-1 text-gray-200 font-semibold"
-          >
-            Full Name <span className="text-pink-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your full name"
-            required
-            autoComplete="name"
-            className="w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
-            value={form.name}
-            onChange={handleChange}
-            aria-invalid={!!errors.name}
-            aria-describedby="name-error"
-          />
-          {errors.name && (
-            <p id="name-error" className="text-xs mt-1 text-pink-400">
-              {errors.name}
-            </p>
-          )}
-        </div>
-
-        {/* Email */}
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-sm mb-1 text-gray-200 font-semibold"
-          >
-            {contactData.FormLabels.Email} <span className="text-pink-500">*</span>
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder={contactData.FormPlaceholders.Email}
-            required
-            autoComplete="email"
-            className="w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
-            value={form.email}
-            onChange={handleChange}
-            aria-invalid={!!errors.email}
-            aria-describedby="email-error"
-          />
-          {errors.email && (
-            <p id="email-error" className="text-xs mt-1 text-pink-400">
-              {errors.email}
-            </p>
-          )}
-        </div>
-      </div>
-
-      {/* Project Type / Subject */}
-      <div>
-        <label
-          htmlFor="project_type"
-          className="block text-sm mb-1 text-gray-200 font-semibold"
-        >
-          {contactData.FormLabels.Subject}
-        </label>
-        <input
-          type="text"
-          name="project_type"
-          id="project_type"
-          placeholder={contactData.FormPlaceholders.Subject}
-          className="w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
-          value={form.project_type}
-          onChange={handleChange}
-        />
-      </div>
-
-      {/* Budget */}
-      <div>
-        <label
-          htmlFor="budget"
-          className="block text-sm mb-1 text-gray-200 font-semibold"
-        >
-          Budget (Optional)
-        </label>
-        <input
-          type="text"
-          name="budget"
-          id="budget"
-          placeholder="Budget range or expectation"
-          className="w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
-          value={form.budget}
-          onChange={handleChange}
-        />
-      </div>
-
-      {/* Message */}
-      <div>
-        <label
-          htmlFor="message"
-          className="block text-sm mb-1 text-gray-200 font-semibold"
-        >
-          {contactData.FormLabels.Message} <span className="text-pink-500">*</span>
-        </label>
-        <textarea
-          name="message"
-          id="message"
-          rows={5}
-          placeholder={contactData.FormPlaceholders.Message}
-          required
-          className="w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
-          value={form.message}
-          onChange={handleChange}
-          aria-invalid={!!errors.message}
-          aria-describedby="message-error"
-        />
-        {errors.message && (
-          <p id="message-error" className="text-xs mt-1 text-pink-400">
-            {errors.message}
-          </p>
-        )}
-      </div>
-
-      {/* Submit */}
-      <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-        <p className="text-xs sm:text-sm text-gray-400 flex items-center gap-1">
-          By sending, you agree to be contacted about your inquiry.
-        </p>
-        <button
-          type="submit"
-          disabled={loading}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-semibold"
-        >
-          <Mail className="text-pink-500" />
-          {loading ? "Sending..." : "Send Message"}
-        </button>
-      </div>
-    </form>
-  );
-}
 
 export default function Contact() {
   return (
-    <main className="relative overflow-hidden min-h-screen px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 pt-24 sm:pt-28 lg:pt-32">
-      <GridBG />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{ zIndex: 1 }}
-      >
-        <motion.div
-          className="absolute inset-8 rounded-3xl border border-white/5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.35 }}
-          transition={{ duration: 1.2, delay: 0.2 }}
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.05),_transparent_45%)]" />
-      </div>
-
+    <div className="px-6 py-12 md:py-24 md:px-16 min-h-screen">
       <motion.div
-        className="relative max-w-5xl mx-auto space-y-10 sm:space-y-14 lg:space-y-16"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        style={{ zIndex: 2 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-6xl mx-auto space-y-20 md:space-y-32"
       >
-        <div className="space-y-4 sm:space-y-6 text-center">
-          <motion.p
-            className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-white/10 bg-white/5 text-xs sm:text-sm uppercase tracking-[0.18em] text-gray-300"
-            variants={itemVariants}
-          >
-            <AnimatedShinyText className="inline-flex items-center justify-center gap-2 px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300">
-              <Mail className="text-pink-500" strokeWidth={1.8} /> Contact {aboutMeData.Name}
-            </AnimatedShinyText>
-          </motion.p>
-          <motion.h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white flex justify-center items-center gap-2"
-            variants={itemVariants}
-          >
-            <Workflow className="text-blue-500" strokeWidth={1.8} />
-            Let&apos;s build your next experience
-          </motion.h1>
-          <motion.p
-            className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mx-auto flex items-center justify-center gap-2"
-            variants={itemVariants}
-            style={{
-              fontFamily:
-                "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-            }}
-          >
-            {contactData.Introduction}
-          </motion.p>
-        </div>
-
-        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
-          <motion.div
-            className="lg:col-span-2 p-5 sm:p-7 rounded-2xl border border-white/10 bg-white/5 backdrop-blur space-y-4 sm:space-y-5"
-            variants={itemVariants}
-          >
-            <h2 className="text-lg sm:text-xl font-display font-bold text-white flex items-center gap-2">
-              <BriefcaseBusiness
-                className="text-yellow-500"
-                strokeWidth={1.8}
-              />
-              Project Inquiry
-            </h2>
-            <p className="text-xs sm:text-sm text-gray-300 flex items-center gap-2 ">
-              Share a bit about your project. I respond within 1–2 business
-              days.
+        <section>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16 border-b border-white/10 pb-8 md:pb-10">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight uppercase">
+              Contact
+            </h1>
+            <p className="text-gray-600 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.4em] pb-2">
+              Collaborations & Inquiries
             </p>
-            {/* Redesigned contact form with validation and labels */}
-            <ContactForm />
-          </motion.div>
-          {/* Side Card */}
-          <motion.div
-            className="w-full max-w-sm mx-auto md:mx-0 md:w-96 bg-[#16181a] border border-[#222327] rounded-xl shadow-lg p-6 flex flex-col gap-6"
-            variants={itemVariants}
-          >
-            {/* Header Section */}
-            <div className="flex flex-col gap-1.5">
-              <div className="flex items-center gap-2 mt-1">
-                <UserRound
-                  className="text-orange-500 text-lg"
-                  strokeWidth={1.8}
-                />
-                <h3 className="text-lg font-display font-bold text-white">
-                  Direct details
-                </h3>
-              </div>
-              <div className="flex flex-col gap-2 mt-1">
-                <span className="block text-gray-400 text-xs uppercase tracking-wide font-semibold mb-0.5">
-                  Location
-                </span>
-                <span
-                  className="text-gray-300"
-                  style={{
-                    fontFamily:
-                      "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                  }}
+          </div>
+
+          <div className="pt-8 grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24">
+            <div className="space-y-12 md:space-y-16">
+              <p className="text-2xl sm:text-4xl font-light tracking-tight text-gray-300 leading-tight">
+                Open for opportunities: Full-time roles, freelance projects, and collaborations.
+              </p>
+              
+              <div className="space-y-8">
+                <h2 className="text-[10px] font-mono uppercase tracking-[0.4em] text-gray-600 font-black">Direct Inquiries</h2>
+                <a
+                  href="mailto:malidhanga.work@gmail.com"
+                  className="group flex items-center justify-between p-6 md:p-10 bg-white/5 border border-white/10 hover:border-white transition-all overflow-hidden"
                 >
-                  {contactData.Address}
-                </span>
-              </div>
-            </div>
-
-            {/* Direct Details Section */}
-            <div className="flex flex-col gap-5 text-sm text-gray-200">
-              {/* Email */}
-              <div className="flex items-center gap-3">
-                <div>
-                  <span className="block text-gray-400 text-xs uppercase tracking-wide font-semibold mb-0.5">
-                    Email
-                  </span>
-                  <Link
-                    href={`mailto:${contactData.Email}`}
-                    className="text-white hover:underline flex items-center gap-2"
-                    style={{
-                      fontFamily:
-                        "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                    }}
-                  >
-                    {contactData.Email}
-                  </Link>
-                </div>
-              </div>
-              {/* Portfolio */}
-              <div className="flex items-center gap-3">
-                <div>
-                  <span className="block text-gray-400 text-xs uppercase tracking-wide font-semibold mb-0.5">
-                    Portfolio
-                  </span>
-                  <Link
-                    href="https://mohammadali.com"
-                    className="text-white hover:underline flex items-center gap-2"
-                    style={{
-                      fontFamily:
-                        "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                    }}
-                  >
-                    mohammadali.eth
-                  </Link>
-                </div>
-              </div>
-              {/* Social */}
-              <div className="flex items-center gap-3">
-                <div>
-                  <span className="block text-gray-400 text-xs uppercase tracking-wide font-semibold">
-                    Social
-                  </span>
-                  <div>
-                    <SocialIcons />
+                  <div className="flex items-center gap-4 min-w-0">
+                    <Mail className="text-gray-400 group-hover:text-white transition-colors shrink-0" />
+                    <span className="text-lg sm:text-2xl md:text-3xl font-bold tracking-tighter truncate">
+                      malidhanga.work@gmail.com
+                    </span>
                   </div>
-                </div>
+                  <ArrowUpRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform shrink-0" />
+                </a>
               </div>
             </div>
 
-            {/* Services Section */}
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <span className="text-gray-400 text-xs uppercase tracking-wide font-semibold">
-                  Services
-                </span>
+            <div className="space-y-12">
+              <div className="space-y-8">
+                <div className="flex items-center gap-4 border-b border-white/10 pb-6">
+                  <span className="text-2xl">🌐</span>
+                  <h2 className="text-sm font-mono uppercase tracking-[0.4em] font-black text-white">Socials</h2>
+                </div>
+                
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {socials.map((social, idx) => (
+                    <motion.a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: idx * 0.05 }}
+                      className={`px-4 py-4 text-[10px] font-black uppercase tracking-[0.3em] ${social.color} text-white ${social.border || ''} border transition-all hover:-translate-y-1 active:scale-95 flex items-center justify-center text-center`}
+                    >
+                      {social.name}
+                    </motion.a>
+                  ))}
+                </div>
               </div>
-              <ul
-                className="space-y-2 text-sm text-gray-200 mt-1"
-                style={{
-                  fontFamily:
-                    "Menlo, Monaco, 'Fira Mono', 'Liberation Mono', 'Courier New', monospace",
-                }}
-              >
-                {serviceIcons.map(({ Icon, className, text }) => (
-                  <li key={text} className="flex items-center gap-3">
-                    <Icon className={`${className} text-base`} />
-                    <span>{text}</span>
-                  </li>
-                ))}
-              </ul>
+
+              <div className="pt-12 p-8 md:p-12 border border-white/5 bg-white/[0.005] space-y-6">
+                <h3 className="text-[10px] font-mono uppercase tracking-[0.4em] text-gray-600 font-black">Location</h3>
+                <p className="text-2xl md:text-3xl font-bold uppercase tracking-tighter text-white">{aboutMeData.Address}</p>
+                <div className="flex items-center gap-4 text-green-500 font-mono text-[10px] uppercase tracking-[0.4em] font-black underline underline-offset-8 decoration-green-500/20">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                  </span>
+                  Ready to work
+                </div>
+              </div>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </section>
       </motion.div>
-    </main>
+    </div>
   );
 }
