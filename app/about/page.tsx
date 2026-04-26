@@ -111,15 +111,15 @@ export default function About() {
               </div>
 
               <div className="pt-6">
-                <a
-                  href="https://drive.google.com/file/d/1Zc1OKgVPQoX4De8uDyW-4kuGZ-s35gmo/view?usp=sharing"
+                <Link
+                  href="https://res.cloudinary.com/diukjb3ma/raw/upload/v1777209727/Mohammadali%27s_Resume"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-4 px-8 py-4 md:px-12 md:py-6 bg-white text-black hover:bg-black hover:text-white border border-white transition-all font-black text-[10px] md:text-xs uppercase tracking-[0.3em] shadow-[10px_10px_0px_rgba(255,255,255,0.05)] hover:shadow-none w-full sm:w-auto justify-center"
                 >
                   <FileText size={20} />
                   <span>Resume</span>
-                </a>
+                </Link>
               </div>
             </div>
 
