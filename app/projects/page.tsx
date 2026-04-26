@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import projectsData from "../../Config/projects.json";
+import SEO from "@/components/SEO";
 
 export default function Projects() {
   const allProjects = [
@@ -14,6 +15,12 @@ export default function Projects() {
 
   return (
     <div className="px-6 py-12 md:py-24 md:px-16 min-h-[85vh]">
+      <SEO
+        title="Projects Portfolio | Mohammadali Dhanga - Full Stack Showcase"
+        description="Explore the portfolio of Mohammadali Dhanga, featuring AI-powered applications, MERN stack platforms, and innovative software solutions."
+        keywords="Mohammadali Dhanga, AliDev, Projects, Portfolio, Full Stack, AI, Gandhinagar, India, JavaScript, React.js, Node.js, TypeScript, Next.js, MySQL, MongoDB, Tailwind CSS, PostgreSQL, Ruby on Rails, React Native, PHP, GitHub, Figma, Vercel, WordPress, Shopify, Adobe Photoshop, Render, Netlify, CSS3, Java, HTML5, Python, Solidity, AWS, Google Cloud, Firebase, .Net, Angular, Context-API, Express.js, Flask, SASS, Web3.js, Vue.js, Yarn, Redis, Supabase, Prisma, Adobe Illustrator, Canva, Git, Docker, Postman, Portfolio"
+        url="https://www.alidev.in/projects"
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -21,9 +28,15 @@ export default function Projects() {
         className="max-w-6xl mx-auto"
       >
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16 border-b border-white/10 pb-8 md:pb-10">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight uppercase">
-            Work
-          </h1>
+          <div className="space-y-4">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight uppercase">
+              Project Portfolio
+            </h1>
+            <p className="text-gray-400 font-light text-sm max-w-xl">
+              A collection of high-impact digital products and scalable systems. 
+              Explore my technical insights on the <Link href="/blog" className="text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition-all">developer blog</Link> or return to the <Link href="/" className="text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition-all">AliDev homepage</Link>.
+            </p>
+          </div>
           <p className="text-gray-600 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.4em] pb-2">
             Selected Projects
           </p>

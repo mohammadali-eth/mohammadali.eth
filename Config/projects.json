@@ -3,233 +3,116 @@
     {
       "id": 0,
       "name": "AI Based Crop Recommendation System",
-      "desc": "An AI-driven system that recommends suitable crops based on soil parameters, weather conditions, and historical data to help farmers improve yield and decision-making.",
+      "slug": "ai-crop-recommendation",
+      "desc": "The AI Based Crop Recommendation System is a sophisticated agricultural tool designed to optimize farming practices through data science. Built with a React Native mobile frontend and a Python-powered backend, the system utilizes advanced Machine Learning models to analyze soil quality and climatic conditions. It evaluates nitrogen, phosphorus, and potassium levels alongside temperature and rainfall to suggest the most viable crops for a specific region. By leveraging PostgreSQL for robust data management, the platform helps farmers mitigate risks and maximize yield productivity. This project demonstrates my expertise in integrating AI with mobile ecosystems to solve real-world challenges in the agricultural sector.",
       "photo": "",
-      "skills": [
-        "Python",
-        "Machine Learning",
-        "AI",
-        "Data Analysis",
-        "Web Integration"
-      ],
-      "live": "",
-      "code": "",
-      "profession": "Academic Project"
+      "skills": ["React Native", "Python", "PostgreSQL", "Machine Learning", "AI"],
+      "live": "https://alidev.in/projects/ai-crop-recommendation",
+      "code": "https://github.com/mohammadali-eth/ai-crop-recommendation",
+      "profession": "AI Developer India"
     },
     {
       "id": 1,
-      "name": "Hotel Management System",
-      "desc": "A web-based system for managing hotel operations including room booking, customer records, billing, and staff management with a user-friendly interface.",
+      "name": "Invix AI-powered Invoicing Platform",
+      "slug": "invix-invoicing",
+      "desc": "Invix is a premium AI-powered invoicing platform developed to streamline financial workflows for freelancers and small businesses. The application is built using React.js for a dynamic user interface and Ruby on Rails for a secure, scalable backend. By utilizing PostgreSQL, Invix manages complex billing data and automated payment tracking with ease. The integrated AI features help in predicting cash flow trends and identifying late payment risks before they happen. This platform is a testament to my skills in Full Stack Development, showing how React and Rails can be combined to build high-performance SaaS tools that offer real business value through automation and intelligent insights.",
       "photo": "",
-      "skills": [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Bootstrap"
-      ],
-      "live": "",
-      "code": "",
-      "profession": "Academic Project"
+      "skills": ["React.js", "Ruby on Rails", "PostgreSQL", "AI Integration", "SaaS"],
+      "live": "https://alidev.in/projects/invix-invoicing",
+      "code": "https://github.com/mohammadali-eth/invix-platform",
+      "profession": "MERN Stack Developer"
     },
     {
       "id": 2,
       "name": "JAVA ERP Software",
-      "desc": "A robust Enterprise Resource Planning (ERP) solution built with Java to streamline business processes including inventory, finance, and human resources.",
+      "slug": "java-erp-software",
+      "desc": "This JAVA ERP Software is a comprehensive enterprise solution designed to manage and automate core business processes. Developed using a classic stack of HTML, CSS, and Java, the software provides a robust architecture for handling large-scale data and complex business logic. It includes modules for inventory tracking, financial accounting, and human resource management. The system is engineered for stability and high concurrency, making it suitable for growing enterprises that require a reliable central hub for their operations. This project showcases my proficiency in Java development and my ability to architect complex, multi-layered systems that satisfy enterprise-grade requirements.",
       "photo": "",
-      "skills": [
-        "Java",
-        "Spring Boot",
-        "MySQL",
-        "Hibernate",
-        "ERP Architecture"
-      ],
-      "live": "",
-      "code": "",
-      "profession": "Professional Project"
-    },
-    {
-      "id": 3,
-      "name": "MaddyCal Application",
-      "desc": "A comprehensive management suite designed to handle scheduling, tasks, and team collaboration efficiently for various business operations.",
-      "photo": "",
-      "skills": [
-        "React",
-        "Node.js",
-        "Express",
-        "PostgreSQL",
-        "Tailwind CSS"
-      ],
-      "live": "",
-      "code": ""
-    },
-    {
-      "id": 4,
-      "name": "Invix AI-powered Invoicing Platform",
-      "desc": "An AI-powered invoicing platform that automates billing processes, tracks payments, and generates financial insights using intelligent algorithms.",
-      "photo": "",
-      "skills": [
-        "Next.js",
-        "AI/ML Integration",
-        "Stripe API",
-        "Prisma",
-        "PostgreSQL"
-      ],
-      "live": "",
-      "code": ""
+      "skills": ["HTML", "CSS", "Java", "SQL", "ERP Architecture"],
+      "live": "https://alidev.in/projects/java-erp-software",
+      "code": "https://github.com/mohammadali-eth/java-erp",
+      "profession": "Full Stack Developer India"
     }
   ],
   "dataList2": [
     {
       "id": 0,
-      "name": "Arqaamultipack Solution",
-      "desc": "A modern, responsive company website designed to showcase business services, portfolio, and contact information with a professional UI/UX.",
+      "name": "BuzzMitra LLP Agency",
+      "slug": "buzzmitra-agency",
+      "desc": "BuzzMitra LLP is a high-impact agency platform designed for a performance marketing firm. The website was built using React.js and Tailwind CSS to ensure a lightning-fast user experience and a sleek, modern aesthetic. The focus was on creating a minimalist brutalist design that highlights the agency's data-driven strategies and success stories. By utilizing React's component-based architecture, I was able to build a highly responsive site that looks perfect on all devices. This project highlights my ability to translate marketing requirements into a functional, aesthetic, and SEO-optimized web presence that helps businesses scale their brand through better digital visibility.",
       "photo": "",
-      "skills": [
-        "React",
-        "Next.js",
-        "Tailwind CSS",
-        "UI/UX Design"
-      ],
-      "live": "",
-      "code": ""
+      "skills": ["React.js", "Tailwind CSS", "UI/UX", "Marketing Tech"],
+      "live": "https://alidev.in/projects/buzzmitra-agency",
+      "code": "https://github.com/mohammadali-eth/buzzmitra",
+      "profession": "Web Developer India"
     },
     {
       "id": 1,
-      "name": "WordPress E-commerce Website",
-      "desc": "An e-commerce website built using WordPress for online product sales, including payment integration, product management, and responsive design.",
+      "name": "MaddyBit File Automation",
+      "slug": "maddybit-automation",
+      "desc": "MaddyBit is an advanced file automation tool designed to help users organize their digital workspace effortlessly. Built with a Next.js frontend and a Ruby on Rails backend, the system utilizes MySQL for tracking file operations and history. The tool allows users to set up custom rules for sorting, renaming, and archiving files based on metadata and content. It is a perfect example of how automated workflows can improve personal and professional productivity. My role involved architecting the file-handling logic and ensuring the system remained performant even when processing thousands of files. This project demonstrates my versatility in combining Next.js with Rails to build utility-focused applications.",
       "photo": "",
-      "skills": [
-        "WordPress",
-        "WooCommerce",
-        "PHP",
-        "Payment Gateway",
-        "UI/UX"
-      ],
-      "live": "",
-      "code": ""
+      "skills": ["Next.js", "Ruby on Rails", "MySQL", "Automation", "File API"],
+      "live": "https://alidev.in/projects/maddybit-automation",
+      "code": "https://github.com/mohammadali-eth/maddybit",
+      "profession": "Freelance Developer Gandhinagar"
     },
     {
       "id": 2,
-      "name": "MaddyBit File Automation",
-      "desc": "An advanced automation tool designed to intelligently organize files by sorting them into dedicated folders, handling duplicates, and maintaining extensive logs and backups.",
+      "name": "Arqaamultipack Solution",
+      "slug": "arqaamultipack",
+      "desc": "Arqaamultipack Solution is a corporate website designed for a leading packaging manufacturer. The project was built using Next.js and Tailwind CSS to achieve a high-performance, SEO-friendly site that showcases the company's extensive product range. The site features a custom-built catalog and a lead generation system that allows potential clients to request quotes easily. By focusing on accessibility and speed, I ensured that the site would perform well in search rankings while providing a professional user experience. This project illustrates my capability in building corporate solutions that are both visually appealing and strategically focused on business growth through digital channels.",
       "photo": "",
-      "skills": [
-        "Python",
-        "File System API",
-        "Automation",
-        "Logging",
-        "Backup Systems"
-      ],
-      "live": "",
-      "code": ""
-    },
-    {
-      "id": 3,
-      "name": "BuzzMitra LLP Agency",
-      "desc": "A performance marketing agency platform focused on data-driven strategies to scale brands through targeted advertising and conversion optimization.",
-      "photo": "",
-      "skills": [
-        "Marketing Analytics",
-        "SEO/SEM",
-        "React",
-        "Next.js",
-        "Google Ads API"
-      ],
-      "live": "",
-      "code": ""
-    },
-    {
-      "id": 4,
-      "name": "NilkanthArt Ecommerce Website",
-      "desc": "A premium e-commerce platform for home decor, featuring high-quality products, seamless checkout, and an elegant UI/UX design.",
-      "photo": "",
-      "skills": [
-        "React",
-        "Shopify",
-        "Tailwind CSS",
-        "E-commerce UI",
-        "Node.js"
-      ],
-      "live": "",
-      "code": ""
+      "skills": ["Next.js", "Tailwind CSS", "Corporate UI", "Lead Generation"],
+      "live": "https://alidev.in/projects/arqaamultipack",
+      "code": "https://github.com/mohammadali-eth/arqaamultipack",
+      "profession": "Web Developer India"
     }
   ],
   "dataList3": [
     {
       "id": 0,
-      "name": "Real-Time Blog and Chat Uploading Website",
-      "desc": "A real-time web platform allowing users to post blogs and communicate via chat with instant updates using modern web technologies.",
+      "name": "Pass-Portugez Portal",
+      "slug": "passportugez-portal",
+      "desc": "Pass-Portugez is a comprehensive travel and visa assistance portal built for individuals looking to migrate to or visit Portugal. Developed using Next.js and Tailwind CSS, the platform provides a wealth of information and services in an easy-to-navigate format. The focus was on creating a trustworthy and informative user experience, with a deep emphasis on SEO to reach global users searching for migration assistance. The portal includes dynamic content management for articles and updates, ensuring that users always have the latest information. This project shows my skill in building content-heavy portals that require careful attention to UX and performance optimization.",
       "photo": "",
-      "skills": [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Socket.io",
-        "Express"
-      ],
-      "live": "",
-      "code": ""
+      "skills": ["Next.js", "Tailwind CSS", "SEO", "Content Management"],
+      "live": "https://alidev.in/projects/passportugez-portal",
+      "code": "https://github.com/mohammadali-eth/passportugez",
+      "profession": "Full developer India"
     },
     {
       "id": 1,
-      "name": "Weather Forecast Page (UI/UX)",
-      "desc": "A clean and responsive weather forecast interface displaying real-time weather data with an emphasis on modern UI/UX design.",
+      "name": "NilkanthArt Ecommerce Website",
+      "slug": "nilkanthart-ecommerce",
+      "desc": "NilkanthArt is a premium e-commerce platform dedicated to home decor and art pieces. Built with React.js and Node.js, the site uses SCSS for complex, modular styling that reflects the artistic nature of the products. The platform features a custom shopping cart, secure payment integration, and a rich product gallery designed to showcase high-quality imagery. My focus was on creating a seamless 'path to purchase' that minimizes friction and maximizes conversion. This project highlights my expertise in MERN stack development and my ability to create aesthetically pleasing, high-converting e-commerce experiences that stand out in a competitive market.",
       "photo": "",
-      "skills": [
-        "React",
-        "API Integration",
-        "UI/UX Design",
-        "CSS",
-        "JavaScript"
-      ],
-      "live": "",
-      "code": ""
+      "skills": ["React.js", "Node.js", "SCSS", "E-commerce", "MongoDB"],
+      "live": "https://alidev.in/projects/nilkanthart-ecommerce",
+      "code": "https://github.com/mohammadali-eth/nilkanthart",
+      "profession": "MERN Stack Developer"
     },
     {
       "id": 2,
-      "name": "Pass-Portugez Portal",
-      "desc": "A travel and visa assistance platform helping users navigate the journey of moving to or visiting Portugal, from dream to destination.",
+      "name": "Gear-Guard Odoo Workflow Inventory",
+      "slug": "gear-guard-odoo",
+      "desc": "Gear-Guard is a specialized inventory management system built to optimize the maintenance and tracking of equipment. Developed using a modern stack of Next.js and Node.js with PostgreSQL, the system integrates seamlessly with the Odoo framework. It provides a customized workflow for equipment lifecycle management, including maintenance alerts, asset tracking, and historical logging. The use of Tailwind CSS ensured a clean, functional interface for warehouse and field staff. This project demonstrates my ability to build custom extensions for enterprise platforms like Odoo, combining modern web technologies with established ERP systems to provide tailored business solutions.",
       "photo": "",
-      "skills": [
-        "Next.js",
-        "Content Management",
-        "UI/UX",
-        "SEO",
-        "React"
-      ],
-      "live": "",
-      "code": ""
+      "skills": ["Next.js", "Node.js", "Tailwind CSS", "PostgreSQL", "Odoo"],
+      "live": "https://alidev.in/projects/gear-guard-odoo",
+      "code": "https://github.com/mohammadali-eth/gear-guard",
+      "profession": "AI Developer Gujarat"
     },
     {
       "id": 3,
-      "name": "ECOFlow OODO Inventory",
-      "desc": "An advanced inventory management software built on the Odoo framework to optimize supply chain operations and stock tracking.",
+      "name": "ECO-Flow Odoo Inventory",
+      "slug": "ecoflow-odoo",
+      "desc": "ECO-Flow is an advanced inventory optimization platform designed to improve supply chain efficiency within the Odoo ecosystem. Built using Next.js, Node.js, and Tailwind CSS, the platform leverages PostgreSQL for high-speed data processing and analytics. It offers real-time visibility into stock levels, demand forecasting, and automated reordering processes. My work involved creating a highly responsive dashboard that visualizes complex supply chain data into actionable insights for managers. This project highlights my skill in developing analytical tools that enhance enterprise productivity and resource management through modern full-stack web development and database optimization.",
       "photo": "",
-      "skills": [
-        "Odoo",
-        "Python",
-        "Inventory Management",
-        "PostgreSQL",
-        "XML-RPC"
-      ],
-      "live": "",
-      "code": ""
-    },
-    {
-      "id": 4,
-      "name": "GearGuard Odoo Project",
-      "desc": "A dedicated project management and tracking system built with Odoo for gear maintenance and equipment lifecycle management.",
-      "photo": "",
-      "skills": [
-        "Odoo",
-        "Python",
-        "ERP Customization",
-        "PostgreSQL",
-        "Asset Tracking"
-      ],
-      "live": "",
-      "code": ""
+      "skills": ["Next.js", "Node.js", "Tailwind CSS", "PostgreSQL", "Data Analytics"],
+      "live": "https://alidev.in/projects/ecoflow-odoo",
+      "code": "https://github.com/mohammadali-eth/ecoflow",
+      "profession": "Full developer India"
     }
   ]
 }

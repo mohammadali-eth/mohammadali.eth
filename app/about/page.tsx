@@ -1,14 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FileText } from "lucide-react";
+import { FileText, ArrowRight } from "lucide-react";
 import aboutMeData from "../../Config/aboutme.json";
 import educationData from "../../Config/education.json";
 import experienceData from "../../Config/experience.json";
+import SEO from "@/components/SEO";
+import Link from "next/link";
 
 export default function About() {
   return (
     <div className="px-6 py-12 md:py-24 md:px-16 min-h-screen">
+      <SEO
+        title="About Mohammadali Dhanga | Full Stack & AI Developer India"
+        description="Learn more about Mohammadali Dhanga, a leading Full Stack and AI Developer in India specializing in scalable web solutions and intelligent automation."
+        keywords="Mohammadali Dhanga, AliDev, Full developer India, AI developer Gujarat, freelance web developer Gandhinagar, JavaScript, React.js, Node.js, TypeScript, Next.js, MySQL, MongoDB, Tailwind CSS, PostgreSQL, Ruby on Rails, React Native, PHP, GitHub, Figma, Vercel, WordPress, Shopify, Adobe Photoshop, Render, Netlify, CSS3, Java, HTML5, Python, Solidity, AWS, Google Cloud, Firebase, .Net, Angular, Context-API, Express.js, Flask, SASS, Web3.js, Vue.js, Yarn, Redis, Supabase, Prisma, Adobe Illustrator, Canva, Git, Docker, Postman, Portfolio"
+        url="https://www.alidev.in/about"
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -33,24 +41,72 @@ export default function About() {
                 and high-performance web applications.
               </p>
 
-              <div className="space-y-8 md:space-y-12">
-                <div className="relative pl-6 md:pl-10 border-l border-white/10 py-2 group hover:border-white transition-colors duration-500">
-                  <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
-                    Experienced in Full Stack Development, including Ruby on
-                    Rails, Web, and Mobile (Android & iOS) applications.
-                  </p>
-                </div>
-                <div className="relative pl-6 md:pl-10 border-l border-white/10 py-2 group hover:border-white transition-colors duration-500">
-                  <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
-                    Strong backend expertise using Node.js with scalable,
-                    structured architectures (NestJS-style).
-                  </p>
-                </div>
-                <div className="relative pl-6 md:pl-10 border-l border-white/10 py-2 group hover:border-white transition-colors duration-500">
-                  <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
-                    Deep interest in startups, SaaS products, and innovative
-                    tech solutions.
-                  </p>
+              <div className="space-y-12">
+                <div className="space-y-6">
+                  <h2 className="text-white/20 font-mono text-xs uppercase tracking-[0.3em]">
+                    The Journey
+                  </h2>
+                  <div className="text-lg md:text-xl text-gray-400 font-light leading-relaxed space-y-6">
+                    <p>
+                      As a{" "}
+                      <span className="text-white font-bold">
+                        Mohammadali Dhanga developer
+                      </span>
+                      , I have dedicated years to mastering the art of software
+                      engineering, focusing on creating seamless digital
+                      experiences. Based in India, I have built a reputation as
+                      a leading{" "}
+                      <span className="text-white font-bold">
+                        Full developer in India
+                      </span>
+                      , helping businesses bridge the gap between complex
+                      backend systems and intuitive user interfaces. My journey
+                      has taken me from academic projects to professional
+                      collaborations, where I&apos;ve honed my skills in modern
+                      tech stacks like Next.js, React, and Node.js.
+                    </p>
+                    <p>
+                      Beyond traditional web development, I am also recognized
+                      as an{" "}
+                      <span className="text-white font-bold">
+                        AI developer in Gujarat
+                      </span>
+                      , integrating machine learning and intelligent automation
+                      into web applications. This unique combination of skills
+                      allows me to build &apos;smart&apos; platforms that
+                      don&apos;t just display data but understand and act on it.
+                      Currently, I am expanding my reach as a{" "}
+                      <span className="text-white font-bold">
+                        freelance web developer in Gandhinagar
+                      </span>
+                      , providing high-end development services to clients
+                      looking for precision, performance, and scalability.
+                    </p>
+                    <p>
+                      My technical expertise is built on a solid foundation of
+                      MERN stack development, but I don&apos;t limit myself to a
+                      single ecosystem. I have worked extensively with Ruby on
+                      Rails, Java Spring Boot, and Python, giving me a versatile
+                      perspective on system architecture. My approach to
+                      development is rooted in the principles of Minimalist
+                      Brutalism—focusing on clarity, structural integrity, and
+                      raw performance.
+                    </p>
+                    <p>
+                      Throughout my career, I have led several high-impact
+                      projects, ranging from AI-powered invoicing systems like
+                      Invix to real-time collaboration tools. You can explore a
+                      full list of my work on my{" "}
+                      <Link
+                        href="/projects"
+                        className="text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition-all inline-flex items-center gap-2"
+                      >
+                        projects page <ArrowRight size={14} />
+                      </Link>
+                      , where I showcase how I translate complex requirements
+                      into elegant, production-ready code.
+                    </p>
+                  </div>
                 </div>
               </div>
 

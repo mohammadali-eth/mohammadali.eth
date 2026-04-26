@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 const techStack = [
   // --- FEATURED SKILLS ---
@@ -229,6 +230,12 @@ const techStack = [
 export default function Skills() {
   return (
     <div className="px-6 py-12 md:py-24 md:px-16 min-h-screen">
+      <SEO 
+        title="Technical Skills & Stack | Mohammadali Dhanga - Full Stack Expert"
+        description="Explore the technical capabilities of Mohammadali Dhanga, including expertise in MERN stack, Ruby on Rails, AI integration, and modern UI/UX design."
+        keywords="Mohammadali Dhanga, AliDev, Skills, Tech Stack, Gandhinagar, India, JavaScript, React.js, Node.js, TypeScript, Next.js, MySQL, MongoDB, Tailwind CSS, PostgreSQL, Ruby on Rails, React Native, PHP, GitHub, Figma, Vercel, WordPress, Shopify, Adobe Photoshop, Render, Netlify, CSS3, Java, HTML5, Python, Solidity, AWS, Google Cloud, Firebase, .Net, Angular, Context-API, Express.js, Flask, SASS, Web3.js, Vue.js, Yarn, Redis, Supabase, Prisma, Adobe Illustrator, Canva, Git, Docker, Postman, Portfolio"
+        url="https://www.alidev.in/skills"
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -274,7 +281,7 @@ export default function Skills() {
                           >
                             <img
                               src={`https://cdn.simpleicons.org/${tech.icon}`}
-                              alt={tech.name}
+                              alt={`${tech.name} - Mohammadali Dhanga portfolio`}
                               className="w-full h-full object-contain"
                             />
                           </div>
@@ -317,7 +324,7 @@ export default function Skills() {
                     >
                       <img
                         src={`https://cdn.simpleicons.org/${tech.icon}/ffffff`}
-                        alt=""
+                        alt={`${tech.name} - AliDev web application`}
                         className="w-3 h-3 md:w-4 md:h-4"
                       />
                       <span>{tech.name}</span>

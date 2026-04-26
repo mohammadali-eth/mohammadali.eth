@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Mail } from "lucide-react";
 import aboutMeData from "../../Config/aboutme.json";
+import SEO from "@/components/SEO";
 
 const socials = [
   {
@@ -61,6 +62,12 @@ const socials = [
 export default function Contact() {
   return (
     <div className="px-6 py-12 md:py-24 md:px-16 min-h-screen">
+      <SEO 
+        title="Contact Mohammadali Dhanga | Full Stack Developer Gandhinagar"
+        description="Get in touch with Mohammadali Dhanga for full stack development projects, AI solutions, and professional collaborations in Gandhinagar, India."
+        keywords="Mohammadali Dhanga, AliDev, Contact, Freelance Developer, Gandhinagar, India, JavaScript, React.js, Node.js, TypeScript, Next.js, MySQL, MongoDB, Tailwind CSS, PostgreSQL, Ruby on Rails, React Native, PHP, GitHub, Figma, Vercel, WordPress, Shopify, Adobe Photoshop, Render, Netlify, CSS3, Java, HTML5, Python, Solidity, AWS, Google Cloud, Firebase, .Net, Angular, Context-API, Express.js, Flask, SASS, Web3.js, Vue.js, Yarn, Redis, Supabase, Prisma, Adobe Illustrator, Canva, Git, Docker, Postman, Portfolio"
+        url="https://www.alidev.in/contact"
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
