@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/skills", label: "Skills" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -63,7 +64,9 @@ export default function Navigation() {
               href={link.href}
               onClick={() => setMenuOpen(false)}
               className={`transition-colors ${
-                pathname === link.href ? "text-white font-bold" : "text-gray-500"
+                pathname === link.href
+                  ? "text-white font-bold"
+                  : "text-gray-500"
               }`}
             >
               {link.label}

@@ -2,7 +2,7 @@
 
 ### **MERN Stack Developer & Web Designer**
 
-📍 Gandhinagar, Gujarat, India | 🌐 [mohammadali.eth](https://mohammadali.eth)
+📍 Gandhinagar, Gujarat, India | 🌐 [mohammadali.eth](https://alidev.in)
 
 ---
 

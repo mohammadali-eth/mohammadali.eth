@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "building-scalable-web-infrastructures",
+    "title": "Building Scalable Web Infrastructures with Next.js and AWS",
+    "date": "2026-04-26",
+    "excerpt": "Learn the best practices for architecting high-performance web applications that scale effortlessly.",
+    "content": "Full stack development is more than just writing code; it's about building systems that can handle growth. In this post, we explore how to leverage Next.js and AWS to create robust architectures...",
+    "keywords": "Next.js, AWS, Web Infrastructure, Scalable Apps, Full Stack Development",
+    "category": "Architecture"
+  },
+  {
+    "slug": "mastering-modern-ui-design",
+    "title": "Mastering Modern UI Design: Minimalist Brutalism",
+    "date": "2026-04-20",
+    "excerpt": "Why minimalist brutalism is the future of digital design and how to implement it correctly.",
+    "content": "Design trends come and go, but structural integrity remains. Minimalist brutalism focuses on honesty, raw materials, and clear hierarchy...",
+    "keywords": "UI Design, Minimalist Brutalism, Web Design Trends, UX Best Practices",
+    "category": "Design"
+  }
+]

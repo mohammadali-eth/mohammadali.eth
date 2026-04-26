@@ -79,7 +79,6 @@ const socialLinks = [
   },
 ];
 
-
 const iconVariants = {
   hover: {
     scale: 1.1,

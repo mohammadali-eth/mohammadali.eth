@@ -10,7 +10,7 @@ export const metadata = {
   title: "Mohammadali Dhanga",
   description:
     "Mohammadali Dhanga - Full Stack Developer and Web Designer specializing in modern, responsive, and user-friendly web applications using Next.js, React, and Node.js.",
-  url: "https://mohammadali.eth",
+  url: "https://www.alidev.in",
   image:
     "https://res.cloudinary.com/diukjb3ma/image/upload/v1765709456/IMG_5147_aylm5c.jpg",
   siteName: "Mohammadali Dhanga Portfolio",
@@ -63,6 +63,8 @@ function GridBG() {
   );
 }
 
+import Providers from "@/components/Providers";
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className}>
@@ -97,9 +99,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Mohammadali Dhanga",
+              alternateName: "AliDev",
               jobTitle: "Full Stack Developer",
-              url: metadata.url,
-              sameAs: [metadata.instagram, metadata.github, metadata.linkedin],
+              url: "https://www.alidev.in",
+              sameAs: [metadata.github, metadata.linkedin],
               description: metadata.description,
               image: metadata.image,
             }),
@@ -107,22 +110,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className="min-h-screen bg-black text-white text-base selection:bg-white selection:text-black relative overflow-x-hidden">
-        {/* Ambient Lighting */}
-        <div className="fixed inset-0 pointer-events-none z-0">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full mix-blend-screen" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-teal-600/5 blur-[100px] rounded-full mix-blend-screen" />
-        </div>
+        <Providers>
+          {/* Ambient Lighting */}
+          <div className="fixed inset-0 pointer-events-none z-0">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full mix-blend-screen" />
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-teal-600/5 blur-[100px] rounded-full mix-blend-screen" />
+          </div>
 
-        {/* Grid Background */}
-        <div className="fixed inset-0 pointer-events-none z-0">
-          <GridBG />
-        </div>
+          {/* Grid Background */}
+          <div className="fixed inset-0 pointer-events-none z-0">
+            <GridBG />
+          </div>
 
-        <div className="relative z-10 flex flex-col min-h-screen border-x border-white/10 max-w-7xl mx-auto">
-          <Navigation />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
+          <div className="relative z-10 flex flex-col min-h-screen border-x border-white/10 max-w-7xl mx-auto">
+            <Navigation />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );
