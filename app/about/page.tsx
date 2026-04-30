@@ -7,6 +7,7 @@ import educationData from "../../Config/education.json";
 import experienceData from "../../Config/experience.json";
 import SEO from "@/components/SEO";
 import Link from "next/link";
+import ProfileSection from "@/components/ProfileSection";
 
 export default function About() {
   return (
@@ -23,6 +24,8 @@ export default function About() {
         transition={{ duration: 0.4 }}
         className="max-w-6xl mx-auto space-y-20 md:space-y-32"
       >
+        <ProfileSection />
+
         {/* Header & Bio Section */}
         <section>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16 border-b border-white/10 pb-8 md:pb-10">
