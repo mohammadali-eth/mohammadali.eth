@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
 /**
  * SEO Component for managing page metadata.
  * Uses react-helmet-async to handle head tags.
- * 
+ *
  * @param {Object} props
  * @param {string} props.title - Page title
  * @param {string} props.description - Meta description
@@ -14,8 +14,8 @@ import { Helmet } from 'react-helmet-async';
  * @param {string} props.url - Canonical URL for the page
  * @param {string} [props.type='website'] - Open Graph type
  */
-const SEO = ({ title, description, keywords, url, type = 'website' }) => {
-  const siteName = 'Mohammadali Dhanga';
+const SEO = ({ title, description, keywords, url, type = "website" }) => {
+  const siteName = "Mohammadali Dhanga";
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
 
   return (
@@ -37,7 +37,7 @@ const SEO = ({ title, description, keywords, url, type = 'website' }) => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       {description && <meta name="twitter:description" content={description} />}
-      
+
       {/* Additional tags can be added here as needed */}
     </Helmet>
   );

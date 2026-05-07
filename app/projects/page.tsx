@@ -33,8 +33,22 @@ export default function Projects() {
               Project Portfolio
             </h1>
             <p className="text-gray-400 font-light text-sm max-w-xl">
-              A collection of high-impact digital products and scalable systems. 
-              Explore my technical insights on the <Link href="/blog" className="text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition-all">developer blog</Link> or return to the <Link href="/" className="text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition-all">AliDev homepage</Link>.
+              A collection of high-impact digital products and scalable systems.
+              Explore my technical insights on the{" "}
+              <Link
+                href="/blog"
+                className="text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition-all"
+              >
+                developer blog
+              </Link>{" "}
+              or return to the{" "}
+              <Link
+                href="/"
+                className="text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition-all"
+              >
+                AliDev homepage
+              </Link>
+              .
             </p>
           </div>
           <p className="text-gray-600 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.4em] pb-2">

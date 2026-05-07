@@ -6,7 +6,16 @@
       "slug": "cloud-vault",
       "desc": "Cloud Vault is a premium, multi-platform document management system that unifies storage from Google Drive, Cloudinary, and Telegram into a single, sleek dashboard. It features native folder navigation, cross-platform file migration, and smart management with drag-and-drop uploads. Built with Next.js 15 and NestJS, it utilizes a robust JWT-based authentication system and a modern dark-mode aesthetic with glassmorphism. This project showcases my ability to architect complex integrations and deliver a high-performance, unified cloud experience.",
       "photo": "",
-      "skills": ["Next.js 15", "NestJS", "Tailwind CSS 4", "Prisma", "PostgreSQL", "Google Drive API", "Cloudinary", "Telegram API"],
+      "skills": [
+        "Next.js 15",
+        "NestJS",
+        "Tailwind CSS 4",
+        "Prisma",
+        "PostgreSQL",
+        "Google Drive API",
+        "Cloudinary",
+        "Telegram API"
+      ],
       "live": "https://cloudy-vault.vercel.app",
       "code": "https://github.com/mohammadali-eth/CloudVault",
       "profession": "Full Stack Developer"
@@ -17,7 +26,13 @@
       "slug": "ai-crop-recommendation",
       "desc": "The AI Based Crop Recommendation System is a sophisticated agricultural tool designed to optimize farming practices through data science. Built with a React Native mobile frontend and a Python-powered backend, the system utilizes advanced Machine Learning models to analyze soil quality and climatic conditions. It evaluates nitrogen, phosphorus, and potassium levels alongside temperature and rainfall to suggest the most viable crops for a specific region. By leveraging PostgreSQL for robust data management, the platform helps farmers mitigate risks and maximize yield productivity. This project demonstrates my expertise in integrating AI with mobile ecosystems to solve real-world challenges in the agricultural sector.",
       "photo": "",
-      "skills": ["React Native", "Python", "PostgreSQL", "Machine Learning", "AI"],
+      "skills": [
+        "React Native",
+        "Python",
+        "PostgreSQL",
+        "Machine Learning",
+        "AI"
+      ],
       "live": "https://alidev.in/projects/ai-crop-recommendation",
       "code": "https://github.com/mohammadali-eth/ai-crop-recommendation",
       "profession": "AI Developer India"
@@ -28,7 +43,13 @@
       "slug": "invix-invoicing",
       "desc": "Invix is a premium AI-powered invoicing platform developed to streamline financial workflows for freelancers and small businesses. The application is built using React.js for a dynamic user interface and Ruby on Rails for a secure, scalable backend. By utilizing PostgreSQL, Invix manages complex billing data and automated payment tracking with ease. The integrated AI features help in predicting cash flow trends and identifying late payment risks before they happen. This platform is a testament to my skills in Full Stack Development, showing how React and Rails can be combined to build high-performance SaaS tools that offer real business value through automation and intelligent insights.",
       "photo": "",
-      "skills": ["React.js", "Ruby on Rails", "PostgreSQL", "AI Integration", "SaaS"],
+      "skills": [
+        "React.js",
+        "Ruby on Rails",
+        "PostgreSQL",
+        "AI Integration",
+        "SaaS"
+      ],
       "live": "https://invix-info.vercel.app/",
       "code": "https://github.com/mohammadali-eth/Invix_Info",
       "profession": "MERN Stack Developer"
@@ -120,7 +141,13 @@
       "slug": "ecoflow-odoo",
       "desc": "ECO-Flow is an advanced inventory optimization platform designed to improve supply chain efficiency within the Odoo ecosystem. Built using Next.js, Node.js, and Tailwind CSS, the platform leverages PostgreSQL for high-speed data processing and analytics. It offers real-time visibility into stock levels, demand forecasting, and automated reordering processes. My work involved creating a highly responsive dashboard that visualizes complex supply chain data into actionable insights for managers. This project highlights my skill in developing analytical tools that enhance enterprise productivity and resource management through modern full-stack web development and database optimization.",
       "photo": "",
-      "skills": ["Next.js", "Node.js", "Tailwind CSS", "PostgreSQL", "Data Analytics"],
+      "skills": [
+        "Next.js",
+        "Node.js",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Data Analytics"
+      ],
       "live": "https://alidev.in/projects/ecoflow-odoo",
       "code": "https://github.com/RhythmItaliya/ECOFlow",
       "profession": "Full developer India"

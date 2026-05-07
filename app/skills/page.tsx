@@ -230,7 +230,7 @@ const techStack = [
 export default function Skills() {
   return (
     <div className="px-6 py-12 md:py-24 md:px-16 min-h-screen">
-      <SEO 
+      <SEO
         title="Technical Skills & Stack | Mohammadali Dhanga - Full Stack Expert"
         description="Explore the technical capabilities of Mohammadali Dhanga, including expertise in MERN stack, Ruby on Rails, AI integration, and modern UI/UX design."
         keywords="Mohammadali Dhanga, AliDev, Skills, Tech Stack, Gandhinagar, India, JavaScript, React.js, Node.js, TypeScript, Next.js, MySQL, MongoDB, Tailwind CSS, PostgreSQL, Ruby on Rails, React Native, PHP, GitHub, Figma, Vercel, WordPress, Shopify, Adobe Photoshop, Render, Netlify, CSS3, Java, HTML5, Python, Solidity, AWS, Google Cloud, Firebase, .Net, Angular, Context-API, Express.js, Flask, SASS, Web3.js, Vue.js, Yarn, Redis, Supabase, Prisma, Adobe Illustrator, Canva, Git, Docker, Postman, Portfolio"
