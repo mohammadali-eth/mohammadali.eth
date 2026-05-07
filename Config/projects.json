@@ -36,7 +36,6 @@
     {
       "id": 3,
       "name": "JAVA ERP Software",
-      
       "slug": "java-erp-software",
       "desc": "This JAVA ERP Software is a comprehensive enterprise solution designed to manage and automate core business processes. Developed using a classic stack of HTML, CSS, and Java, the software provides a robust architecture for handling large-scale data and complex business logic. It includes modules for inventory tracking, financial accounting, and human resource management. The system is engineered for stability and high concurrency, making it suitable for growing enterprises that require a reliable central hub for their operations. This project showcases my proficiency in Java development and my ability to architect complex, multi-layered systems that satisfy enterprise-grade requirements.",
       "photo": "",
