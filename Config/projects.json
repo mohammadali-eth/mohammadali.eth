@@ -116,6 +116,24 @@
       "live": "http://arqaamultipack.com/",
       "code": "https://github.com/mohammadali-eth/Arqaamultipack",
       "profession": "Web Developer India"
+    },
+    {
+      "id": 3,
+      "name": "VendorBridge - Odoo Vendor Portal",
+      "slug": "vendorbridge-procurement-portal",
+      "desc": "VendorBridge is a modern Procurement & Vendor Management ERP platform built for the Odoo x KSV hackathon. Designed to digitize and automate the complete procurement lifecycle, it enables collaboration between procurement officers, vendors, and managers. The system automates RFQ creation, side-by-side quotation comparison, approval workflows, purchase order generation, and invoice management. Powered by React, Node.js, Tailwind CSS, Prisma, and PostgreSQL, it eliminates manual operations and ensures transparency through workflow automation.",
+      "photo": "",
+      "skills": [
+        "React.js",
+        "Node.js",
+        "Tailwind CSS",
+        "Prisma",
+        "PostgreSQL",
+        "Express.js"
+      ],
+      "live": "https://odoo-vendor-bridge.vercel.app/",
+      "code": "https://github.com/mohammadali-eth/VendorBridge",
+      "profession": "Full Stack Developer"
     }
   ],
   "dataList3": [
@@ -168,6 +186,24 @@
       "live": "https://alidev.in/projects/ecoflow-odoo",
       "code": "https://github.com/RhythmItaliya/ECOFlow",
       "profession": "Full developer India"
+    },
+    {
+      "id": 4,
+      "name": "Agro Farmy",
+      "slug": "agro-farmy",
+      "desc": "Agro Farmy is a high-end smart agriculture and urban farming platform designed to connect modern technology with nature. Built with a GPU-optimized frontend using React, Tailwind CSS, and Framer Motion, it features high-fidelity interactions powered by GSAP and an atmospheric canvas particle system. The portal supports urban gardening, structural rooftop farming guidelines, and organic vermicompost commerce. This project demonstrates my ability to engineer premium, fluid user interfaces with advanced micro-animations and physics-based interactions.",
+      "photo": "",
+      "skills": [
+        "React.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "GSAP",
+        "HTML5 Canvas",
+        "Vite"
+      ],
+      "live": "https://agrofarmy.com",
+      "code": "https://github.com/mohammadali-eth/Agrofarmy_Business",
+      "profession": "Frontend & UI Developer"
     }
   ]
 }

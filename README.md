@@ -65,6 +65,8 @@ _June 2023 – January 2024_
 
 ## 📂 Selected Projects
 
+- **Agro Farmy**: A smart agriculture and urban gardening platform designed with advanced GPU-optimized micro-interactions, GSAP animations, and canvas particle physics.
+- **VendorBridge - Odoo x KSV**: An enterprise procurement & vendor management ERP platform designed to automate RFQs, quotation comparisons, and PO workflows.
 - **Invix AI-powered Invoicing**: An automated billing platform utilizing intelligent algorithms for financial insights.
 - **MaddyCal**: A comprehensive management suite for scheduling and task collaboration.
 - **AI Crop Recommendation**: A machine learning system for precision agriculture based on soil/weather data.
